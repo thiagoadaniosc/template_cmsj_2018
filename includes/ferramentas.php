@@ -80,7 +80,7 @@
             <div class="card col-lg-12 rounded-0 justify-content-center p-3" style="background-color: #6666FF">
                 <i class="fa fa-paperclip m-auto text-white" style="font-size:80px"></i>
                 <h4 class="text-center text-white">Clipagem Digital</h4>
-                <small class="text-center text-white">(Configurações do Usuário)</small>
+                <small class="text-center text-white">(Clipagem Digital)</small>
             </div>
         </a>
     </article>
