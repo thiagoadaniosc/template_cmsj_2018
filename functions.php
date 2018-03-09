@@ -253,7 +253,7 @@ function get_type($post_type){
 	} elseif ($post_type == "comunicados") {
 		return "Comunicados";
 	} else {
-		return "Outros";
+		return "Notícias";
 	}
 
 }
@@ -435,8 +435,8 @@ function add_event_caps() {
 
 function get_last_clipagens() {
 	$servidor = 'localhost';
-    $usuario = 'root';
-    $senha = 'root';
+    $usuario = base64_decode('cm9vdA==');
+    $senha = base64_decode('cm9vdA==');
     $banco = 'clipagem_digital';
     
     $mysqli = new mysqli($servidor, $usuario, $senha, $banco);

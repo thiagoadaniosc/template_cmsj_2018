@@ -29,6 +29,18 @@ a {
     padding-left: 15px !important
 }
 
+.dropdown-item {
+    border-left: 0px solid transparent;
+    transition: .4s;
+
+}
+
+.dropdown-item:hover {
+    color:white;
+    background-color:rgb(43, 43, 43);
+    border-left: 3px solid rgb(52, 134, 211) ;
+}
+
 .home-news-header{
     background-color: #3B6ED9;
     color: white;

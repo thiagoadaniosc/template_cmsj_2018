@@ -3,7 +3,110 @@
 	<style>
 		body{
 			background-color: #EEEEEE;
-		}
+        }
+        .thc-calendar {
+            margin:auto;
+            font-size:30px;
+        }
+
+        .thc-calendar table th {
+            padding:20px;
+            padding-top:50px;
+            padding-bottom: 50px;
+        }
+
+        .thc-calendar-day {
+            padding:15px;
+        }
+
+        .thc-calendar table thead tr{
+            margin-left: -20px;
+        }
+
+        .thc-highlight {
+            background-color: mediumslateblue;
+            color: white;
+            padding:5px;
+            position: relative;
+            left:-8px;
+            border: 2px solid mediumslateblue;
+        }
+
+        .thc-highlight:hover {
+            background-color: transparent;
+            color: mediumslateblue;
+        }
+
+        .thc-calendar-navigation {
+            text-align: center;
+        }
+
+        .widget_calendar {
+            border: 1px solid  rgb(86, 86, 86);
+            padding: 10px;
+            
+        }
+
+        .thc-calendar caption {
+            background-color: mediumslateblue;
+            text-transform: uppercase;
+            text-align: center;
+            margin-top:20px;
+            color:white;
+            border: 2px solid mediumslateblue;
+        }
+
+        .thc-calendar caption:hover {
+            background-color: transparent;
+            color: mediumslateblue;
+        }
+
+        .thc-calendar-navigation td {
+            text-transform: uppercase;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: white !important;
+        
+        }
+
+        .thc-calendar-navigation td a{
+            color: white;
+            padding-top:10px;
+            padding-bottom:10px;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+
+        .thc-calendar-navigation td:nth-child(1){
+            background-color: rgb(68, 68, 68);
+            border: 2px solid rgb(68, 68, 68);
+        }
+
+        .thc-calendar-navigation td:nth-child(1):hover{
+            background-color:transparent;
+            color: rgb(68, 68, 68);
+        }
+
+        .thc-calendar-navigation td:nth-child(1):hover a {
+            color: rgb(68, 68, 68);
+        }
+
+        .thc-calendar-navigation td:nth-child(3){
+            background-color: rgb(110, 87, 236);
+            border: 2px solid  rgb(110, 87, 236);
+        }
+
+        .thc-calendar-navigation td:nth-child(3):hover{
+            background-color:transparent;
+            color: rgb(68, 68, 68);
+        }
+
+        .thc-calendar-navigation td:nth-child(3):hover a {
+            color: rgb(68, 68, 68);
+        }
+
+
 	</style>
 	<section class="post-panel col-lg-12 justify-content-center row">
 		<header class="post-bg"> 
@@ -19,13 +122,8 @@
 			
 			<div class="post-content col-lg-12 mt-4 ">
 				<div class="pr-5 pl-5 pt-4 border  border-light bg-white rounded-0" style="box-shadow:rgba(0,0,0,.2) 0 4px 16px; font-size: 1.25rem;">
-					<small><i class="fa text-dark fa fa-user-circle"></i> <?php echo get_the_author_meta('first_name') . ' ' . get_the_author_meta('last_name')?> </small>
-					<small class="float-right"><i class="text-dark fa fa-clock-o"></i> <?= get_the_date("d F Y", $post->ID);?> </small>
-					<small><br><i class="fa text-dark fa fa-tag"></i> <?= get_type($post_type)?> </small>
-					<h3 style="font-size: 20px;text-align: center;letter-spacing: -.80px;"><?php the_excerpt(); ?></h3>
-					<hr>
 					<!-- <?php the_post_thumbnail('large'); ?>-->
-					<div class="post-content-text">
+					<div class="">
 						<?php the_content(); ?>
 						<!--
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -43,11 +141,7 @@
 							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						-->
-					</div>
-					<?php if(has_tag()): ?>
-					<small class="mb-2"><i class="fa text-dark fa fa-tags"></i> <?= the_tags();?></small>
-					<?php endif; ?>
-					
+					</div>					
 				</div>
 			</div>
 			<!--

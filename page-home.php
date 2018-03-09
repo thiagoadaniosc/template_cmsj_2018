@@ -47,7 +47,7 @@
         
         <section class="home-news">
             <header class="home-news-header text-white p-1 border-top">
-                <h3><a href="/posts" class="text-white"><i class="home-news-header-title fa fa-newspaper-o"></i> Notícias</a> </h3>
+                <h3><a href="/noticias" class="text-white"><i class="home-news-header-title fa fa-newspaper-o"></i> Notícias</a> </h3>
             </header>
             
             <div class="mt-2">
