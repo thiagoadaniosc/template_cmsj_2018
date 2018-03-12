@@ -10,7 +10,7 @@
             background-size: cover;
 		}
 	</style>
-    <div class="col-lg-8 justify-content-center m-auto bg-white p-5 archive-comunicados-content">
+    <div class="col-lg-8 justify-content-center m-auto bg-white p-3 archive-comunicados-content">
         <h4 class="text-center text-white"> <i class="fa fa-bullhorn m-auto text-white"></i> Comunicados</h4>
 
         <section>

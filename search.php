@@ -36,7 +36,7 @@
                     <h4 class="mb-1 ml-0 pl-0  text-dark"><?= $post->post_title ?></h4>      
                     <small class="p-1"> <i class="fa fa-clock-o"></i> <?= get_the_date()?></small>                  
                 </div>
-                <p class="mb-1"><?= $post->post_title?></p>
+                <p class="mb-1 float-left"><?= $post->post_title?></p>
                 <small class="text-white bg-primary float-right pl-2 pr-2"> Categoria: <?= get_type($post->post_type); ?> </small>
             </a>
         </article>
