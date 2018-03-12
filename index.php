@@ -18,7 +18,7 @@
 		<div class="post-main row justify-content-center m-0 col-lg-8 rounded-0">		
 			
 			<div class="post-content col-lg-12 mt-4 ">
-				<div class="pr-5 pl-5 pt-4 border  border-light bg-white rounded-0" style="box-shadow:rgba(0,0,0,.2) 0 4px 16px; font-size: 1.25rem;">
+				<div class="pr-5 pl-5 pt-4 pb-4 border  border-light bg-white rounded-0" style="box-shadow:rgba(0,0,0,.2) 0 4px 16px; font-size: 1.25rem;">
 					<small><i class="fa text-dark fa fa-user-circle"></i> <?php echo get_the_author_meta('first_name') . ' ' . get_the_author_meta('last_name')?> </small>
 					<small class="float-right"><i class="text-dark fa fa-clock-o"></i> <?= get_the_date("d F Y", $post->ID);?> </small>
 					<small><br><i class="fa text-dark fa fa-tag"></i> <?= get_type($post_type)?> </small>

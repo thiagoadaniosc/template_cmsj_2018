@@ -103,6 +103,16 @@ a {
     border-bottom: 4px solid black;
     font-weight: bold;
 }
+
+.home-asidel-menu li{
+    border-left: 4px solid  rgb(71, 122, 233);
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    transition: .5s;
+}
+.home-asidel-menu li:hover{
+    border-left: 8px solid rgb(71, 122, 233);
+}
 .home-aside-clipagem-header {
     background-color: rgb(55, 121, 187);
     color: white;

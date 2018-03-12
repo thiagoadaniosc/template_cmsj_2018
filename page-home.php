@@ -15,7 +15,7 @@
     <aside class="col-lg-3 bg-white home-asidel">
         <section class="home-asidel-menu mb-2">
             <header class="home-asidel-header text-center mb-2"><i class="fa fa-bars"></i> Menu</header>
-            <nav class="nav nav-pills flex-column justify-content-center">
+            <nav class="nav nav-pills flex-column justify-content-center home-asidel-menu">
                  
                <?php 
                $menu_name = 'menu_aside';
@@ -43,7 +43,7 @@
     
     <div class="col-lg-6 bg-white mb-5 pb-5 home-content-main">
 
-        <?php require_once('includes/ferramentas.php');?>
+        <?php require('includes/ferramentas.php');?>
         
         <section class="home-news">
             <header class="home-news-header text-white p-1 border-top">
@@ -88,7 +88,7 @@
         
     </div>
     
-    <?php require_once ('includes/componentes.php'); ?>
+    <?php require('includes/componentes.php'); ?>
     
 </main>
 <?php get_footer(); ?>
