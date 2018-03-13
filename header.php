@@ -8,7 +8,7 @@
     <meta name="author" content="Thiago Scheidt">
     <meta name="author" content="Marcelo Macagnan">
     <meta name="author" content="Câmara Municipal de São José">
-    <meta http-equiv="refresh" content="60">
+   
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <link href="<?= TEMPLATE_URI ?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="all" rel="stylesheet"
@@ -20,6 +20,12 @@
     <title>Câmara Municipal de São José - Intranet</title>
     
 </head>
+
+
+<!-- <div class=" bg-white justify-content-center row p-0 m-0 loader"  style="width: 100%; height: 100%; z-index:99; position:absolute; top:0;">
+        <img src="<?= TEMPLATE_URI ?>/imgs/Preloader_2.gif" class="m-auto mt-0" alt="">
+</div>
+-->
 
 <div class="header row bg-dark pl-lg-5 pr-lg-5 p-sm-0 p-md-0 position-fixed col-lg-12 mt-0 " style="margin: 0px; z-index:10; height:80px; top:0">
     <header class="navbar col-lg-7 col-xl-9 col-sm-12 col-md-12 navbar-dark bg-dark justify-content-between"> 

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="row col-lg-10 pt-lg-5 pt-xl-4 pl-lg-3 pr-lg-3 p-sm-0 p-md-0 ml-auto mr-auto rounded bg-white justify-content-center">
+<main class="row col-lg-11 col-xl-11 pt-md-2 pt-sm-2 col-md-11 pt-lg-5 pt-xl-4 pl-lg-3 pr-lg-3 p-sm-0 p-md-0 ml-auto mr-auto rounded bg-white justify-content-center">
 <style>
 		body{
 			/* background-color: #EEEEEE; */
