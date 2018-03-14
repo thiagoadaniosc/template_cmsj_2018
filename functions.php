@@ -454,6 +454,56 @@ function get_last_clipagens() {
 	return 	$results;
 }
 
+function get_last_tickets() {
+	$servidor = 'localhost';
+    $usuario = base64_decode('cm9vdA==');
+    $senha = base64_decode('cm9vdA==');
+    $banco = 'glpi';
+    
+    $mysqli = new mysqli($servidor, $usuario, $senha, $banco);
+    mysqli_set_charset($mysqli, "utf8");
+    
+    if(mysqli_connect_errno()) {
+        echo ("Erro ao Conectar ao Banco de Dados");
+        exit;
+	}
+
+	$userid = get_glpi_id();
+
+	$query = "SELECT id, users_id_recipient, name, status FROM glpi_tickets where users_id_recipient = '$userid' order by id DESC LIMIT 0,4";
+
+	$results = $mysqli->query($query);	
+	return 	$results;
+}
+
+function get_glpi_id(){
+	$servidor = 'localhost';
+    $usuario = base64_decode('cm9vdA==');
+    $senha = base64_decode('cm9vdA==');
+    $banco = 'glpi';
+    
+    $mysqli = new mysqli($servidor, $usuario, $senha, $banco);
+    mysqli_set_charset($mysqli, "utf8");
+    
+    if(mysqli_connect_errno()) {
+        echo ("Erro ao Conectar ao Banco de Dados");
+        exit;
+	}
+
+	$current_user = wp_get_current_user();
+	$username = $current_user->user_login;
+
+	$query = "SELECT id, name FROM glpi_users where name = '$username'";
+
+	$results = $mysqli->query($query);
+	$userid;
+	foreach($results as $user){
+		$userid = $user['id'];
+		continue;
+	}
+	return 	$userid;
+}
+
 add_action( 'admin_init', 'add_event_caps');
 
 add_action( 'init', 'add_new_roles');

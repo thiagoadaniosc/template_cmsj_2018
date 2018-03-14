@@ -10,9 +10,36 @@
             background-size: cover;
 		
         }
-	</style>
+</style>
     
     <aside class="col-lg-3 bg-white home-asidel">
+
+         <section class="home-asidel-suporte mb-2">
+            <header class="home-asidel-header text-center mb-2">Ultimos Chamados</header>
+            <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $tickets = get_last_tickets();
+                    while($ticket = $tickets->fetch_assoc()):
+ 
+                     ?>
+                      <tr>
+                        <td><?= $ticket['name']; ?></td>
+                        <td><?= $ticket['status']; ?></td>
+                        <td><?= $ticket['id']; ?></td>
+                      </tr>
+                    <?php endwhile; ?>
+                    </tbody>
+                  </table>
+        </section>
+
         <section class="home-asidel-menu mb-2">
             <header class="home-asidel-header text-center mb-2"><i class="fa fa-bars"></i> Menu</header>
             <nav class="nav nav-pills flex-column justify-content-center home-asidel-menu">
