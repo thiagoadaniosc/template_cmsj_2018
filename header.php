@@ -81,8 +81,8 @@
         <?php global $current_user; get_currentuserinfo();?>
         
         <div class="d-md-none d-sm-none d-xl-block col-lg-2 col-md-12 col-sm-12 text-center" style=" padding: 2px;">
-            
-            <img class="img-thumbnail img-fluid rounded-circle" style="border-radius:0;" width="" src="<?php echo get_avatar_url($current_user->ID, 48); ?>" alt="">
+                
+            <img class="img-thumbnail img-fluid rounded-circle" width="96" style="border-radius:0;" width="" src="<?php echo get_wp_user_avatar_src($current_user->ID, 'thumbnail'); ?>" alt="">         
             
         </div>
         
