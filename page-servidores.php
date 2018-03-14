@@ -1,5 +1,11 @@
-<div class=" bg-white justify-content-center row p-0 m-0 loader"  style="width: 100%; height: 100%; z-index:99; position:absolute; top:0;">
-        <img src="<?= TEMPLATE_URI ?>/imgs/Preloader_2.gif" class="m-auto mt-0" alt="">
+<div class="row justify-content-center p-0 m-0 loader"  style="width: 100%; height: 100%; z-index:99; position:absolute; top:0;">
+    <div class="row col-lg-12 m-auto justify-content-center">
+        <img src="<?= TEMPLATE_URI ?>/imgs/sao-jose-logo_black.png" class="m-auto mt-0" alt="">
+    </div>
+    <div>
+        <img src="<?= TEMPLATE_URI ?>/imgs/Preloader_6.gif" class="mt-0 m-auto " alt="">
+        <p style="position: relative; left:0 " class="text-dark"><b><i>Carregando...</i></b></p>   
+    </div>
 </div>
 <?php get_header(); ?>
 <main class="row col-lg-12 pl-lg-5 pr-lg-5 p-sm-0 p-md-0 justify-content-center ml-auto mr-auto ">
