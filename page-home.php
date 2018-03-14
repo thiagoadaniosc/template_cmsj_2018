@@ -15,7 +15,7 @@
     <aside class="col-lg-3 bg-white home-asidel">
 
          <section class="home-asidel-suporte mb-2">
-            <header class="home-asidel-header text-center mb-2">Ultimos Chamados</header>
+            <header class="home-asidel-header text-center mb-2">Meus Chamados</header>
             <table class="table table-striped">
                     <thead>
                       <tr>
@@ -32,10 +32,17 @@
                      ?>
                       <tr>
                         <td><?= $ticket['name']; ?></td>
-                        <td><?= $ticket['status']; ?></td>
-                        <td><?= $ticket['id']; ?></td>
+                        <td><?= get_glpi_status($ticket['status']); ?></td>
+                        <td><a class="badge badge-dark" alt="Vizualizar" title="Visualizar Chamado" href="http://suporte.cmsj.info/front/ticket.form.php?id=<?= $ticket['id'];?>" target="_blank"><i class="fa fa-eye" style="font-size:14px"></i></a></td>
                       </tr>
                     <?php endwhile; ?>
+                    <tr> 
+                        <td colspan="3" class="col-lg-12">
+                        <a href="http://suporte.cmsj.info/front/ticket.php" class="col-lg-5 btn btn-dark rounded-0" target="_blank"><i class="fa fa-eye" style="font-size:15px"></i> VER TODOS</a>
+                        <a href="http://suporte.cmsj.info/front/helpdesk.public.php?create_ticket=1" class="col-lg-5 btn btn-primary float-right rounded-0" target="_blank" title="Novo Chamado">NOVO <i class="fa fa-plus" style="font-size:15px"></i></a>
+                        </td>
+
+                    </tr>
                     </tbody>
                   </table>
         </section>

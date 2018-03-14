@@ -504,6 +504,20 @@ function get_glpi_id(){
 	return 	$userid;
 }
 
+function get_glpi_status($statusID) {
+	if ($statusID == 1) {
+		return 'Novo';
+	} else if ($statusID == 2 || $statusID == 3){
+		return 'Precessando';
+	} else if ($statusID == 4){
+		return 'Pendente';
+	} else if ($statusID == 5){
+		return 'Solucionado';
+	} else {
+		return 'Fechado';
+	}
+}
+
 add_action( 'admin_init', 'add_event_caps');
 
 add_action( 'init', 'add_new_roles');
