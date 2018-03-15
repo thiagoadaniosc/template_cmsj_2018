@@ -506,15 +506,15 @@ function get_glpi_id(){
 
 function get_glpi_status($statusID) {
 	if ($statusID == 1) {
-		return 'Novo';
+		return '<span class="badge badge-danger">Novo</span>';
 	} else if ($statusID == 2 || $statusID == 3){
-		return 'Precessando';
+		return '<span class="badge badge-secondary">Processando</span>';
 	} else if ($statusID == 4){
-		return 'Pendente';
+		return '<span class="badge badge-warning">Pendente</span>';
 	} else if ($statusID == 5){
-		return 'Solucionado';
+		return '<span class="badge badge-success">Solucionado</span>';
 	} else {
-		return 'Fechado';
+		return '<span class="badge badge-dark">Fechado</span>';
 	}
 }
 

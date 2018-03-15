@@ -4,7 +4,7 @@
 		body{
 			/* background-color: #EEEEEE; */
           
-            background-image: url('<?= 'http://'. $_SERVER['HTTP_HOST'] ?>/wp-content/uploads/2017/09/cmsj.png');
+            background-image: url('<?= TEMPLATE_URI ?>/imgs/cmsj.png');
             background-repeat: repeat-y;
             background-attachment: fixed;
             background-size: cover;
