@@ -375,6 +375,33 @@ function metabox_ramais( $meta_boxes ) {
 }
 */
 
+function ad_modify_entries($cn, $telephonenumber){
+	setlocale(LC_ALL, 'pt_BR');
+    $ldap_server = 'ad.cmsj.sc.gov.br';
+ 	$ldapport = 389;
+    $dn="DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br";
+    $user= base64_decode("c3Vwb3J0ZTE=");
+    $pass= base64_decode("c3Vwb3J0QDgxMDI=");
+    $connect = ldap_connect($ldap_server, $ldapport) or die('erro');
+    ldap_set_option($connect, LDAP_OPT_PROTOCOL_VERSION, 3);
+    ldap_set_option($connect, LDAP_OPT_REFERRALS, 0);
+    if($connect != null) {
+		if ($result = ldap_bind($connect, 'AD-CMSJ\\' . $user, $pass)) {
+			/*$username = 'thiagoas';
+			$filter = "(samaccountname={$username})";
+			echo $filter;
+			$res = ldap_search($connect, $dn, $filter);
+			$entries = ldap_get_entries($connect, $res);*/
+			$entry['telephonenumber'] = $telephonenumber;
+			//ldap_modify($connect, "uid=thiagoas, cn=user,  DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br", $entry);
+			ldap_modify($connect, "CN=$cn,CN=Users,DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br", $entry);
+			//ldap_modify($connect, $dn, $entry);
+			//var_dump($entries);
+		}
+	}
+
+}
+
 function add_new_roles(){
 	add_role( 'rh', 'Recursos Humanos', array( 'read' => true, 'level_0' => true ));
 	add_role( 'cms', 'Comunicação Social', array( 'read' => true, 'level_0' => true ));

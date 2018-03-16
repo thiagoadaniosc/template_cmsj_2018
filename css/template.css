@@ -185,10 +185,33 @@ a {
     -moz-transition: .2s ease-in-out all;
     transition: .2s ease-in-out all;
 }
+.list-group-item figure {
+    overflow: hidden;
+}
 
-.list-group-item-hover:hover {
-    background-color:rgb(56, 57, 58);
+.list-group-item figure img {
+    overflow-wrap: normal;
+    transition: 1s;
+}
+
+.list-group-item-hover:hover figure img {
+    transform: scale(1.5)  rotateZ(-8deg);
+    padding-top:0 !important;
+}
+.home-news-article-title h5 {
+    transition: 1s;
+    text-transform: capitalize;
+
+}
+
+.home-news-article .list-group-item:hover {
+    background-color:rgb(101, 134, 206);
+    transform: scale(.9);
+}
+
+.list-group-item-hover:hover > .home-news-article-title h5{
     color: white;
+    text-decoration: underline;
 }
 
 .archive-comunicados-content {

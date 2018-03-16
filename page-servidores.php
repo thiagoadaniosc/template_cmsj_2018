@@ -1,3 +1,8 @@
+<?php 
+if (isset($_GET['CN']) && isset($_GET['telephonenumber'])) {
+    ad_modify_entries($_GET['CN'], $_GET['telephonenumber']);
+}
+?>
 <?php get_header(); ?>
 <div class="row justify-content-center p-0 m-0 loader"  style="width: 100%; height: 100%; z-index:99; position:absolute; top:0;">
     <div class="row col-lg-12 m-auto justify-content-center">
@@ -36,13 +41,14 @@
                     <th>Departamento</th>
                     <th>Ramal</th>
                     <th>Cargo</th>
+                    <th>Opções</th>
                 </tr>
             </thead>
             <tbody>
                 
                 <!-- LDAP -->
                 <?php 
-                setlocale(LC_ALL, 'pr_BR');
+                setlocale(LC_ALL, 'pt_BR');
                 $ldap_server = 'ad.cmsj.sc.gov.br';
                 $ldapport = 389;
                 $dn="DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br";
@@ -82,8 +88,10 @@
                                     <td><?= $users['description'][0];  ?></td>
                                     <td><?= $users['mail'][0]; ?></td>
                                     <td><?= $users['department'][0];  ?></td>
-                                    <td><?= $users['telephonenumber'][0]; ?></td>
+                                    <!-- <td><?= $users['telephonenumber'][0]; ?></td> -->
+                                    <td> <input type="text" class="bg-transparent border" name="<?= $users['cn'][0]; ?>" value="<?= $users['telephonenumber'][0]; ?>" onkeyup="get_telephonenumber('<?= $users['cn'][0]; ?>')"></td>
                                     <td><?=  iconv('UTF-8','ISO-8859-1', $users['title'][0]); ?></td>
+                                    <td align="center"> <a href="#" name="<?= $users['cn'][0]; ?>_link" class="badge badge-primary text-center m-auto">Editar</a> </td>
                                 </tr>
                                 
                                 <?php 
@@ -103,6 +111,15 @@
         </div>
     </main>
     <script>
+
+        function get_telephonenumber($inputName){
+            $input = document.getElementsByName($inputName);
+            $inputValue = $input[0].value;
+            $linkButton = document.getElementsByName($inputName + '_link');
+            $linkButton[0].href = '?CN=' + $inputName + '&telephonenumber=' + $inputValue;
+            console.log($inputValue);
+        }
+
         $(document).ready(function() {
             var table = $('#servidores-table').DataTable( {
                 lengthChange: true,
