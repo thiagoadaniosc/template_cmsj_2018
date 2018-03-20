@@ -96,18 +96,30 @@
                 
             </button>
             
-            <div class="dropdown-menu col-lg-8" style="border-radius: 0; right:0;  top: 50px; left:auto" >
+            <div class="dropdown-menu" style="border-radius: 0; right:0;  top: 50px; left:auto" >
                 <?php if ($current_user->roles[0] !== 'subscriber') :  ?>
-                <a class="dropdown-item" href="/wp-admin"><i class="fa fa-dashboard"></i> Painel Adm.</a>
-                
-                
+                <a class="dropdown-item" href="/wp-admin"><i class="fa fa-dashboard"></i> Painel Administrativo</a>
                 <?php else : ?>
                 <a class="dropdown-item" href="/wp-admin/profile.php"><i class="fa fa-user-circle"></i> Perfil </a>
+                <?php endif; ?>
+                <?php if ($current_user->roles[0] == 'cms' || $current_user->roles[0] == 'administrator') : ?>
+                <a class="dropdown-item" href="/wp-admin/post-new.php"><i class="fa fa-newspaper-o"></i> Nova Notícia </a>
+                <?php endif; ?>
+
+                <?php if ($current_user->roles[0] == 'cms' || $current_user->roles[0] == 'administrator') : ?>
+                <a class="dropdown-item" href="/wp-admin/post-new.php?post_type=comunicados"><i class="fa fa-bullhorn"></i> Novo Comunicado </a>
+                <?php endif; ?>
+
+                <?php if ($current_user->roles[0] == 'telefonistas' || $current_user->roles[0] == 'administrator') : ?>
+                <a class="dropdown-item" href="/servidores"><i class="fa fa-phone"></i> Editar Ramais </a>
+                <?php endif; ?>
+
+                <?php if ($current_user->roles[0] == 'administrator') : ?>
+                <a class="dropdown-item" href="/contato/?show"><i class="fa fa-envelope"></i> Mensagens e Sugestões </a>
                 <?php endif; ?>
                 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item active" href="<?= wp_logout_url()?>"> <i class="fa fa fa-sign-out"></i> Sair</a>
-                
             </div>
         </div>
         <!-- Menu -->

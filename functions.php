@@ -405,6 +405,7 @@ function ad_modify_entries($cn, $telephonenumber){
 function add_new_roles(){
 	add_role( 'rh', 'Recursos Humanos', array( 'read' => true, 'level_0' => true ));
 	add_role( 'cms', 'Comunicação Social', array( 'read' => true, 'level_0' => true ));
+	add_role( 'telefonistas', 'Telefonistas', array( 'read' => true, 'level_0' => true ));
 	//remove_role('cms');
 	//remove_role('rh');
 }
@@ -437,6 +438,8 @@ function add_event_caps() {
 	$role->add_cap( 'publish_comunicados' ); 
 	$role->add_cap( 'read_private_comunicados' ); 
 	$role->add_cap( 'create_comunicados' ); 
+	$role->add_cap( 'birthdays_list' );
+	$role->add_cap('events');
 
 	$role = get_role( 'cms' );
 
@@ -447,10 +450,13 @@ function add_event_caps() {
 	$role->add_cap('create_posts');
 	$role->add_cap('edit_published_posts');
 	$role->add_cap('delete_published_posts');
+	// $role->remove_cap('events');
+
 
 	$role = get_role( 'rh' );
 
 	$role->add_cap( 'edit_comunicado' ); 
+	$role->add_cap( 'edit_posts' ); 
 	$role->add_cap( 'read_comunicado' ); 
 	$role->add_cap( 'delete_comunicado' ); 
 	$role->add_cap( 'edit_comunicados' ); 
@@ -458,6 +464,8 @@ function add_event_caps() {
 	$role->add_cap( 'publish_comunicados' ); 
 	$role->add_cap( 'read_private_comunicados' ); 
 	$role->add_cap( 'create_comunicados' );
+	$role->add_cap('birthdays_list');
+	$role->add_cap('events');
 }
 
 function get_last_clipagens() {
@@ -545,6 +553,62 @@ function get_glpi_status($statusID) {
 	}
 }
 
+function store_mensage($nome, $email, $titulo, $mensagem){
+	/*
+	use wordpress;
+	CREATE TABLE wp_mensagens (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    titulo varchar(255) NOT NULL,
+    mensagem TEXT NOT NULL
+)
+	*/
+	$servidor = 'localhost';
+    $usuario = base64_decode('cm9vdA==');
+    $senha = base64_decode('cm9vdA==');
+    $banco = 'wordpress';
+    
+    $mysqli = new mysqli($servidor, $usuario, $senha, $banco);
+    mysqli_set_charset($mysqli, "utf8");
+    
+    if(mysqli_connect_errno()) {
+        echo ("Erro ao Conectar ao Banco de Dados");
+        exit;
+	}
+
+	$query = "INSERT INTO wp_mensagens (user_name, email, titulo, mensagem) VALUES ('$nome','$email','$titulo','$mensagem')";
+	echo $query;
+	if($mysqli->query($query) == true){
+		header('Location: /contato?success');
+	} else {
+		header('Location: /contato?fail');
+	}
+
+	exit;
+}
+
+function show_mensages(){
+	$servidor = 'localhost';
+    $usuario = base64_decode('cm9vdA==');
+    $senha = base64_decode('cm9vdA==');
+    $banco = 'wordpress';
+    
+    $mysqli = new mysqli($servidor, $usuario, $senha, $banco);
+    mysqli_set_charset($mysqli, "utf8");
+    
+    if(mysqli_connect_errno()) {
+        echo ("Erro ao Conectar ao Banco de Dados");
+        exit;
+	}
+
+	$query = "SELECT * FROM wp_mensagens";
+
+	$results = $mysqli->query($query);
+	
+	return 	$results;
+}
+
 add_action( 'admin_init', 'add_event_caps');
 
 add_action( 'init', 'add_new_roles');
@@ -564,3 +628,10 @@ add_action( 'init', 'post_type_comunicados');
 add_theme_support( 'post-thumbnails', array('post'));
 add_action('init','possibly_redirect'); 
 //add_action('admin_head', 'my_custom_fonts');
+
+/*
+add_action( 'admin_menu', 'my_admin_menu' );
+
+function my_admin_menu() {
+	add_menu_page( 'Sugestões', 'Sugestões', 'manage_options', 'myplugin/myplugin-admin-page.php', 'myplguin_admin_page', 'dashicons-tickets', 6  );
+*/

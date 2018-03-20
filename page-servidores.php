@@ -1,6 +1,7 @@
 <?php 
-if (isset($_GET['CN']) && isset($_GET['telephonenumber'])) {
+if (isset($_GET['CN']) && isset($_GET['telephonenumber']) && ($current_user->roles[0] == 'telefonistas' ||  $current_user->roles[0] == 'administrator')) {
     ad_modify_entries($_GET['CN'], $_GET['telephonenumber']);
+    header('Location:/servidores?success='. $_GET['CN']);
 }
 ?>
 <?php get_header(); ?>
@@ -30,7 +31,7 @@ if (isset($_GET['CN']) && isset($_GET['telephonenumber'])) {
         <?php 
         $order = isset($_GET['order']) && !empty($_GET['order']) ? $_GET['order'] : 0;   ?>
         
-        <table id="servidores-table" data-order='[[ <?= $order ?>, "asc" ]]' class="table table-striped table-bordered justify-content-center m-auto" cellspacing="0" width="100%">
+        <table id="servidores-table" data-order='[[ <?= $order ?>, "asc" ]]' class="table table-striped table-bordered justify-content-center m-auto table-hover" cellspacing="0" width="100%">
             
             
             <thead>
@@ -41,7 +42,9 @@ if (isset($_GET['CN']) && isset($_GET['telephonenumber'])) {
                     <th>Departamento</th>
                     <th>Ramal</th>
                     <th>Cargo</th>
+                    <?php if($current_user->roles[0] == 'telefonistas' || $current_user->roles[0] == 'administrator'): ?>
                     <th>Opções</th>
+                    <?php endif; ?>
                 </tr>
             </thead>
             <tbody>
@@ -82,16 +85,24 @@ if (isset($_GET['CN']) && isset($_GET['telephonenumber'])) {
                                 }                                         
                                 ?>
                                 <!-- LDAP -->
-                                
+                                <?php if (isset($_GET['success']) && $_GET['success'] == $users['cn'][0]): ?>
+                                <tr class="table-success">
+                                <?php else : ?>
                                 <tr>
+                                <?php endif ?>
                                     <td><?= $users['cn'][0]; ?></td>
                                     <td><?= $users['description'][0];  ?></td>
                                     <td><?= $users['mail'][0]; ?></td>
                                     <td><?= $users['department'][0];  ?></td>
                                     <!-- <td><?= $users['telephonenumber'][0]; ?></td> -->
+                                    <?php if($current_user->roles[0] == 'telefonistas' || $current_user->roles[0] == 'administrator'): ?>
                                     <td> <input type="text" class="bg-transparent border" name="<?= $users['cn'][0]; ?>" value="<?= $users['telephonenumber'][0]; ?>" onkeyup="get_telephonenumber('<?= $users['cn'][0]; ?>')"></td>
                                     <td><?=  iconv('UTF-8','ISO-8859-1', $users['title'][0]); ?></td>
                                     <td align="center"> <a href="#" name="<?= $users['cn'][0]; ?>_link" class="badge badge-primary text-center m-auto">Editar</a> </td>
+                                    <?php else : ?>
+                                    <td><?= $users['telephonenumber'][0]; ?>
+                                    <td><?=  iconv('UTF-8','ISO-8859-1', $users['title'][0]); ?></td>
+                                    <?php endif; ?>
                                 </tr>
                                 
                                 <?php 
