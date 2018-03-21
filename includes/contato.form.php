@@ -21,15 +21,17 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa fa-user-circle"></i></div>
                         </div>
-                        <input class="form-control col-lg-12 col-xl-12 float-left" type="text" name="nome" placeholder="Nome..." value="Teste">
+                        <input class="form-control col-lg-12 col-xl-12 float-left" type="text" name="nome" placeholder="Nome..." value="<?= $current_user->user_firstname;  ?> <?= $current_user->user_lastname ;  ?>">
                     </div>
+                    
+          
                 </div>
                 <div class="col-lg-6 p-0 m-0 pl-lg-2">
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa fa-envelope"></i></div>
                         </div>
-                        <input class="form-control col-lg-12 float-right" type="text" name="email" placeholder="E-mail">
+                        <input class="form-control col-lg-12 float-right" type="text" name="email" placeholder="E-mail" value="<?= $current_user->user_email;?> "> 
                     </div>
                 </div>
             </div>

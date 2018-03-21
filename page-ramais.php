@@ -1,3 +1,9 @@
+<?php 
+if (isset($_GET['CN']) && isset($_GET['telephonenumber']) && ($current_user->roles[0] == 'telefonistas' ||  $current_user->roles[0] == 'administrator')) {
+    ad_modify_entries($_GET['CN'], $_GET['telephonenumber']);
+    header('Location:/ramais?success='. base64_encode($_GET['CN']));
+}
+?>
 <?php get_header(); ?>
 <div class="row justify-content-center p-0 m-0 loader"  style="width: 100%; height: 100%; z-index:99; position:absolute; top:0;">
     <div class="row col-lg-12 m-auto justify-content-center">
@@ -13,28 +19,33 @@
 		body{
 			/* background-color: #EEEEEE; */
             
-            background-image: url('<?= TEMPLATE_URI ?>/imgs/cmsj.png');
+           background-image: url('<?= TEMPLATE_URI ?>/imgs/cmsj.png');
             background-repeat: repeat-y;
             background-attachment: fixed;
             background-size: cover;
             
         }
+
+        h1 {
+            display: none;
+        }
 	</style>
-    <div class="bg-white pb-4" style="box-shadow:rgba(0,0,0,.2) 0 4px 16px; overflow: auto">    
-        <h4 class="text-center col-lg-12 bg-dark text-white p-2">Lista de Servidores</h4>
+    <div class="bg-white pb-4 p-0 col-lg-12" style="box-shadow:rgba(0,0,0,.2) 0 4px 16px; overflow: auto">    
+        <h4 class="text-center col-lg-12 bg-dark text-white p-2">Ramais</h4>
         <?php 
         $order = isset($_GET['order']) && !empty($_GET['order']) ? $_GET['order'] : 0;   ?>
         
-        <table id="servidores-table" data-order='[[ <?= $order ?>, "asc" ]]' class="table table-striped table-bordered justify-content-center m-auto table-hover" cellspacing="0" width="100%">
+        <table id="servidores-table" data-order='[[ <?= $order ?>, "asc" ]]' class="table table-bordered justify-content-center m-auto table-hover bg-white table-sm" cellspacing="0" width="100%">
             
             
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Local</th>
-                    <th>Email</th>
-                    <th>Departamento</th>
-                    <th>Cargo</th>
+                    <th>Servidores</th>
+                    <th>Ramal</th>
+                    <?php if($current_user->roles[0] == 'telefonistas' || $current_user->roles[0] == 'administrator'): ?>
+                    <th>Opções</th>
+                    <?php endif; ?>
                 </tr>
             </thead>
             <tbody>
@@ -62,33 +73,65 @@
                             
                             
                             
-                            $filter = AD_FILTER;
+                            $filter = AD_FILTER_RAMAIS;
                             
                             $res = ldap_search($connect, $dn, $filter);
                             
                             $entries = ldap_get_entries($connect, $res);
+                            //var_dump($entries);
                             // var_dump($entries);
                             
-                            foreach ($entries as $users) {
-                                if ($users['cn'][0] == null){
+                            foreach ($entries as $groups) {
+                                if ($groups['cn'][0] == null){
                                     continue;
-                                }                                         
+                                }  
+                              //  if ((strpos($users['dn'], 'Colaboradores')) ==! true) {
+                                if (preg_match('/\Colaboradores\b/', $groups['dn']) == false) {
+                                    //echo $users['cn'][0];
+                                    //echo '<br>';
+                                    //var_dump(strpos($users['dn'], 'Colaboradores'));
+                                    continue;
+                                }
+
+                                $users = ad_get_group_users($groups['dn']);
+
                                 ?>
                                 <!-- LDAP -->
-                                <?php if (isset($_GET['success']) && $_GET['success'] == $users['cn'][0]): ?>
+                                <?php if (isset($_GET['success']) && base64_decode($_GET['success']) == $groups['dn']): ?>
                                 <tr class="table-success">
                                 <?php else : ?>
                                 <tr>
                                 <?php endif ?>
-                                    <td><?= $users['cn'][0]; ?></td>
-                                    <td><?= $users['description'][0];  ?></td>
-                                    <td><?= $users['mail'][0]; ?></td>
-                                    <td><?= $users['department'][0];  ?></td>
-                                    <!-- <td><?= $users['telephonenumber'][0]; ?></td> -->
-                                    <td><?=  iconv('UTF-8','ISO-8859-1', $users['title'][0]); ?></td>
+                                    <td><?= $groups['cn'][0]; ?></td>
+                                    <td align="left">
+                                    <?php $i = 0 ?>
+                                    <?php foreach ($users as $user): ?>
+                                    <?php if ($user['givenname'][0] == null) continue; ?>
+                                    <?php if ($i > 0 ) echo ','; ?>
+                                    <?php $i++ ?>
+                                    <?=$user['givenname'][0]?>
+                                    <?php endforeach; ?>
+                                    
+                                    </td>
+
+                                    <?php if($current_user->roles[0] == 'telefonistas' || $current_user->roles[0] == 'administrator'): ?>
+                                    <td> 
+                                    <input type="text" class="bg-transparent border" style="height:30px" name="<?= $groups['dn']; ?>" value="<?= $groups['info'][0]; ?>" onkeyup="get_telephonenumber('<?= $groups['dn']; ?>')">
+                                    <span class="d-none"> <?= $groups['info'][0]; ?> </span>
+                                    </td>
+
+                                    <td align="center"> <a href="#" name="<?= $groups['dn']; ?>_link" class="badge badge-primary text-center m-auto">Alterar</a> </td>
+
+                                    <?php else : ?>
+                                    <td><?= $groups['info'][0]; ?> </td>
+                                    <?php endif; ?>
                                 </tr>
                                 
                                 <?php 
+                                
+                                
+                                
+                                
                             }
                             
                             
@@ -101,9 +144,19 @@
         </div>
     </main>
     <script>
+
+        function get_telephonenumber($inputName){
+            $input = document.getElementsByName($inputName);
+            $inputValue = $input[0].value;
+            $linkButton = document.getElementsByName($inputName + '_link');
+            $linkButton[0].href = '?CN=' + $inputName + '&telephonenumber=' + $inputValue;
+            console.log($inputValue);
+        }
+
         $(document).ready(function() {
             var table = $('#servidores-table').DataTable( {
                 lengthChange: true,
+                "lengthMenu": [[30, 50, 100, -1], [30, 50, 100, "Todos"]],
                 buttons: [
                 {
                     extend:    'excelHtml5',
@@ -116,9 +169,14 @@
                     titleAttr: 'CSV'
                 },
                 {
-                    extend:    'pdfHtml5',
+                    extend:    'print',
                     text:      '<i class="fa fa-file-pdf-o"></i>',
-                    titleAttr: 'PDF'
+                    titleAttr: 'PDF',
+                    messageTop: '<h2 class="text-center bg-white">LISTA DE RAMAL</h2>',
+                    autoPrint: true,
+                    exportOptions: {
+                        columns: [ 0, 1, 2 ]
+                    }
                 }
                 ],
                 "oLanguage": { 

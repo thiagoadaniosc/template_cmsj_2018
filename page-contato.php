@@ -20,7 +20,7 @@ if (isset($_GET['send'])) {
 </style>
 <main class="row col-lg-12 pl-lg-5 pr-lg-5 p-sm-0 p-md-0 justify-content-center ml-auto mr-auto">
     <?php
-        if (isset($_GET['show'])) {
+        if (isset($_GET['show']) && ($current_user->roles[0] == 'administrator' || $current_user->roles[0] == 'cms')) {
             require('includes/contato.mensages.php');
         } else {
             require('includes/contato.form.php');

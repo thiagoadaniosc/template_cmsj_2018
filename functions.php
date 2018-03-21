@@ -6,12 +6,23 @@ define('TEMPLATE_URI', get_template_directory_uri());
 define('SUPORTE_URI', 'http://suporte.cmsj.info');
 define('COMUNICADOS_URI', '/comunicados');
 define('NOTICIAS_URI', '/comunicados');
-define('FOLHAWEB_URI', 'http://192.168.4.10/folhaweb');	
+define('FOLHAWEB_URI', 'http://folhaweb.info.cmsj');	
 define('RAMAIS_URI', '/servidores');
 define('DOM_URI', 'https://www.diariomunicipal.sc.gov.br/site/');
 define('CLIPAGEMDIGITAL_URI', 'http://clipagem.cmsj.info');
 define('CONFIGURACOES_URI', '/wp-admin/profile.php');
 define('AD_FILTER', '(&(objectCategory=person)(objectClass=user)(samaccountname=*)(!(UserAccountControl:1.2.840.113556.1.4.803:=2))(!(cn=*Admin*))(!(cn=*teste*))(!(cn=*VM*))(!(cn=*Suporte*)))');
+
+//define('AD_FILTER_RAMAIS', '(groupOfUniqueNames=*)');
+//define('AD_FILTER_RAMAIS', '(&(objectClass=organizationalUnit)((ou:dn:=Evil))');
+//define('AD_FILTER_RAMAIS', '(&(objectCategory=organizationalUnit)(description=123))');
+//define('AD_FILTER_RAMAIS', '(&(objectCategory=group)(description=*))');
+//define('AD_FILTER_RAMAIS', '(&(objectCategory=group)(member=CN=Admin Lancer,OU=Empresas,OU=Colaboradores,OU=CMSJ,DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br))');
+//define('AD_FILTER_RAMAIS', '(&(objectClass=group)(&(ou:dn:=Colaboradores)))');
+define('AD_FILTER_RAMAIS', '(&(objectCategory=group)(CN=*))');
+
+
+
 
 
 add_post_type_support( 'page', 'excerpt' );
@@ -375,6 +386,27 @@ function metabox_ramais( $meta_boxes ) {
 }
 */
 
+function ad_get_group_users($cn){
+	setlocale(LC_ALL, 'pt_BR');
+	$ldap_server = 'ad.cmsj.sc.gov.br';
+	$ldapport = 389;
+	$dn="DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br";
+	 $user= base64_decode("c3Vwb3J0ZTE=");
+	$pass= base64_decode("c3Vwb3J0QDgxMDI=");
+	$connect = ldap_connect($ldap_server, $ldapport) or die('erro');
+	ldap_set_option($connect, LDAP_OPT_PROTOCOL_VERSION, 3);
+	ldap_set_option($connect, LDAP_OPT_REFERRALS, 0);
+    if($connect != null) {
+    	if ($result = ldap_bind($connect, 'AD-CMSJ\\' . $user, $pass)) {      
+    		$filter = "(&(objectClass=user)(sAMAccountName=*)(memberof=$cn))";
+    	    $res = ldap_search($connect, $dn, $filter);       
+			$entries = ldap_get_entries($connect, $res);
+			return $entries;
+		
+		}
+	}
+}
+
 function ad_modify_entries($cn, $telephonenumber){
 	setlocale(LC_ALL, 'pt_BR');
     $ldap_server = 'ad.cmsj.sc.gov.br';
@@ -392,9 +424,9 @@ function ad_modify_entries($cn, $telephonenumber){
 			echo $filter;
 			$res = ldap_search($connect, $dn, $filter);
 			$entries = ldap_get_entries($connect, $res);*/
-			$entry['telephonenumber'] = $telephonenumber;
+			$entry['info'] = $telephonenumber;
 			//ldap_modify($connect, "uid=thiagoas, cn=user,  DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br", $entry);
-			ldap_modify($connect, "CN=$cn,CN=Users,DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br", $entry);
+			ldap_modify($connect, "$cn", $entry);
 			//ldap_modify($connect, $dn, $entry);
 			//var_dump($entries);
 		}
@@ -451,10 +483,10 @@ function add_event_caps() {
 	$role->add_cap('edit_published_posts');
 	$role->add_cap('delete_published_posts');
 	// $role->remove_cap('events');
-
-
+	
+	
 	$role = get_role( 'rh' );
-
+	
 	$role->add_cap( 'edit_comunicado' ); 
 	$role->add_cap( 'edit_posts' ); 
 	$role->add_cap( 'read_comunicado' ); 
@@ -466,6 +498,13 @@ function add_event_caps() {
 	$role->add_cap( 'create_comunicados' );
 	$role->add_cap('birthdays_list');
 	$role->add_cap('events');
+	
+	$role = get_role('subscriber');
+
+	$role->remove_cap('edit_posts');
+	$role->remove_cap('events');
+	$role->remove_cap( 'birthdays_list' );
+	$role->add_cap('read');
 }
 
 function get_last_clipagens() {

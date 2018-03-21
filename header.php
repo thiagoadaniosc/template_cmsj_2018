@@ -114,7 +114,7 @@
                 <a class="dropdown-item" href="/servidores"><i class="fa fa-phone"></i> Editar Ramais </a>
                 <?php endif; ?>
 
-                <?php if ($current_user->roles[0] == 'administrator') : ?>
+                <?php if ($current_user->roles[0] == 'administrator' || $current_user->roles[0] == 'cms') : ?>
                 <a class="dropdown-item" href="/contato/?show"><i class="fa fa-envelope"></i> Mensagens e Sugestões </a>
                 <?php endif; ?>
                 
