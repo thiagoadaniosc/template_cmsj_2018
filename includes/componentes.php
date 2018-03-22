@@ -12,7 +12,7 @@
                 <a href="<?=  get_permalink($post->ID); ?>" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between pl-0">
                         <h5 class="mb-1 ml-0 pl-0" style="font-size: 16px;"><?= $post->post_title ?></h5>      
-                        <small class=" p-1"> <i class="fa fa-clock-o"></i> <?= get_the_date("d F Y", $post->ID);?></small>                  
+                        <small class=" p-1 d-xl-inline d-lg-none d-md-none d-sm-inline"> <i class="fa fa-clock-o"></i> <?= get_the_date("d F Y", $post->ID);?></small>                  
                     </div>
                     <p class="mb-1"><?= $post->post_excerpt?></p>
                 </a>
@@ -38,7 +38,7 @@
                 <a href="http://clipagem.cmsj.info/uploads/<?= $clipagem['nome'] ?>" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start">                        
                     <div class="d-flex w-100 justify-content-between pl-0 col-lg-12">
                         <h5 class="mb-1 ml-0 pl-0" style="font-size: 16px;"><?= $clipagem['titulo'] ?></h5>  
-                        <small class="text-right"> <i class="fa fa-clock-o"></i> <?= $clipagem['data'] ?></small>                             
+                        <small class="text-right d-xl-inline d-lg-none d-md-none d-sm-inline"> <i class="fa fa-clock-o"></i> <?= $clipagem['data'] ?></small>                             
                     </div>
                     <p class="mb-1"><i class="fa fa-newspaper-o"></i> <?= $clipagem['veiculo'] ?></p>
                     <p class="mb-1"><i class="fa fa-user-circle"></i> <?= $clipagem['autor'] ?></p>

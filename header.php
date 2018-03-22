@@ -8,7 +8,7 @@
     <meta name="author" content="Thiago Scheidt">
     <meta name="author" content="Marcelo Macagnan">
     <meta name="author" content="Câmara Municipal de São José">
-   
+
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <link href="<?= TEMPLATE_URI ?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="all" rel="stylesheet"
@@ -18,9 +18,8 @@
     <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/css/template.css">
     
     <title>Câmara Municipal de São José - Intranet</title>
-    
-</head>
 
+</head>
 <!--
 <div class="row justify-content-center p-0 m-0 loader"  style="width: 100%; height: 100%; z-index:99; position:absolute; top:0;">
     <div class="row col-lg-12 m-auto justify-content-center">
@@ -32,7 +31,6 @@
     </div>
 </div>
 -->
-
 <div class="header row bg-dark pl-lg-5 pr-lg-5 p-sm-0 p-md-0 position-fixed col-lg-12 mt-0 " style="margin: 0px; z-index:10; height:80px; top:0">
     <header class="navbar col-lg-7 col-xl-9 col-sm-12 col-md-12 navbar-dark bg-dark justify-content-between"> 
         <a href="/" class="navbar-brand col-xl-auto col-lg-6 p-0 m-0 col-md-4 col-sm-8"><img class="img-fluid col-lg-12 col-md-8 col-sm-8" src="<?= TEMPLATE_URI ?>/imgs/sao-jose-logo-md.png" alt=""></a>
@@ -42,9 +40,7 @@
             <button class="form-control btn btn-light col-xl-2 col-lg-4" type="submit" style="padding-top: 14px !important;
             padding-bottom: 14px !important; border:0px"> <i class="fa fa-x fa-search"></i></button>
         </form>
-        
-        
-        
+
         <div class="nav-mobile btn-group d-lg-none d-xl-none d-sm-inline-flex d-md-inline-flex justify-content-center col-md-3 col-sm-2">
             <button type="button" class="btn btn-secondary col-lg-12" style="border-radius: 0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" style="font-size:24px"></i></button>
             
@@ -90,9 +86,10 @@
             
             
             <button type="button" class="btn btn-secondary dropdown-toggle col-lg-12 col-md-12 col-sm-12" style="border-radius: 0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                
+                <small style="font-size:2vh;">
                 <?= $current_user->user_firstname;  ?>
                 <?= $current_user->user_lastname ;  ?>
+                </small>
                 
             </button>
             
@@ -125,7 +122,7 @@
         <!-- Menu -->
         
         <div class="btn-group d-md-none d-sm-none d-lg-inline-flex d-xl-inline-flex justify-content-center col-xl-3 col-lg-3 col-md-4 col-sm-4">
-            <button type="button" class="btn btn-secondary col-lg-12" style="border-radius: 0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" style="font-size:24px"></i></button>
+            <button type="button" class="btn btn-secondary col-lg-12" style="border-radius: 0; height: 50px !important;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars m-autto" style="font-size: 2.5vh;"></i></button>
             
             <div class="dropdown-menu bg-dark" style="border-radius: 0; right:15px;left:auto; top: 50px;" >
                 <a class="dropdown-item text-light" href=""> <i class="fa fa-home"></i> Início</a>
@@ -139,21 +136,12 @@
                 $menuitems = wp_get_nav_menu_items($menu->term_id);
                 foreach ($menuitems as $item):
                 ?>
-                
                 <a class="dropdown-item text-light" href="<?= $item->url?>"><?= $item->title?></a>
-                
-                
                 <?php endforeach; ?>
-                
-                
+
             </div>
             
         </div>
-        
-        
-        
-        
-        
-        
+
     </div>
 </div>

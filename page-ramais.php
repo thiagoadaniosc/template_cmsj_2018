@@ -106,10 +106,10 @@ if (isset($_GET['CN']) && isset($_GET['telephonenumber']) && ($current_user->rol
                                     <td align="left">
                                     <?php $i = 0 ?>
                                     <?php foreach ($users as $user): ?>
-                                    <?php if ($user['givenname'][0] == null) continue; ?>
+                                    <?php if ($user['cn'][0] == null) continue; ?>
                                     <?php if ($i > 0 ) echo ','; ?>
                                     <?php $i++ ?>
-                                    <?=$user['givenname'][0]?>
+                                    <?=$user['cn'][0]?>
                                     <?php endforeach; ?>
                                     
                                     </td>

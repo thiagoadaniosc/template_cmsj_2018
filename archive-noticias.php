@@ -8,7 +8,7 @@
             background-size: cover;
 		}
 	</style>
-    <div class="col-lg-8 justify-content-center m-auto bg-white p-0 archive-noticias-content">
+    <div class="col-xl-8 col-lg-10 justify-content-center m-auto bg-white p-0 archive-noticias-content">
         <h4 class="text-center text-white bg-dark mt-0"> <i class="home-news-header-title m-0 fa fa-newspaper-o"></i> Notícias</h4>
         
         <section>
@@ -23,11 +23,11 @@
                      
                         if (has_post_thumbnail() == 1):
                         ?>
-                         <img class="home-news-article-img col-lg-3 float-left m-0 pl-0" width="auto" height="200" src="<?=  the_post_thumbnail_url('medium'); ?>" alt="">
+                         <img class="archive-noticia-article-img col-lg-3 float-left m-0 pl-0" src="<?=  the_post_thumbnail_url('full'); ?>" alt="">
                         <?php
                         else:
                         ?>
-                        <img class="home-news-article-img col-lg-3 float-left m-0 pl-0" width="auto" height="200" src="<?= TEMPLATE_URI ?>/imgs/suporte_background.jpg" alt="">
+                        <img class="archive-noticia-article-img col-lg-3 float-left m-0 pl-0" src="<?= TEMPLATE_URI ?>/imgs/suporte_background.jpg" alt="">
                         <?php endif;  ?>
                        
                         <div class="d-flex w-100 justify-content-between pl-0 col-lg-9">

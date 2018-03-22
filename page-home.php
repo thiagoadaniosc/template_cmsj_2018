@@ -14,14 +14,14 @@
     
     <aside class="col-lg-3 bg-white home-asidel">
 
-         <section class="home-asidel-suporte mb-2">
+         <section class="home-asidel-suporte mb-2" style="overflow: auto">
             <header class="home-asidel-header text-center mb-2">Meus Chamados</header>
             <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">Descrição</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Ações</th>
+                        <th scope="col" class="d-xl-table-cell d-lg-none d-md-table-cell d-sm-none">Ações</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -33,13 +33,13 @@
                       <tr>
                         <td><?= $ticket['name']; ?></td>
                         <td><?= get_glpi_status($ticket['status']); ?></td>
-                        <td><a class="badge badge-dark" alt="Vizualizar" title="Visualizar Chamado" href="http://suporte.cmsj.info/front/ticket.form.php?id=<?= $ticket['id'];?>" target="_blank"><i class="fa fa-eye" style="font-size:14px"></i></a></td>
+                        <td class="d-xl-table-cell d-lg-none d-sm-none d-md-table-cell"><a class="badge badge-dark" alt="Vizualizar" title="Visualizar Chamado" href="http://suporte.cmsj.info/front/ticket.form.php?id=<?= $ticket['id'];?>" target="_blank"><i class="fa fa-eye" style="font-size:14px"></i></a></td>
                       </tr>
                     <?php endwhile; ?>
                     <tr> 
                         <td colspan="3" class="col-lg-12">
-                        <a href="http://suporte.cmsj.info/front/ticket.php" class="col-lg-5 btn btn-dark rounded-0" target="_blank"><i class="fa fa-eye" style="font-size:15px"></i> VER TODOS</a>
-                        <a href="http://suporte.cmsj.info/front/helpdesk.public.php?create_ticket=1" class="col-lg-5 btn btn-primary float-right rounded-0" target="_blank" title="Novo Chamado">NOVO <i class="fa fa-plus" style="font-size:15px"></i></a>
+                        <a href="http://suporte.cmsj.info/front/ticket.php" class="col-lg-5 col-md-5 col-sm-5 btn btn-dark rounded-0" target="_blank" style="font-size:.9vw"><i class="fa fa-eye"></i> VER TODOS</a>
+                        <a href="http://suporte.cmsj.info/front/helpdesk.public.php?create_ticket=1" class="col-lg-5 col-md-5 col-sm-5 btn btn-primary float-right rounded-0" target="_blank" title="Novo Chamado" style="font-size:.9vw">NOVO <i class="fa fa-plus"></i></a>
                         </td>
 
                     </tr>
@@ -78,53 +78,8 @@
     <div class="col-lg-6 bg-white mb-5 pb-5 home-content-main">
 
         <?php require('includes/ferramentas.php');?>
-        
-        <section class="home-news">
-            <header class="home-news-header text-white p-1 border-top">
-                <h3><a href="/noticias" class="text-white"><i class="home-news-header-title fa fa-newspaper-o"></i> Notícias</a> </h3>
-            </header>
-            
-            <div class="mt-2 row p-0 m-0">
-                
-                <?php 
-                $noticias_query = new WP_Query(array('post_type' => 'post', 'posts_per_page' => 6));
-                $noticias_post = $noticias_query->get_posts();
-                foreach ($noticias_post as $post):
-                ?>
-                <article class="list-group col-lg-6 col-xl-4 col-md-12 col-sm-12 mb-2 home-news-article">
-                    <a href="<?= get_permalink($post->ID); ?>" class="list-group-item-hover rounded-0 list-group-item list-group-item-action flex-column align-items-start pt-0 p pl-0 pr-0">
-                    <?php 
-                     
-                     if (has_post_thumbnail($post->ID) == 1):
-                        ?>
-                        <figure>
-                            <img class="home-news-article-img pt-2 p-2 col-lg-12" width="auto" height="180"  src="<?=  the_post_thumbnail_url($post->ID,'medium'); ?>" alt="">
-                            <small class="badge badge-primary rounded-0" style="position: absolute; top:15; right:20px; background-color: rgba(33, 128, 206, 0.5)"><i class="fa fa-clock-o"></i> <?= get_the_date("d F Y", $post->ID);?></small>
-                        </figure>
-                     <?php
-                     else:
-                     ?>
-                     <figure>
-                     <img class="home-news-article-img col-lg-12 pt-2 p-2" width="auto" height="180"  src="<?= TEMPLATE_URI ?>/imgs/suporte_background.jpg" alt="">
-                     <small class="badge badge-primary rounded-0" style="position: absolute; top:15; right:20px; background-color: rgba(33, 128, 206, 0.5)"><i class="fa fa-clock-o"></i> <?= get_the_date("d F Y", $post->ID);?></small>
-                    </figure>
-                     <?php endif;  ?>
-                    
-                        <div class="d-flex w-100 justify-content-center col-lg-12 home-news-article-title">
-                            <h5 class="mb-1 ml-0 pl-0 text-center"><?= $post->post_title; ?></h5>
-                          
-                            
-                        </div>
-                        <!-- <p class="mb-1"><?= $post->post_excerpt;?></p> -->
-                    </a>
-                    
-                </article>
-                <?php endforeach;?>
-                
-            </div>
-            
-        </section>
-     
+        <?php require('includes/home.news.php');?>
+        <?php require('includes/home.news.mobile.php');?>
         
     </div>
     
