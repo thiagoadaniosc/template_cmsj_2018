@@ -40,9 +40,9 @@ if (isset($_GET['CN']) && isset($_GET['telephonenumber']) && ($current_user->rol
             
             <thead>
                 <tr>
-                    <th>Nome</th>
+                    <th style="width:200px">Setor</th>
                     <th>Servidores</th>
-                    <th>Ramal</th>
+                    <th style="width:200px">Ramal</th>
                     <?php if($current_user->roles[0] == 'telefonistas' || $current_user->roles[0] == 'administrator'): ?>
                     <th>Opções</th>
                     <?php endif; ?>
@@ -104,13 +104,22 @@ if (isset($_GET['CN']) && isset($_GET['telephonenumber']) && ($current_user->rol
                                 <?php endif ?>
                                     <td><?= $groups['cn'][0]; ?></td>
                                     <td align="left">
-                                    <?php $i = 0 ?>
+                                    <?php
+                                     $i = 0;
+                                     $array_users = '';
+                                     ?>
                                     <?php foreach ($users as $user): ?>
                                     <?php if ($user['cn'][0] == null) continue; ?>
-                                    <?php if ($i > 0 ) echo ','; ?>
+                                    <?php if ($i > 0 ): ?>
+                                    <?php $array_users .= ', '.$user['cn'][0];?>
+                                    <?php else : ?>
+                                    <?php $array_users .= $user['cn'][0];?>
+                                    <?php endif; ?>
+
                                     <?php $i++ ?>
-                                    <?=$user['cn'][0]?>
+                                   
                                     <?php endforeach; ?>
+                                    <?= $array_users ?>
                                     
                                     </td>
 
@@ -144,13 +153,15 @@ if (isset($_GET['CN']) && isset($_GET['telephonenumber']) && ($current_user->rol
         </div>
     </main>
     <script>
-
+        //var ramais = [];
         function get_telephonenumber($inputName){
             $input = document.getElementsByName($inputName);
             $inputValue = $input[0].value;
             $linkButton = document.getElementsByName($inputName + '_link');
             $linkButton[0].href = '?CN=' + $inputName + '&telephonenumber=' + $inputValue;
-            console.log($inputValue);
+
+          //  window.ramais[$inputName] = $inputValue;
+            //console.log(window.ramais[$inputName]);
         }
 
         $(document).ready(function() {
@@ -161,12 +172,18 @@ if (isset($_GET['CN']) && isset($_GET['telephonenumber']) && ($current_user->rol
                 {
                     extend:    'excelHtml5',
                     text:      '<i class="fa fa-file-excel-o"></i>',
-                    titleAttr: 'Excel'
+                    titleAttr: 'Excel',
+                    exportOptions: {
+                        columns: [ 0, 1, 2 ]
+                    }
                 },
                 {
-                    extend:    'csvHtml5',
+                    extend:    'excel',
                     text:      '<i class="fa fa-file-text-o"></i>',
-                    titleAttr: 'CSV'
+                    titleAttr: 'CSV',
+                    exportOptions: {
+                        columns: [ 0, 1, 2 ]
+                    }
                 },
                 {
                     extend:    'print',

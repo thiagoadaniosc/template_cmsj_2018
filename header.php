@@ -108,7 +108,7 @@
                 <?php endif; ?>
 
                 <?php if ($current_user->roles[0] == 'telefonistas' || $current_user->roles[0] == 'administrator') : ?>
-                <a class="dropdown-item" href="/servidores"><i class="fa fa-phone"></i> Editar Ramais </a>
+                <a class="dropdown-item" href="/ramais"><i class="fa fa-phone"></i> Editar Ramais </a>
                 <?php endif; ?>
 
                 <?php if ($current_user->roles[0] == 'administrator' || $current_user->roles[0] == 'cms') : ?>

@@ -12,7 +12,7 @@
         }
 </style>
     
-    <aside class="col-lg-3 bg-white home-asidel">
+    <aside class="col-xl-3 col-lg-3 col-md-12 bg-white home-asidel">
 
          <section class="home-asidel-suporte mb-2" style="overflow: auto">
             <header class="home-asidel-header text-center mb-2">Meus Chamados</header>
@@ -64,6 +64,10 @@
                </li> 
                <?php endforeach; ?>
 
+                <li class="nav-item btn btn-dark mb-1 justify-content-center text-left rounded-0 ">
+                   <a href="https://correio.sc.gov.br/" target="_blank" class="nav-link text-white"><i class="fa fa-envelope"></i> Correio Expresso</a>
+               </li> 
+
             </nav>
         </section>
         <section class="home-asidel-clima ">
@@ -75,7 +79,7 @@
         
     </aside>
     
-    <div class="col-lg-6 bg-white mb-5 pb-5 home-content-main">
+    <div class="col-lg-6 col-xl-6 bg-white mb-5 pb-5 home-content-main">
 
         <?php require('includes/ferramentas.php');?>
         <?php require('includes/home.news.php');?>
