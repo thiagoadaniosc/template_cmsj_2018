@@ -6,7 +6,7 @@ define('TEMPLATE_URI', get_template_directory_uri());
 define('SUPORTE_URI', 'http://suporte.cmsj.info');
 define('COMUNICADOS_URI', '/comunicados');
 define('NOTICIAS_URI', '/comunicados');
-define('FOLHAWEB_URI', 'http://folhaweb.info.cmsj');	
+define('FOLHAWEB_URI', 'http://folhaweb.cmsj.info');	
 define('RAMAIS_URI', '/servidores');
 define('DOM_URI', 'https://www.diariomunicipal.sc.gov.br/site/');
 define('CLIPAGEMDIGITAL_URI', 'http://clipagem.cmsj.info');
@@ -472,6 +472,7 @@ function add_event_caps() {
 	$role->add_cap( 'create_comunicados' ); 
 	$role->add_cap( 'birthdays_list' );
 	$role->add_cap('events');
+	
 
 	$role = get_role( 'cms' );
 
@@ -482,6 +483,7 @@ function add_event_caps() {
 	$role->add_cap('create_posts');
 	$role->add_cap('edit_published_posts');
 	$role->add_cap('delete_published_posts');
+	$role->add_cap('read');
 	// $role->remove_cap('events');
 	
 	
@@ -498,6 +500,7 @@ function add_event_caps() {
 	$role->add_cap( 'create_comunicados' );
 	$role->add_cap('birthdays_list');
 	$role->add_cap('events');
+	$role->add_cap('read');
 	
 	$role = get_role('subscriber');
 
