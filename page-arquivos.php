@@ -26,8 +26,8 @@
 				
 				<?php the_post(); ?>
 				
-				<p><i class="fa fa-calendar"></i> <?php echo get_the_date( 'd/m/Y' ); ?></p>
-				<h1><?php the_title(); ?></h1>
+				<!--<p><i class="fa fa-calendar"></i> <?php echo get_the_date( 'd/m/Y' ); ?></p>-->
+				<h1 class="text-uppercase"><?php the_title(); ?></h1>
 				<h3 style="font-size: 20px;text-align: center;letter-spacing: -.80px;"><?php the_excerpt(); ?></h3>
 			</div>
 		</header>

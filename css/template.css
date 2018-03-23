@@ -565,6 +565,10 @@ a {
     border-radius: .25rem;
 }
 
+.tickets-table-size {
+    font-size: 1.5vh !important;
+}
+
 
 @media (max-width: 576px) {
     .header {
@@ -604,6 +608,10 @@ a {
         width: 100%;
         height: 400px !important;
     }
+
+    .tickets-table-size {
+        font-size: 10px !important;
+    }
  }
 
 @media (max-width: 768px) { 
@@ -629,6 +637,9 @@ a {
     .archive-noticia-article-img {
         width: 100%;
         height: 400px !important;
+    }
+    .tickets-table-size {
+        font-size: 10px !important;
     }
  }
 

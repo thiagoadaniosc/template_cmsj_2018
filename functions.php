@@ -7,7 +7,7 @@ define('SUPORTE_URI', 'http://suporte.cmsj.info');
 define('COMUNICADOS_URI', '/comunicados');
 define('NOTICIAS_URI', '/comunicados');
 define('FOLHAWEB_URI', 'http://folhaweb.cmsj.info');	
-define('RAMAIS_URI', '/servidores');
+define('RAMAIS_URI', '/ramais');
 define('DOM_URI', 'https://www.diariomunicipal.sc.gov.br/site/');
 define('CLIPAGEMDIGITAL_URI', 'http://clipagem.cmsj.info');
 define('CONFIGURACOES_URI', '/wp-admin/profile.php');
@@ -435,11 +435,11 @@ function ad_modify_entries($cn, $telephonenumber){
 }
 
 function add_new_roles(){
+	//remove_role('rh');
+	//remove_role('cms');
 	add_role( 'rh', 'Recursos Humanos', array( 'read' => true, 'level_0' => true ));
 	add_role( 'cms', 'Comunicação Social', array( 'read' => true, 'level_0' => true ));
 	add_role( 'telefonistas', 'Telefonistas', array( 'read' => true, 'level_0' => true ));
-	//remove_role('cms');
-	//remove_role('rh');
 }
 
 
@@ -472,10 +472,11 @@ function add_event_caps() {
 	$role->add_cap( 'create_comunicados' ); 
 	$role->add_cap( 'birthdays_list' );
 	$role->add_cap('events');
+	$role->add_cap('news');
 	
-
 	$role = get_role( 'cms' );
 
+	$role->add_cap('news');
 	$role->add_cap('edit_posts');
 	$role->add_cap('read_posts');
 	$role->add_cap('delete_posts');
@@ -489,8 +490,9 @@ function add_event_caps() {
 	
 	$role = get_role( 'rh' );
 	
-	$role->add_cap( 'edit_comunicado' ); 
 	$role->add_cap( 'edit_posts' ); 
+	$role->add_cap('read_posts');
+	$role->add_cap( 'edit_comunicado' ); 
 	$role->add_cap( 'read_comunicado' ); 
 	$role->add_cap( 'delete_comunicado' ); 
 	$role->add_cap( 'edit_comunicados' ); 
@@ -501,6 +503,15 @@ function add_event_caps() {
 	$role->add_cap('birthdays_list');
 	$role->add_cap('events');
 	$role->add_cap('read');
+
+	$role->add_cap('read_posts');
+	$role->add_cap('delete_posts');
+	$role->add_cap('publish_posts');
+	$role->add_cap('create_posts');
+	$role->add_cap('edit_published_posts');
+	$role->add_cap('delete_published_posts');
+	$role->add_cap('read');
+	
 	
 	$role = get_role('subscriber');
 

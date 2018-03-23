@@ -6,6 +6,12 @@
             background-repeat: repeat-y;
             background-attachment: fixed;
             background-size: cover;
+        }
+        .btn {
+			height:40px !important;
+		}
+		input {
+			height:40px !important;
 		}
 	</style>
     <?php 

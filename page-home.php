@@ -16,7 +16,7 @@
 
          <section class="home-asidel-suporte mb-2" style="overflow: auto">
             <header class="home-asidel-header text-center mb-2">Meus Chamados</header>
-            <table class="table table-striped">
+            <table class="table table-striped tickets-table-size" style="">
                     <thead>
                       <tr>
                         <th scope="col">Descrição</th>
