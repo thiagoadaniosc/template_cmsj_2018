@@ -50,23 +50,28 @@
         <section class="home-asidel-menu mb-2">
             <header class="home-asidel-header text-center mb-2"><i class="fa fa-bars"></i> Menu</header>
             <nav class="nav nav-pills flex-column justify-content-center home-asidel-menu">
-                 
+                <!-- 
                <?php 
-               $menu_name = 'menu_aside';
+             /*  $menu_name = 'menu_aside';
                $locations = get_nav_menu_locations();
                $menu = wp_get_nav_menu_object( $locations[$menu_name] );
                $menuitems = wp_get_nav_menu_items($menu->term_id);
                foreach ($menuitems as $item):
-                ?>
+               */ ?>
 
                <li class="nav-item btn btn-dark mb-1 justify-content-center text-left rounded-0 ">
                    <a href="<?= $item->url ?>" class="nav-link text-white"><?= $item->title ?></a>
                </li> 
-               <?php endforeach; ?>
+               <?php //endforeach; ?>
 
                 <li class="nav-item btn btn-dark mb-1 justify-content-center text-left rounded-0 ">
                    <a href="https://correio.sc.gov.br/" target="_blank" class="nav-link text-white"><i class="fa fa-envelope"></i> Correio Expresso</a>
                </li> 
+
+               -->
+
+               <?php  wp_nav_menu( array( 'theme_location' => 'menu_aside', 'menu_class' => 'menu_aside'
+				) ); ?>
 
             </nav>
         </section>

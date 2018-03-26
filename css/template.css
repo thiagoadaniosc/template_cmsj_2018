@@ -6,6 +6,10 @@ main {
     margin-top:100px !important;
 }
 
+header {
+    height: 80px;
+}
+
 
 input, button {
     border-radius: 0 !important;
@@ -156,6 +160,10 @@ a {
     font-weight: bold;
 }
 
+.menu-menu-lateral-container ul {
+    margin:0;
+    padding:0;
+}
 
 .home-asidel-header {
     background-color: rgb(56, 57, 58);
@@ -171,7 +179,71 @@ a {
     -webkit-transition: .5s;
     -moz-transition: .5s;
     transition: .5s;
+    list-style: none;
+    background-color: #343a40;
+    color:white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: 1s;
 }
+
+.home-asidel-menu li a {
+    color:white;
+    padding:6px;
+    color:white;
+    padding:6px;
+    display: block;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    
+}
+/*
+.menu-item-has-children::after {
+    content: "\f000";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: white;
+    font-size: 5px;
+    padding-right: 0.5em;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+*/
+
+.menu-item-has-children a::after {
+    content: " \f0d7";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: white;
+    padding-right: 0.5em;
+    float: right;
+}
+
+.menu-item-has-children ul li a::after {
+    content: " ";
+}
+.home-asidel-menu ul li ul {
+    display: none;
+}
+
+.home-asidel-menu ul li ul li {
+    border-color:transparent;
+    
+}
+
+.home-asidel-menu ul li ul li:hover {
+    border-color:transparent;
+    border-left-width: 15px;
+    
+}
+
 .home-asidel-menu li:hover{
     border-left: 8px solid rgb(71, 122, 233);
 }

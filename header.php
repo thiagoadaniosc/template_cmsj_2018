@@ -63,6 +63,7 @@
                 <?php endforeach; ?>
 
                 <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-light" href="/wp-admin"> Painel Administrativo</a>
                 <a class="dropdown-item text-light" href="<?= wp_logout_url()?>"> <i class="fa fa fa-sign-out"></i> Sair</a>
                 
                 
@@ -101,18 +102,16 @@
                 <?php endif; ?>
                 <?php if ($current_user->roles[0] == 'cms' || $current_user->roles[0] == 'administrator') : ?>
                 <a class="dropdown-item" href="/wp-admin/post-new.php"><i class="fa fa-newspaper-o"></i> Nova Notícia </a>
+                <a class="dropdown-item" href="/contato/?show"><i class="fa fa-envelope"></i> Mensagens e Sugestões </a>
                 <?php endif; ?>
 
-                <?php if ($current_user->roles[0] == 'cms' || $current_user->roles[0] == 'administrator') : ?>
+                <?php if ($current_user->roles[0] == 'rh' || $current_user->roles[0] == 'administrator') : ?>
                 <a class="dropdown-item" href="/wp-admin/post-new.php?post_type=comunicados"><i class="fa fa-bullhorn"></i> Novo Comunicado </a>
+                <a class="dropdown-item" href="/wp-admin/edit.php?post_type=thc-events"><i class="fa fa-calendar"></i> Calendário </a>
                 <?php endif; ?>
 
                 <?php if ($current_user->roles[0] == 'telefonistas' || $current_user->roles[0] == 'administrator') : ?>
                 <a class="dropdown-item" href="/ramais"><i class="fa fa-phone"></i> Editar Ramais </a>
-                <?php endif; ?>
-
-                <?php if ($current_user->roles[0] == 'administrator' || $current_user->roles[0] == 'cms') : ?>
-                <a class="dropdown-item" href="/contato/?show"><i class="fa fa-envelope"></i> Mensagens e Sugestões </a>
                 <?php endif; ?>
                 
                 <div class="dropdown-divider"></div>
@@ -122,7 +121,7 @@
         <!-- Menu -->
         
         <div class="btn-group d-md-none d-sm-none d-lg-inline-flex d-xl-inline-flex justify-content-center col-xl-3 col-lg-3 col-md-4 col-sm-4">
-            <button type="button" class="btn btn-secondary col-lg-12" style="border-radius: 0; height: 50px !important;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars m-autto" style="font-size: 2.5vh;"></i></button>
+            <button type="button" class="btn btn-secondary col-lg-12 m-auto" style="border-radius: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars m-autto" style="font-size: 2.5vh;"></i></button>
             
             <div class="dropdown-menu bg-dark" style="border-radius: 0; right:15px;left:auto; top: 50px;" >
                 <a class="dropdown-item text-light" href=""> <i class="fa fa-home"></i> Início</a>
