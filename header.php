@@ -17,7 +17,7 @@
     
     <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/css/template.css">
     
-    <title>Câmara Municipal de São José - Intranet</title>
+    <title>Intranet CMSJ</title>
 
 </head>
 <!--

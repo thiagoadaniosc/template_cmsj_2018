@@ -36,7 +36,7 @@
     </article>
     
     <article class="col-xl-4 col-md-6 col-lg-6 mb-2 col-sm-12 justify-content-center home-ferramentas-article">
-        <a class="text" href="<?= RAMAIS_URI ?>" target="_blank">
+        <a class="text" href="<?= RAMAIS_URI ?>">
             <div class="card col-lg-12 rounded-0 p-3" style="background-color: #3648ab; height: 150px;">
                 <i class="fa fa-phone m-auto text-white" style="font-size:50px"></i>
                 <h4 class="text-center text-white"  style="font-size: 2.5vh">Ramais</h4>
@@ -60,7 +60,7 @@
             <div class="card col-lg-12 rounded-0 p-3" style="background-color:#d62a67; height: 150px;">
                 <i class="fa fa-birthday-cake m-auto text-white" style="font-size:50px"></i>
                 <h4 class="text-center text-white" style="font-size: 2.5vh">Aniversariantes</h4>
-                <small class="text-center text-white">(Aniversariantes do dia)</small>
+                <small class="text-center text-white">(Aniversariantes do mês)</small>
             </div>
         </a>
     </article>
@@ -80,7 +80,7 @@
             <div class="card col-lg-12 rounded-0 justify-content-center p-3" style="background-color: #6666FF; height: 150px">
                 <i class="fa fa-paperclip m-auto text-white" style="font-size:50px"></i>
                 <h4 class="text-center text-white"  style="font-size: 2.5vh">Clipagem Digital</h4>
-                <small class="text-center text-white">(Clipagem Digital)</small>
+                <small class="text-center text-white">(CMSJ na Mídia)</small>
             </div>
         </a>
     </article>

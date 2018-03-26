@@ -1,9 +1,9 @@
 <div class="bg-white col-lg-5 pt-4 pb-4 mt-4 justify-content-center" style="border-left: 6px solid rgb(66, 107, 194); border-right: 6px solid rgb(66, 107, 194);">
-        <h4 class="text-center col-lg-12 text-dark">CONTATO</h4>
+        <h4 class="text-center col-lg-12 text-dark text-uppercase">Críticas e Sugestões</h4>
         <hr class="col-lg-2 col-xl-2 col-md-5 col-sm-5 bg-primary">
         <p class="text-center"> Preencha os campos abaixo para entrar em contato.<br>
             <small>
-                Envie sua duvida ou sugestão.
+                Envie sua Crítica ou Sugestões
             </small>
         </p>        
         <form class="form-group col-lg-10 m-auto" action="">
