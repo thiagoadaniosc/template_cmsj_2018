@@ -36,7 +36,7 @@ register_nav_menus(
 );
 
 // Registrando Sidebar
-
+/*
 register_sidebar( array(
 	'name'          => 'home_sidebar',
 	'description'   => 'Home Sidebar',
@@ -46,7 +46,7 @@ register_sidebar( array(
 	'before_title'  => '<h4 class="widgettitle text-center">',
 	'after_title'   => "</h4>\n", )
 );
-
+*/
 //----------------------
 
 
@@ -325,7 +325,7 @@ function get_month(int $numberMonth) {
 
 function possibly_redirect(){ 
 	if (isset( $_GET['action'] )){  
-		if ( in_array( $_GET['action'], array('lostpassword', 'retrievepassword') ) ) {
+		if ( in_array( $_GET['action'], array('lostpassword', 'retrievepassword', 'register') ) ) {
         /*echo "
 		<h2 style='text-align:center'>Esqueceu a Senha ?</h2>
         <p style='text-align: center'> Entre em contato com o setor de Tecnologia da informação pelo E-mail: <b>suporte@cmsj.sc.gov.br</b>, informando seu usuário e o problema. 
@@ -333,9 +333,9 @@ function possibly_redirect(){
         <a href='intranet.cmsj.sc.gov.br'> Voltar para Página Principal</a>		
         </p>		
         ";*/
-        include 'lost-pw.php';
-        exit;
-        //wp_redirect( '/wp-login.php' ); exit;
+        //echo "Não é possível fazer esta ação !";
+        
+        wp_redirect( '/' );
     }
 }
 }

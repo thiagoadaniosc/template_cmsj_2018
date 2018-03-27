@@ -14,11 +14,19 @@
 		}
 		
 		.btn {
-			height:40px !important;
+			height:45px !important;
 		}
 		input {
-			height:40px !important;
+			height:45px !important;
 		}
+
+		#mdocs-navbar-collapse ul {
+			display: inline;
+		}
+		#mdocs-navbar-collapse ul li{
+			display: inline;
+		}
+
 	</style>
 	<section class="post-panel col-lg-12 justify-content-center row">
 		<header class="post-bg"> 

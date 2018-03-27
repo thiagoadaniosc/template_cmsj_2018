@@ -8,10 +8,10 @@
             background-size: cover;
         }
         .btn {
-			height:40px !important;
+			height:45px !important;
 		}
 		input {
-			height:40px !important;
+			height:45px !important;
 		}
 	</style>
     <?php 
