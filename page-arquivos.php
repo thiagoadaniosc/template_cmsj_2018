@@ -3,16 +3,16 @@
 	<style>
 		body{
 			background-color: #EEEEEE;
-
-		}
-
-        #mdocs-navbar .navbar-brand {
-           float:left !important;
-            text-align:left !important;
-            display: none;
 			
-        }
-
+		}
+		
+		#mdocs-navbar .navbar-brand {
+			float:left !important;
+			text-align:left !important;
+			display: none;
+			
+		}
+		
 		.btn {
 			height:40px !important;
 		}
@@ -31,37 +31,42 @@
 				<h3 style="font-size: 20px;text-align: center;letter-spacing: -.80px;"><?php the_excerpt(); ?></h3>
 			</div>
 		</header>
-
+		
 		<div class="post-main row justify-content-center m-0 mt-0 p-0 col-lg-9 rounded-0">		
+			
+			<div class="post-content col-lg-12 mt-1 ">
+				
+				<div class="pl-4 pt-4 pr-4 border  border-light bg-white rounded-0" style="box-shadow:rgba(0,0,0,.2) 0 4px 16px;">
+					<nav class="breadcrumb rounded-0">
+						<a class="breadcrumb-item" href="/">Home</a>
+						<span class="breadcrumb-item active"><?php the_title(); ?></span>
+					</nav>
+					<!-- <?php// the_post_thumbnail('large'); ?>-->
+					<?php the_content(); ?>
+					<!--
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						<br>
+						<br>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					-->
+					
+				</div>
+			</div>
+		</div>
 		
-		<div class="post-content col-lg-12 mt-1 ">
-			<div class="pl-4 pt-4 pr-4 border  border-light bg-white rounded-0" style="box-shadow:rgba(0,0,0,.2) 0 4px 16px;">
-			<!-- <?php// the_post_thumbnail('large'); ?>-->
-			<?php the_content(); ?>
-			<!--
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				<br>
-				<br>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			-->
-		
-        </div>
-    </div>
-	</div>
-	
 	</section>
-
-
+	
+	
 </main> 
 
 <?php get_footer(); ?>

@@ -86,10 +86,10 @@
         <div class="btn-group d-lg-inline-flex d-xl-inline-flex d-md-none d-sm-none justify-content-center col-xl-7 col-lg-7 col-md-8 col-sm-8">
             
             
-            <button type="button" class="btn btn-secondary dropdown-toggle col-lg-12 col-md-12 col-sm-12" style="border-radius: 0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <small style="font-size:2vh;">
-                <?= $current_user->user_firstname;  ?>
-                <?= $current_user->user_lastname ;  ?>
+            <button type="button" class="btn btn-secondary dropdown-toggle col-lg-12 col-md-12 col-sm-12" style="border-radius: 0; overflow: none; word-wrap: break-word;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <small style="font-size:1.8vh; word-wrap: break-word;">
+                <?php $complete_name = $current_user->user_firstname . ' ' .  substr($current_user->user_lastname,0,1) . '.'; ?>
+                <?= trim($complete_name) ?>
                 </small>
                 
             </button>

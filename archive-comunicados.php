@@ -11,8 +11,13 @@
 		}
 	</style>
     <div class="col-lg-8 justify-content-center m-auto bg-white p-3 archive-comunicados-content">
+        
+        <nav class="breadcrumb rounded-0">
+            <a class="breadcrumb-item" href="/">Home</a>
+            <a class="breadcrumb-item active" href="<?= get_post_type_archive_link(get_post_type())  ?>"><?= get_type($post_type) ?></a>
+        </nav>
         <h4 class="text-center text-white"> <i class="fa fa-bullhorn m-auto text-white"></i> Comunicados</h4>
-
+        
         <section>
             
             <?php
@@ -34,12 +39,12 @@
             </div>
             
         </section>
-
-        <section class="pagination col-lg-12 text-center justify-content-center">
-		<?php wordpress_pagination(); ?>
-	    </section>
         
-
+        <section class="pagination col-lg-12 text-center justify-content-center">
+            <?php wordpress_pagination(); ?>
+        </section>
+        
+        
     </div>
 </main>
 <?php get_footer(); ?>

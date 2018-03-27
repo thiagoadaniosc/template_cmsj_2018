@@ -1,4 +1,9 @@
-
+<div class="col-lg-11 p-0">
+        <nav class="breadcrumb rounded-0 col-lg-12 m-auto bg-white" style="border-left: 6px solid rgb(66, 107, 194); border-right: 6px solid rgb(66, 107, 194);">
+            <a class="breadcrumb-item" href="/">Home</a>
+            <span class="breadcrumb-item active"><?php the_title(); ?></span>
+        </nav>
+</div>
 <div class="bg-white col-lg-11 pt-4 pb-4 mt-4 justify-content-center" style="border-left: 6px solid rgb(66, 107, 194); border-right: 6px solid rgb(66, 107, 194);">
     <?php 
         $mensages = show_mensages();

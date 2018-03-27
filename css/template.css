@@ -17,6 +17,32 @@ input, button {
     padding-bottom: 10px !important;
 }
 
+blockquote {
+    background-color: #f9f9f9;
+    border-left: 6px solid #5ca2df;
+    border-right: 1px solid #ebebeb;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    border-radius: 3px;
+    margin: 0 0 20px;
+    font-size: 5px;
+    line-height: 25px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 20px 15px 20px 32px;
+    position: relative;
+}
+
+blockquote::before {
+    content: "\f10d";
+    color: #5ca2df;
+    font-family: FontAwesome;
+    font-size: 22px;
+    position: absolute;
+    left: 8px;
+    top: 17px;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;

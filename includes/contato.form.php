@@ -1,4 +1,11 @@
+<div class="col-lg-12 p-0">
+        <nav class="breadcrumb rounded-0 col-lg-5 m-auto bg-white" style="border-left: 6px solid rgb(66, 107, 194); border-right: 6px solid rgb(66, 107, 194);">
+            <a class="breadcrumb-item" href="/">Home</a>
+            <span class="breadcrumb-item active"><?php the_title(); ?></span>
+        </nav>
+    </div>
 <div class="bg-white col-lg-5 pt-4 pb-4 mt-4 justify-content-center" style="border-left: 6px solid rgb(66, 107, 194); border-right: 6px solid rgb(66, 107, 194);">
+    
         <h4 class="text-center col-lg-12 text-dark text-uppercase">Críticas e Sugestões</h4>
         <hr class="col-lg-2 col-xl-2 col-md-5 col-sm-5 bg-primary">
         <p class="text-center"> Preencha os campos abaixo para entrar em contato.<br>

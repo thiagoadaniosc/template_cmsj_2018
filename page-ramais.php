@@ -32,10 +32,11 @@ if (isset($_GET['CN']) && isset($_GET['telephonenumber']) && ($current_user->rol
     </style>
     
     <div class="bg-white pb-4 p-0 col-lg-12 row pl-0 pr-0 mr-0 ml-0 pt-3" style="box-shadow:rgba(0,0,0,.2) 0 4px 16px; overflow: auto"> 
-        <aside class="col-xl-3 col-lg-3 col-md-12 border-right">
-                <?php require('includes/menu.php'); ?>
-        </aside>
-        <div class="col-lg-9">
+        <div class="col-lg-12">
+            <nav class="breadcrumb rounded-0">
+                <a class="breadcrumb-item" href="/">Home</a>
+                <span class="breadcrumb-item active"><?php the_title(); ?></span>
+            </nav>
             <h4 class="text-center col-lg-12 bg-dark text-white p-2">Ramais</h4>
             <?php 
             $order = isset($_GET['order']) && !empty($_GET['order']) ? $_GET['order'] : 0;   ?>
