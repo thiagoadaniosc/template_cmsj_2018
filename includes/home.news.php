@@ -1,4 +1,4 @@
-<section class="home-news d-xl-inline-block d-lg-none d-md-none d-sm-none">
+<section class="home-news d-xl-inline-block col-xl-12 col-lg-12 d-lg-none d-md-none d-sm-none">
     <header class="home-news-header text-white p-1 border-top">
         <h3><a href="/noticias" class="text-white"><i class="home-news-header-title fa fa-newspaper-o"></i> Notícias</a> </h3>
     </header>

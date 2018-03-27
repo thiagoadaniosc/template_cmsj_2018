@@ -75,7 +75,7 @@
         
     </header>
     
-    <div class=" d-sm-none d-none d-lg-inline-flex d-md-inline-flex col-lg-5 col-xl-3 col-md-12 col-sm-12 navbar navbar-dark bg-dark row"> 
+    <div class=" d-sm-none d-md-none d-none d-lg-inline-flex col-lg-5 col-xl-3 col-md-12 col-sm-12 navbar navbar-dark bg-dark row" style="height: 80px;"> 
         <?php global $current_user; get_currentuserinfo();?>
         
         <div class="d-md-none d-sm-none d-xl-block col-lg-2 col-md-12 col-sm-12 text-center" style=" padding: 2px;">
@@ -87,7 +87,7 @@
         <div class="btn-group d-lg-inline-flex d-xl-inline-flex d-md-none d-sm-none justify-content-center col-xl-7 col-lg-7 col-md-8 col-sm-8">
             
             
-            <button type="button" class="btn btn-secondary dropdown-toggle col-lg-12 col-md-12 col-sm-12" style="border-radius: 0; overflow: none; word-wrap: break-word;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-secondary dropdown-toggle col-lg-12 col-md-12 col-sm-12" style="border-radius: 0; overflow: none; word-wrap: break-word; font-size:1.8vh; " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <small style="font-size:1.8vh; word-wrap: break-word;">
                 <?php $complete_name = $current_user->user_firstname . ' ' .  substr($current_user->user_lastname,0,1) . '.'; ?>
                 <?= trim($complete_name) ?>
