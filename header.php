@@ -17,6 +17,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/css/dataTables.bootstrap4.min.css'/>
     
     <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/css/template.css">
+    <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/style.css">
     
     <title>Intranet CMSJ</title>
 
@@ -32,8 +33,8 @@
     </div>
 </div>
 -->
-<div class="header row bg-dark pl-lg-5 pr-lg-5 p-sm-0 p-md-0 position-fixed col-lg-12 mt-0 " style="margin: 0px; z-index:10; height:80px; top:0">
-    <header class="navbar site-header col-lg-7 col-xl-9 col-sm-12 col-md-12 navbar-dark bg-dark justify-content-between"> 
+<div class="header row bg-header pl-lg-5 pr-lg-5 p-sm-0 p-md-0 position-fixed col-lg-12 mt-0 " style="margin: 0px; z-index:10; height:80px; top:0">
+    <header class="navbar site-header col-lg-7 col-xl-9 col-sm-12 col-md-12 navbar-dark bg-header justify-content-between"> 
         <a href="/" class="navbar-brand col-xl-auto col-lg-6 p-0 m-0 col-md-4 col-sm-8"><img class="img-fluid col-lg-12 col-md-8 col-sm-8" src="<?= TEMPLATE_URI ?>/imgs/sao-jose-logo-md.png" alt=""></a>
         
         <form class="d-none d-md-none d-sm-none d-lg-inline-flex d-xl-inline-flex form-inline search-form col-xl-auto col-xl-auto col-lg-6 col-md-12 col-sm-12"action="">
@@ -75,7 +76,7 @@
         
     </header>
     
-    <div class=" d-sm-none d-md-none d-none d-lg-inline-flex col-lg-5 col-xl-3 col-md-12 col-sm-12 navbar navbar-dark bg-dark row" style="height: 80px;"> 
+    <div class=" d-sm-none d-md-none d-none d-lg-inline-flex col-lg-5 col-xl-3 col-md-12 col-sm-12 navbar navbar-dark bg-header row" style="height: 80px;"> 
         <?php global $current_user; get_currentuserinfo();?>
         
         <div class="d-md-none d-sm-none d-xl-block col-lg-2 col-md-12 col-sm-12 text-center" style=" padding: 2px;">

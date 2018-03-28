@@ -1,7 +1,56 @@
 /*
 Theme Name: Template Câmara Municipal de São José
 Theme URI: https://github.com/thiagoadaniosc/template_cmsj_2018
-Author: Thiago Adanio Scheidt
+Author: Thiago Adanio Scheidt, Marcelo M.
 Author URI: https://github.com/thiagoadaniosc
 Version: 2.0
 */
+
+.bg-header {
+    background-color: #343A40 !important;
+}
+
+.bg-fr-glpi {
+    background-color: #007BFF !important;
+}
+
+.bg-fr-comunicados{
+    background-color: #DC3545 !important;
+}
+
+.bg-fr-folhaweb{
+    background-color: #FFFFFF !important;
+}
+
+.bg-fr-ramais{
+    background-color: #3648AB !important;
+}
+
+.bg-fr-calendario{
+    background-color: #563D7C !important;
+}
+
+.bg-fr-aniversariantes{
+    background-color: #D62A67 !important;
+}
+
+.bg-fr-dom{
+    background-color: #FFFFFF !important;
+}
+
+.bg-fr-clipagem{
+    background-color: #6666FF !important;
+}
+
+.bg-fr-configuracoes{
+    background-color: #0D1235 !important;
+}
+
+.home-news-header{
+    background-color: #3B6ED9 !important;
+    color: white;
+    margin: 0 !important;
+    /* border-radius: 3px; */
+    border-bottom: 4px solid #455983 !important;
+    font-weight: bold !important;
+}

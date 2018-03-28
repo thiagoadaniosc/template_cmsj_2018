@@ -23,8 +23,7 @@ if (isset($_GET['CN']) && isset($_GET['telephonenumber']) && ($current_user->rol
             background-repeat: repeat-y;
             background-attachment: fixed;
             background-size: cover;
-            
-        }
+            }
         
         h1 {
             display: none;
