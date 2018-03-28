@@ -38,7 +38,7 @@
                     
                 </article>
                 <?php endwhile;?>
-                
+                <?php require('includes/pagination.php'); ?>
             </div>
             
         </section>

@@ -635,32 +635,23 @@ a {
 /*Paginação*/
 
 .pagination {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding-left: 0;
-    list-style: none;
-    border-radius: .25rem;
-    margin-top: 50px;
+
 }
 
-.pagination .current {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding-left: 0;
-    list-style: none;
-    border-radius: .25rem;
-    background-color: #3B6ED9;
-    color: white;
+.current {
+     background-color: #3B6ED9 !important;
+    color: white !important;
 }
 
-.pagination .page-numbers {
-	padding: 8px;
-	padding-left: 15px;
-	padding-right: 15px;
-    margin: 0 !important;
-    border-radius: .25rem;
+.page-numbers {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
 }
 
 .tickets-table-size {

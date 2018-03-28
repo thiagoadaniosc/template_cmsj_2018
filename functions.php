@@ -248,15 +248,21 @@ function wordpress_pagination() {
 	global $wp_query;
 
 	$big = 999999999;
+	if ($wp_query->max_num_pages > 1) {
+		$paginate_links = paginate_links( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'prev_text' => __('Anterior'),
+			'next_text' => __('Próxima'),
+			'total' => $wp_query->max_num_pages,
+			'type' => 'array'
+		) );
 
-	echo paginate_links( array(
-		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		'format' => '?paged=%#%',
-		'current' => max( 1, get_query_var('paged') ),
-		'prev_text' => __('«'),
-		'next_text' => __('»'),
-		'total' => $wp_query->max_num_pages
-	) );
+		foreach ( $paginate_links as $pgl ) {
+			echo "<li  class='page-item'> $pgl </li>";
+		}
+	}
 }
 
 
