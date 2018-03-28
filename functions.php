@@ -1,6 +1,8 @@
 <?php
 // Theme Supports
 
+is_explorer();
+
 define('TEMPLATE_URI', get_template_directory_uri());
 
 define('SUPORTE_URI', 'http://suporte.cmsj.info');
@@ -12,7 +14,6 @@ define('DOM_URI', 'https://www.diariomunicipal.sc.gov.br/site/');
 define('CLIPAGEMDIGITAL_URI', 'http://clipagem.cmsj.info');
 define('CONFIGURACOES_URI', '/wp-admin/profile.php');
 define('AD_FILTER', '(&(objectCategory=person)(objectClass=user)(samaccountname=*)(!(UserAccountControl:1.2.840.113556.1.4.803:=2))(!(cn=*Admin*))(!(cn=*teste*))(!(cn=*VM*))(!(cn=*Suporte*)))');
-
 //define('AD_FILTER_RAMAIS', '(groupOfUniqueNames=*)');
 //define('AD_FILTER_RAMAIS', '(&(objectClass=organizationalUnit)((ou:dn:=Evil))');
 //define('AD_FILTER_RAMAIS', '(&(objectCategory=organizationalUnit)(description=123))');
@@ -20,11 +21,6 @@ define('AD_FILTER', '(&(objectCategory=person)(objectClass=user)(samaccountname=
 //define('AD_FILTER_RAMAIS', '(&(objectCategory=group)(member=CN=Admin Lancer,OU=Empresas,OU=Colaboradores,OU=CMSJ,DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br))');
 //define('AD_FILTER_RAMAIS', '(&(objectClass=group)(&(ou:dn:=Colaboradores)))');
 define('AD_FILTER_RAMAIS', '(&(objectCategory=group)(CN=*))');
-
-
-
-
-
 add_post_type_support( 'page', 'excerpt' );
 
 //  Registando Menus
@@ -49,6 +45,18 @@ register_sidebar( array(
 */
 //----------------------
 
+function is_explorer(){
+	$user_agent =  $_SERVER['HTTP_USER_AGENT'];
+	if (strpos($user_agent, 'MSIE') || strpos($user_agent, 'Trident/7')) {
+		//echo 'Internet Explorer';
+		echo'
+		<h1 style="text-align:center; color:#FFF; width:500px; height:auto; border-radius:10px 10px 10px 10px; padding:5px 5px 5px 5px; background-color:#045CAA; margin:0 auto; margin-top:150px;">Esse navegador está bloqueado para acessar esse sistema.<br/></h1>';
+		echo '<p style="text-align:center; color:#ba0707"> Por favor utilize um navegador atualizado. </p>';
+		echo '<p style="text-align:center"> <a href="https://www.google.com.br/chrome/index.html">Baixar Google Chrome</a> </p>';
+		echo '<p style="text-align:center"> <a href="https://www.google.com.br">< Voltar</a> </p>';
+		exit;
+	}
+}
 
 
 function post_type_comunicados(){
