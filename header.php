@@ -96,28 +96,61 @@
                 
             </button>
             
-            <div class="dropdown-menu" style="border-radius: 0; right:0;  top: 50px; left:auto" >
+            <div class="dropdown-menu" id="user-menu" style="border-radius: 0; right:0;  top: 50px; left:0" >
                 <?php if ($current_user->roles[0] !== 'subscriber') :  ?>
-                <a class="dropdown-item" href="/wp-admin"><i class="fa fa-dashboard"></i> Painel Administrativo</a>
+                <li class="dropdown-item">
+                <a class="text-dark dropdown-link d-block" href="/wp-admin"><i class="fa fa-dashboard"></i> Painel Administrativo</a>
+                </li>
                 <?php else : ?>
-                <a class="dropdown-item" href="/wp-admin/profile.php"><i class="fa fa-user-circle"></i> Perfil </a>
+                <li class="dropdown-item">
+                <a class="text-dark dropdown-link d-block" href="/wp-admin/profile.php"><i class="fa fa-user-circle"></i> Perfil </a>
+                </li>
                 <?php endif; ?>
                 <?php if ($current_user->roles[0] == 'cms' || $current_user->roles[0] == 'administrator') : ?>
-                <a class="dropdown-item" href="/wp-admin/post-new.php"><i class="fa fa-newspaper-o"></i> Nova Notícia </a>
-                <a class="dropdown-item" href="/contato/?show"><i class="fa fa-envelope"></i> Mensagens e Sugestões </a>
+
+                <li class="dropdown-item dropdown-item-has-children">
+                <a class="text-dark dropdown-link d-block" ><i class="fa fa-newspaper-o"></i> Notícia </a>
+                    <ul class="p-1 dropdown-submenu">
+                        <li class="dropdown-subitem">
+                            <a class="d-block dropdown-link" href="/wp-admin/post-new.php"><i class="fa fa-plus"></i> Adcionar notícia</a>
+                        </li>
+                        <li class="dropdown-subitem">
+                            <a class="d-block dropdown-link" href="/wp-admin/edit.php"><i class="fa fa-list"></i> Notícias</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown-item">
+                <a class="text-dark dropdown-link d-block" href="/contato/?show"><i class="fa fa-envelope"></i> Mensagens e Sugestões </a>
+                </li>
                 <?php endif; ?>
 
                 <?php if ($current_user->roles[0] == 'rh' || $current_user->roles[0] == 'administrator') : ?>
-                <a class="dropdown-item" href="/wp-admin/post-new.php?post_type=comunicados"><i class="fa fa-bullhorn"></i> Novo Comunicado </a>
-                <a class="dropdown-item" href="/wp-admin/edit.php?post_type=thc-events"><i class="fa fa-calendar"></i> Calendário </a>
+                <li class="dropdown-item dropdown-item-has-children">
+                <a class="text-dark dropdown-link d-block" href="/wp-admin/post-new.php?post_type=comunicados"><i class="fa fa-bullhorn"></i> Comunicado </a>
+                <ul class="p-1 dropdown-submenu">
+                        <li class="dropdown-subitem">
+                            <a class="d-block dropdown-link" href="/wp-admin/post-new.php"><i class="fa fa-plus"></i> Adcionar comunicado</a>
+                        </li>
+                        <li class="dropdown-subitem">
+                            <a class="d-block dropdown-link" href="/wp-admin/edit.php"><i class="fa fa-list"></i> Comunicados</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown-item">
+                <a class="text-dark dropdown-link d-block" href="/wp-admin/edit.php?post_type=thc-events"><i class="fa fa-calendar"></i> Calendário </a>
+                </li>
                 <?php endif; ?>
 
                 <?php if ($current_user->roles[0] == 'telefonistas' || $current_user->roles[0] == 'administrator') : ?>
-                <a class="dropdown-item" href="/ramais"><i class="fa fa-phone"></i> Editar Ramais </a>
+                <li class="dropdown-item">
+                <a class="text-dark dropdown-link d-block" href="/ramais"><i class="fa fa-phone"></i> Editar Ramais </a>
+                </li>
                 <?php endif; ?>
                 
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item active" href="<?= wp_logout_url()?>"> <i class="fa fa fa-sign-out"></i> Sair</a>
+                <li class="dropdown-item active">
+                <a class="text-white dropdown-link d-block" href="<?= wp_logout_url()?>"> <i class="fa fa fa-sign-out"></i> Sair</a>
+                </li>
             </div>
         </div>
         <!-- Menu -->

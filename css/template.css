@@ -67,6 +67,14 @@ a {
     text-decoration: none !important;
 }
 
+#scrollUp {
+    bottom: 20px;
+    right: 20px;
+    width: 38px; /* Width of image */
+    height: 38px; /* Height of image */
+    background: url('../imgs/top.png') no-repeat;
+  }
+
 .loader {
     background-color: rgba(255, 255, 255, 0.767)
 }
@@ -75,7 +83,7 @@ a {
     margin-top: 15px;
 }
 
-
+/**/
 .dropdown-item{
     padding-left: 15px !important
 }
@@ -83,7 +91,8 @@ a {
 .dropdown-item {
     border-left: 0px solid transparent;
     transition: .4s;
-
+    cursor: pointer;
+    /*max-width: 220px;*/
 }
 
 .dropdown-item:hover {
@@ -91,6 +100,43 @@ a {
     background-color:rgb(43, 43, 43);
     border-left: 3px solid rgb(52, 134, 211) ;
 }
+
+#user-menu .dropdown-item:hover {
+    color:white;
+    background-color:rgb(66, 66, 66);
+    border-left: 3px solid rgb(52, 134, 211) ;
+}
+
+.dropdown-link {
+    transition: .4s;
+}
+
+.dropdown-item:hover .dropdown-link {
+    color: white !important;
+}
+
+.dropdown-submenu {
+    display: none;
+}
+.dropdown-subitem {
+    list-style: none;
+    transition: 1s;
+    padding:5px;
+}
+.dropdown-subitem:hover {
+    padding-left: 10px;
+}
+
+.dropdown-item-has-children > a::after {
+    content: " \f0d7";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    padding-right: 0.5em;
+    float: right;
+}
+
 
 /* Home News DESKTOP */
 
@@ -634,9 +680,6 @@ a {
 
 /*Paginação*/
 
-.pagination {
-
-}
 
 .current {
      background-color: #3B6ED9 !important;
