@@ -2,6 +2,7 @@
 // Theme Supports
 
 is_explorer();
+global $current_user; get_currentuserinfo();
 
 define('TEMPLATE_URI', get_template_directory_uri());
 
@@ -11,7 +12,7 @@ define('NOTICIAS_URI', '/comunicados');
 define('FOLHAWEB_URI', 'http://folhaweb.cmsj.info');	
 define('RAMAIS_URI', '/ramais');
 define('DOM_URI', 'https://www.diariomunicipal.sc.gov.br/site/');
-define('CLIPAGEMDIGITAL_URI', 'http://clipagem.cmsj.info');
+define('CLIPAGEMDIGITAL_URI', 'http://clipagem.cmsj.info/visitante?username=' . $current_user->user_login  );
 define('CONFIGURACOES_URI', '/wp-admin/profile.php');
 define('AD_FILTER', '(&(objectCategory=person)(objectClass=user)(samaccountname=*)(!(UserAccountControl:1.2.840.113556.1.4.803:=2))(!(cn=*Admin*))(!(cn=*teste*))(!(cn=*VM*))(!(cn=*Suporte*)))');
 //define('AD_FILTER_RAMAIS', '(groupOfUniqueNames=*)');
