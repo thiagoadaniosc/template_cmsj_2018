@@ -6,10 +6,9 @@
     <article class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-2 home-ferramentas-article" >
         <a class="text" href="<?= SUPORTE_URI ?>" target="_blank">
             <div class="card col-lg-12 justify-content-center rounded-0 p-3 bg-fr-glpi zoomIn animated"  style="height: 150px" >
-                <i class="fa fa-question-circle m-auto text-white" style="font-size:50px"></i>
+            <img class="m-auto img-fr-glpi"  data-src="<?= TEMPLATE_URI ?>/imgs/glpi.png" data-hover="<?= TEMPLATE_URI ?>/imgs/glpi-hover.png" src="<?= TEMPLATE_URI ?>/imgs/glpi.png" width="60vh" alt="GLPI">
                 <h4 class="text-center text-white"  style="font-size: 2.5vh">GLPI</h4>
-                
-                <small class="text-center text-white" style="font-size: 1.5vh">(Sistema de Suporte)</small>
+                <small class="text-center text-white">(Sistema de Suporte)</small>
             </div>
         </a>
     </article>
@@ -19,7 +18,7 @@
             <div class="card col-lg-12 justify-content-center rounded-0 p-3 bg-fr-comunicados zoomIn animated" style="height: 150px;">
                 <i class="fa fa-bullhorn m-auto text-white" style="font-size:50px"></i>
                 <h4 class="text-center text-white"  style="font-size: 2.5vh">Comunicados</h4>
-                <small class="text-center text-white" style="font-size: 1.5vh">(Comunicados Internos)</small>
+                <small class="text-center text-white">(Comunicados Internos)</small>
             </div>
         </a>
     </article>

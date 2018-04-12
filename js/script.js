@@ -61,6 +61,16 @@ $('.bg-fr-dom').mouseleave(function(){
     $('.img-fr-dom').attr("src", $src);
 });
 
+$('.bg-fr-glpi').hover(function(){
+    $img_hover = $('.img-fr-glpi')[0].getAttribute('data-hover')
+    $('.img-fr-glpi').attr("src", $img_hover);
+});
+
+$('.bg-fr-glpi').mouseleave(function(){
+    $src = $('.img-fr-glpi')[0].getAttribute('data-src');
+    $('.img-fr-glpi').attr("src", $src);
+});
+
 $(function () {
     $.scrollUp({
         scrollImg: true
