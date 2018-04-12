@@ -10,40 +10,150 @@ Version: 2.0
     background-color: #343A40 !important;
 }
 
+.home-asidel-menu-header {
+    background-color: #166fb8ff;
+    border-bottom: 4px solid rgb(0, 92, 167);
+    color: white;
+    height: auto;
+    padding-top:10px;
+    padding-bottom: 10px;
+    border-radius: 0px;
+    font-size: 20px;
+}
+
+.home-asidel-menu-header-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left:12px;
+    top: 12px;
+}
+
 .bg-fr-glpi {
     background-color: #007BFF !important;
+    transition: .5s;
+}
+
+.bg-fr-glpi:hover h4, .bg-fr-glpi:hover i, .bg-fr-glpi:hover small, .bg-fr-glpi:hover{
+    color:  #007BFF !important;
+    background-color: transparent !important;
+}
+
+.bg-fr-glpi:hover {
+    border: 1px solid #007BFF; 
 }
 
 .bg-fr-comunicados{
-    background-color: #DC3545 !important;
+    background-color: #ffc13a !important;
+    transition: .5s;
+}
+
+.bg-fr-comunicados:hover h4, .bg-fr-comunicados:hover i, .bg-fr-comunicados:hover small, .bg-fr-comunicados:hover{
+    color:  #ffc13a !important;
+    background-color: transparent !important;
+}
+
+.bg-fr-comunicados:hover {
+    border: 1px solid #ffc13a; 
 }
 
 .bg-fr-folhaweb{
-    background-color: #FFFFFF !important;
+    background-color: #00306e !important;
+    transition: .5s;
+}
+
+.bg-fr-folhaweb:hover h4, .bg-fr-folhaweb:hover i, .bg-fr-folhaweb:hover small, .bg-fr-folhaweb:hover{
+    color:  #00306e !important;
+    background-color: transparent !important;
+}
+
+.bg-fr-folhaweb:hover {
+    border: 1px solid #00306e; 
 }
 
 .bg-fr-ramais{
+    /*background-color: #3648AB !important;*/
     background-color: #3648AB !important;
+    transition: .5s;
+}
+
+.bg-fr-ramais:hover h4, .bg-fr-ramais:hover i, .bg-fr-ramais:hover small, .bg-fr-ramais:hover{
+    color:  #3648AB !important;
+    background-color: transparent !important;
+}
+
+.bg-fr-ramais:hover {
+    border: 1px solid #3648AB; 
 }
 
 .bg-fr-calendario{
     background-color: #563D7C !important;
+    transition: .5s;
+}
+
+.bg-fr-calendario:hover h4, .bg-fr-calendario:hover i, .bg-fr-calendario:hover small, .bg-fr-calendario:hover{
+    color:  #563D7C !important;
+    background-color: transparent !important;
+}
+
+.bg-fr-calendario:hover {
+    border: 1px solid #563D7C; 
 }
 
 .bg-fr-aniversariantes{
     background-color: #D62A67 !important;
+    transition: .5s;
+}
+
+.bg-fr-aniversariantes:hover h4, .bg-fr-aniversariantes:hover i, .bg-fr-aniversariantes:hover small, .bg-fr-aniversariantes:hover{
+    color:  #D62A67 !important;
+    background-color: transparent !important;
+}
+
+.bg-fr-aniversariantes:hover {
+    border: 1px solid #D62A67; 
 }
 
 .bg-fr-dom{
-    background-color: #FFFFFF !important;
+    background-color: #df4b57 !important;
+    transition: .5s;
+}
+
+.bg-fr-dom:hover h4, .bg-fr-dom:hover i, .bg-fr-dom:hover small, .bg-fr-dom:hover{
+    color:  #df4b57 !important;
+    background-color: transparent !important;
+}
+
+.bg-fr-dom:hover {
+    border: 1px solid #df4b57; 
 }
 
 .bg-fr-clipagem{
     background-color: #6666FF !important;
+    transition: .5s;
+}
+
+.bg-fr-clipagem:hover h4, .bg-fr-clipagem:hover i, .bg-fr-clipagem:hover small, .bg-fr-clipagem:hover{
+    color:  #6666FF !important;
+    background-color: transparent !important;
+}
+
+.bg-fr-clipagem:hover {
+    border: 1px solid #6666FF; 
 }
 
 .bg-fr-configuracoes{
     background-color: #0D1235 !important;
+    transition: .5s;
+}
+
+.bg-fr-configuracoes:hover h4, .bg-fr-configuracoes:hover i, .bg-fr-configuracoes:hover small, .bg-fr-configuracoes:hover{
+    color:  #0D1235 !important;
+    background-color: transparent !important;
+}
+
+.bg-fr-configuracoes:hover {
+    border: 1px solid #0D1235; 
 }
 
 .home-news-header{

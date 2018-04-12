@@ -3,18 +3,25 @@ $(window).load(function() {
     $('.menu-item-has-children').toggleClass('menu-item-has-children-disable');
 });
 
-$( ".menu-item-has-children" ).click(function() {
-    var elementID = '#' + $(this).attr('id') + ' > .sub-menu';
-    if ($(this).hasClass('sub-menu-active')) {
-        $(elementID).hide("slow");
-        $(this).removeClass('sub-menu-active');
-        $(this).removeClass('menu-item-has-children-active');
-        $(this).toggleClass('menu-item-has-children-disable');
+$( ".menu-item-has-children a" ).click(function() {
+    var elementID = '#' + $(this).parent().attr('id') + '> .sub-menu';
+    var element = '#' + $(this).parent().attr('id') + '> a';
+    var element_parent = "#" + $(element).parent().attr('id');
+    if ($(element).hasClass('sub-menu-active')) {
+        $(element).removeClass('sub-menu-active');
+        $(element_parent).removeClass('menu-item-has-children-active');
+        $(element_parent).toggleClass('menu-item-has-children-disable');
+        elementID = $(elementID).toArray();
+        $(elementID[0]).hide("slow");
     } else {
-        $(this).toggleClass('sub-menu-active');
-        $(this).toggleClass('menu-item-has-children-active');
-        $(this).removeClass('menu-item-has-children-disable');
-        $(elementID).show("slow"); 
+        $(element).toggleClass('sub-menu-active');
+        $(element_parent).toggleClass('menu-item-has-children-active');
+        $(element_parent).removeClass('menu-item-has-children-disable');
+        //$(elementID).show('slow');
+        elementID = $(elementID).toArray();
+        $(elementID[0]).show('slow');
+     
+
     }
 });
 
@@ -34,6 +41,25 @@ $("#user-menu .dropdown-item-has-children").mouseleave(function(){
     }
 });
 
+$('.bg-fr-folhaweb').hover(function(){
+    $img_hover = $('.img-fr-folha-web')[0].getAttribute('data-hover')
+    $('.img-fr-folha-web').attr("src", $img_hover);
+});
+
+$('.bg-fr-folhaweb').mouseleave(function(){
+    $src = $('.img-fr-folha-web')[0].getAttribute('data-src');
+    $('.img-fr-folha-web').attr("src", $src);
+});
+
+$('.bg-fr-dom').hover(function(){
+    $img_hover = $('.img-fr-dom')[0].getAttribute('data-hover')
+    $('.img-fr-dom').attr("src", $img_hover);
+});
+
+$('.bg-fr-dom').mouseleave(function(){
+    $src = $('.img-fr-dom')[0].getAttribute('data-src');
+    $('.img-fr-dom').attr("src", $src);
+});
 
 $(function () {
     $.scrollUp({

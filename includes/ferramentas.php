@@ -1,4 +1,3 @@
-
 <section class="col-lg-12 row p-0 m-0 home-ferramentas">
     <header class="home-ferramentas-header col-lg-12 mb-3">
         <h4 class="col-lg-12 mt-2 text-center">FERRAMENTAS</h4>
@@ -28,9 +27,9 @@
     <article class="col-xl-4 col-md-6 col-lg-6 mb-2 col-sm-12 home-ferramentas-article">
         <a class="text" href="<?= FOLHAWEB_URI ?>" target="_blank">
             <div class="card col-lg-12 justify-content-center rounded-0 p-3 bg-white bg-fr-folhaweb zoomIn animated" style="height:150px">
-                <img class="mr-auto ml-auto" width="50" src="<?= TEMPLATE_URI ?>/imgs/folha-web.png" alt="">
-                <h4 class="text-center" style="color:#24609F; font-size: 2.5vh">Folha Web</h4>
-                <small class="text-center" style="color:#24609F">(Folha de Pagamento Digital)</small>
+                <img class="mr-auto ml-auto img-fr-folha-web" data-src="<?= TEMPLATE_URI ?>/imgs/folha-web.png" data-hover="<?= TEMPLATE_URI ?>/imgs/folha-web-hover.png" width="50" src="<?= TEMPLATE_URI ?>/imgs/folha-web.png" alt="">
+                <h4 class="text-center text-white" style="font-size: 2.5vh">Folha Web</h4>
+                <small class="text-center text-white">(Folha de Pagamento Digital)</small>
             </div>
         </a>
     </article>
@@ -68,9 +67,9 @@
     <article class="col-xl-4 col-md-6 col-lg-6 col-sm-12 mb-2 justify-content-center home-ferramentas-article">
         <a class="text" href="<?= DOM_URI ?>" target="_blank">
             <div class="card col-lg-12 rounded-0 justify-content-center p-3 bg-fr-dom zoomIn animated" style="height: 150px">
-                <img class="m-auto" src="<?= TEMPLATE_URI ?>/imgs/dom-logo.png" width="102vh" alt="">
-                <h4 class="text-center text-danger"  style="font-size: 2.5vh">DOM</h4>
-                <small class="text-center text-danger">(Diário Official dos Municípios)</small>
+                <img class="m-auto img-fr-dom"  data-src="<?= TEMPLATE_URI ?>/imgs/dom-logo.png" data-hover="<?= TEMPLATE_URI ?>/imgs/dom-logo-hover.png" src="<?= TEMPLATE_URI ?>/imgs/dom-logo.png" width="80vh" alt="">
+                <h4 class="text-center text-white"  style="font-size: 2.5vh">DOM</h4>
+                <small class="text-center text-white">(Diário Official dos Municípios)</small>
             </div>
         </a>
     </article>

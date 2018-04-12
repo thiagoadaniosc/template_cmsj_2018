@@ -1,7 +1,12 @@
 
 
 <section class="home-asidel-menu mb-2">
-  <header class="home-asidel-header text-center mb-2"><i class="fa fa-bars"></i> Menu</header>
+  <header class=" home-asidel-menu-header text-center mb-2">
+    <!-- img src="<?= TEMPLATE_URI ?>/imgs/17.png" class="home-asidel-menu-header-icon" alt="">  -->
+    <i class="fa fa-bars float-left" style="position: relative; top: 5px; left: 20px; font-size: 20px;"></i> Menu
+  </header>
+
+  
   <nav class="nav nav-pills flex-column justify-content-center home-asidel-menu">
     <!-- 
       <?php 

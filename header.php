@@ -35,12 +35,12 @@
 -->
 <div class="header row bg-header pl-lg-5 pr-lg-5 p-sm-0 p-md-0 position-fixed col-lg-12 mt-0 " style="margin: 0px; z-index:10; height:80px; top:0">
     <header class="navbar site-header col-lg-7 col-xl-9 col-sm-12 col-md-12 navbar-dark bg-header justify-content-between"> 
-        <a href="/" class="navbar-brand  col-xl-auto col-lg-6 p-0 m-0 col-md-4 col-sm-8"><img class="header-logo img-fluid col-lg-12 col-md-8 col-sm-8" src="<?= TEMPLATE_URI ?>/imgs/sao-jose-logo-md.png" alt=""></a>
+        <a href="/" class="navbar-brand  col-xl-4 col-lg-6 p-0 m-0 col-md-4 col-sm-8"><img class="header-logo img-fluid col-xl-8 col-md-8 col-sm-8" src="<?= TEMPLATE_URI ?>/imgs/sao-jose-logo-md.png" alt=""></a>
         
-        <form class="d-none d-md-none d-sm-none d-lg-inline-flex d-xl-inline-flex form-inline search-form col-xl-auto col-xl-auto col-lg-6 col-md-12 col-sm-12"action="">
-            <input type="text" style="border-radius: 0; border:0" name="s" class="form-control search-form-input col-lg-8 col-xl-10" placeholder="Pesquisar...">
-            <button class="form-control btn btn-light col-xl-2 col-lg-4" type="submit" style="padding-top: 14px !important;
-            padding-bottom: 14px !important; border:0px"> <i class="fa fa-x fa-search"></i></button>
+        <form class="d-none d-md-none d-sm-none d-lg-inline-flex d-xl-inline-flex form-inline search-form col-xl-auto col-xl-8 col-lg-6 col-md-12 col-sm-12"action="">
+            <input type="text" style="border-radius: 0; border:0" name="s" class="form-control search-form-input col-lg-8 col-xl-10" placeholder="O que você procura ?">
+            <button class="form-control btn col-xl-2 col-lg-4 text-white" type="submit" style="padding-top: 14px !important;
+            padding-bottom: 14px !important; border:0px; background-color: rgb(80, 80, 80);"> <i class="fa fa-x fa-search text-white"></i></button>
         </form>
 
         <div class="nav-mobile btn-group d-lg-none d-xl-none d-sm-inline-flex d-md-inline-flex justify-content-center col-md-3 col-sm-2">
