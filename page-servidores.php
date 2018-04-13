@@ -50,8 +50,8 @@
                     $ldap_server = 'ad.cmsj.sc.gov.br';
                     $ldapport = 389;
                     $dn="DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br";
-                    $user= base64_decode("c3Vwb3J0ZTE=");
-                    $pass= base64_decode("c3Vwb3J0QDgxMDI=");
+                    $user= AD_USER;
+                    $pass= AD_PASS;
                     
                     // Tenta se conectar com o servidor
                     //try {

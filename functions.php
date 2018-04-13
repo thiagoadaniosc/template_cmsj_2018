@@ -5,7 +5,8 @@ is_explorer();
 global $current_user; get_currentuserinfo();
 
 define('TEMPLATE_URI', get_template_directory_uri());
-
+define('AD_USER', base64_decode("c3Vwb3J0ZTE="));
+define('AD_PASS', base64_decode("c3Vwb3J0QDgxMDI="));
 define('SUPORTE_URI', 'http://suporte.cmsj.info');
 define('COMUNICADOS_URI', '/comunicados');
 define('NOTICIAS_URI', '/comunicados');

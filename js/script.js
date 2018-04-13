@@ -3,7 +3,8 @@ $(window).load(function() {
     $('.menu-item-has-children').toggleClass('menu-item-has-children-disable');
 });
 
-$( ".menu-item-has-children a" ).click(function() {
+$( ".menu-item-has-children > a" ).click(function() {
+    console.log('click');
     var elementID = '#' + $(this).parent().attr('id') + '> .sub-menu';
     var element = '#' + $(this).parent().attr('id') + '> a';
     var element_parent = "#" + $(element).parent().attr('id');
@@ -24,7 +25,7 @@ $( ".menu-item-has-children a" ).click(function() {
 
     }
 });
-
+/*
 $("#user-menu .dropdown-item-has-children").hover(function(){
     var element = $(this).find('ul');
     if (!$(this).hasClass('sub-menu-active')) {
@@ -40,7 +41,7 @@ $("#user-menu .dropdown-item-has-children").mouseleave(function(){
         $(element).hide("slow");
     }
 });
-
+*/
 $('.bg-fr-folhaweb').hover(function(){
     $img_hover = $('.img-fr-folha-web')[0].getAttribute('data-hover')
     $('.img-fr-folha-web').attr("src", $img_hover);

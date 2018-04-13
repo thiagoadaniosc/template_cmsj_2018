@@ -129,7 +129,7 @@ a {
 }
 
 .dropdown-submenu {
-    display: none;
+    /*display: none;*/
 }
 .dropdown-subitem {
     list-style: none;
@@ -139,7 +139,7 @@ a {
 .dropdown-subitem:hover {
     padding-left: 10px;
 }
-
+/*
 .dropdown-item-has-children > a::after {
     content: " \f0d7";
     font-family: FontAwesome;
@@ -149,6 +149,7 @@ a {
     padding-right: 0.5em;
     float: right;
 }
+*/
 
 
 /* Home News DESKTOP */
