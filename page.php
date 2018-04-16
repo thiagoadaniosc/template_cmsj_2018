@@ -15,7 +15,6 @@ if (has_post_thumbnail($post->ID)) {
 		.post-bg{
 			background-image: url("<?= $thumbnail_url ?>");
 		}
-
 		/*.post-bg{
 			background-image: url("<?= TEMPLATE_URI ?>/imgs/back_2.jpg");
 		}*/
