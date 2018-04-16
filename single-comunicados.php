@@ -1,17 +1,30 @@
 <?php get_header(); ?>
+<?php the_post(); ?>
+<?php 
+if (has_post_thumbnail($post->ID)) {
+	$thumbnail_url = get_the_post_thumbnail_url($post->ID);
+} else {
+	$thumbnail_url =  TEMPLATE_URI . "/imgs/back_2.jpg";
+}
+?>
 <main class="conteudo col-lg-12">
 	<style>
 		body{
 			background-color: #EEEEEE;
 		}
+		.post-bg{
+			background-image: url("<?= $thumbnail_url ?>");
+		}
+
+		/*.post-bg{
+			background-image: url("<?= TEMPLATE_URI ?>/imgs/back_2.jpg");
+		}*/
+
 	</style>
 	<section class="post-panel col-lg-12 justify-content-center row">
 		<header class="post-bg"> 
 			<div class="post-title col-lg-12">
-				
-				<?php the_post(); ?>
 				<h1><?php the_title(); ?></h1>
-				
 			</div>
 		</header>
 		

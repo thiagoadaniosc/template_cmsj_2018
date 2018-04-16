@@ -132,7 +132,7 @@
                             <a class="d-block dropdown-link" href="/wp-admin/post-new.php"><i class="fa fa-plus"></i> Adcionar comunicado</a>
                         </li>
                         <li class="dropdown-subitem">
-                            <a class="d-block dropdown-link" href="/wp-admin/edit.php"><i class="fa fa-list"></i> Comunicados</a>
+                            <a class="d-block dropdown-link" href="/wp-admin/edit.php?post_type=comunicados"><i class="fa fa-list"></i> Comunicados</a>
                         </li>
                     </ul>
                 </li>
