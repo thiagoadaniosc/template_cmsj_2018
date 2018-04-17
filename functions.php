@@ -10,7 +10,7 @@ define('AD_PASS', base64_decode("c3Vwb3J0QDgxMDI="));
 define('SUPORTE_URI', 'http://suporte.cmsj.info');
 define('COMUNICADOS_URI', '/comunicados');
 define('NOTICIAS_URI', '/comunicados');
-define('FOLHAWEB_URI', 'http://192.168.4.23:8080');	
+define('FOLHAWEB_URI', 'http://folhaweb.cmsj.info:8080/');	
 define('RAMAIS_URI', '/ramais');
 define('DOM_URI', 'https://www.diariomunicipal.sc.gov.br/site/');
 define('CLIPAGEMDIGITAL_URI', 'http://clipagem.cmsj.info/visitante?username=' . $current_user->user_login  );

@@ -1,6 +1,6 @@
 <section class="col-lg-12 row p-0 m-0 home-ferramentas">
     <header class="home-ferramentas-header col-lg-12 mb-3">
-        <h4 class="col-lg-12 mt-2 text-center">FERRAMENTAS</h4>
+        <p class="" style="opacity:0; font-size:1px; margin:1px; padding:1px"></p>
     </header>
     
     <article class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-2 home-ferramentas-article" >
