@@ -241,11 +241,11 @@ a {
     /*background-color: rgb(223, 82, 82);*/
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #ffc13a;
+    background-color: #df4b57;
     /*color: white;*/
     margin: 0;
     border-radius: 0px; 
-    border-bottom: 4px solid rgb(228, 197, 61);;
+    border-bottom: 4px solid #b1303a;
     /*font-weight: bold;*/
     font-size: 20px;
     border-radius: 0;
@@ -390,12 +390,11 @@ a {
 }
 .home-aside-clipagem-header {
     /*background-color: rgb(55, 121, 187);*/
-    background-color: #d5182aff;
-    opacity: .8;
+    background-color: #6666FF;
     color: white;
     margin: 0;
     border-radius: 0px; 
-    border-bottom: 4px solid rgb(172, 3, 20);
+    border-bottom: 4px solid rgb(71, 71, 219);
     /*font-weight: bold;*/
     padding-top: 10px;
     padding-bottom: 10px;
