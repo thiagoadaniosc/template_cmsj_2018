@@ -28,320 +28,133 @@ Version: 2.0
     left:12px;
     top: 12px;
 }
-/*FR PADRÂO*/
 
-.bg-fr{
-    border: 2px solid !important;
-}
-
-
-/* FR GLPI */
 .bg-fr-glpi {
-    background-color: white !important;
-    transition: .5s;
-    border-color: #007BFF; 
-    border-radius: 2px !important;
-}
-
-
-.bg-fr-glpi h4 {
-    color: #007BFF !important;
-}
-
-.bg-fr-glpi small {
-    color:  #007BFF !important;
-}
-
-.bg-fr-glpi:hover{
     background-color: #007BFF !important;
-    /*-webkit-box-shadow: inset 10px 10px 100px -30px rgb(51, 51, 51);*/
+    transition: .5s;
 }
 
-
-.bg-fr-glpi:hover h4, .bg-fr-glpi:hover i, .bg-fr-glpi:hover small{
-    color:  white !important;
+.bg-fr-glpi:hover h4, .bg-fr-glpi:hover i, .bg-fr-glpi:hover small, .bg-fr-glpi:hover{
+    color:  #007BFF !important;
+    background-color: transparent !important;
 }
 
 .bg-fr-glpi:hover {
     border: 1px solid #007BFF; 
 }
 
-
-/* FR RAMAIS */
-/*background-color: #3648AB !important;*/
-
-.bg-fr-ramais {
-    background-color: white !important;
+.bg-fr-comunicados{
+    background-color: #ffc13a !important;
     transition: .5s;
-    border-color: #3648AB !important; 
-    border-radius: 2px !important;
 }
 
-.bg-fr-ramais h4 {
-    color: #3648AB !important;
-}
-
-.bg-fr-ramais small {
-    color:  #3648AB !important;
-}
-
-.bg-fr-ramais i{
-    color:  #3648AB !important;
-}
-
-.bg-fr-ramais:hover{
-    background-color: #3648AB !important;
-}
-
-
-.bg-fr-ramais:hover h4, .bg-fr-ramais:hover i, .bg-fr-ramais:hover small{
-    color:  white !important;
-}
-
-.bg-fr-ramais:hover {
-    border: 1px solid #3648AB; 
-}
-
-/* FR FOLHAWEB  00306e */
-
-.bg-fr-folhaweb {
-    background-color: white !important;
-    transition: .5s;
-    border: 1px solid #00306e; 
-    border-radius: 2px !important;
-}
-
-.bg-fr-folhaweb h4 {
-    color: #00306e !important;
-}
-
-.bg-fr-folhaweb small {
-    color:  #00306e !important;
-}
-
-.bg-fr-folhaweb i{
-    color:  #00306e !important;
-}
-
-.bg-fr-folhaweb:hover{
-    background-color: #00306e !important;
-}
-
-
-.bg-fr-folhaweb:hover h4, .bg-fr-folhaweb:hover i, .bg-fr-folhaweb:hover small{
-    color:  white !important;
-}
-
-.bg-fr-folhaweb:hover {
-    border: 1px solid #00306e; 
-}
-
-/* FR DOM e45864*/
-
-.bg-fr-dom {
-    background-color: white !important;
-    transition: .5s;
-    border: 1px solid #e45864; 
-    border-radius: 2px !important;
-}
-
-.bg-fr-dom h4 {
-    color: #e45864 !important;
-}
-
-.bg-fr-dom small {
-    color:  #e45864 !important;
-}
-
-.bg-fr-dom i{
-    color:  #e45864 !important;
-}
-
-.bg-fr-dom:hover{
-    background-color: #e45864 !important;
-}
-
-
-.bg-fr-dom:hover h4, .bg-fr-dom:hover i, .bg-fr-dom:hover small{
-    color:  white !important;
-}
-
-.bg-fr-dom:hover {
-    border: 1px solid #00306e; 
-}
-
-/*FR CLIPAGEM DD4655 */
-
-.bg-fr-clipagem {
-    background-color: white !important;
-    transition: .5s;
-    border: 1px solid #DD4655; 
-    border-radius: 2px !important;
-}
-
-.bg-fr-clipagem h4 {
-    color: #DD4655 !important;
-}
-
-.bg-fr-clipagem small {
-    color:  #DD4655 !important;
-}
-
-.bg-fr-clipagem i{
-    color:  #DD4655 !important;
-}
-
-.bg-fr-clipagem:hover{
-    background-color: #DD4655 !important;
-}
-
-
-.bg-fr-clipagem:hover h4, .bg-fr-clipagem:hover i, .bg-fr-clipagem:hover small{
-    color:  white !important;
-}
-
-.bg-fr-clipagem:hover {
-    border: 1px solid #DD4655; 
-}
-
-.bg-fr-clipagem:hover {
-    border: 1px solid #DD4655; 
-}
-
-/* FR COMUNICADOS */
-.bg-fr-comunicados {
-    background-color: white !important;
-    transition: .5s;
-    border: 1px solid #b63030; 
-}
-
-.bg-fr-comunicados h4 {
-    color: #b63030 !important;
-}
-
-.bg-fr-comunicados small {
-    color:  #b63030 !important;
-}
-
-.bg-fr-comunicados i{
-    color:  #b63030 !important;
-}
-
-.bg-fr-comunicados:hover{
-    background-color: #b63030 !important;
-}
-
-
-.bg-fr-comunicados:hover h4, .bg-fr-comunicados:hover i, .bg-fr-comunicados:hover small{
-    color:  white !important;
+.bg-fr-comunicados:hover h4, .bg-fr-comunicados:hover i, .bg-fr-comunicados:hover small, .bg-fr-comunicados:hover{
+    color:  #ffc13a !important;
+    background-color: transparent !important;
 }
 
 .bg-fr-comunicados:hover {
-    border: 1px solid #b63030; 
+    border: 1px solid #ffc13a; 
 }
 
-
-/* FR CALENDARIO 05ab6d */
-.bg-fr-calendario {
-    background-color: white !important;
+.bg-fr-folhaweb{
+    background-color: #5858e9 !important;
     transition: .5s;
-    border: 1px solid #05ab6d; 
 }
 
-.bg-fr-calendario h4 {
-    color: #05ab6d !important;
+.bg-fr-folhaweb:hover h4, .bg-fr-folhaweb:hover i, .bg-fr-folhaweb:hover small, .bg-fr-folhaweb:hover{
+    color:  rgb(88, 88, 233) !important;
+    background-color: transparent !important;
 }
 
-.bg-fr-calendario small {
-    color:  #05ab6d !important;
+.bg-fr-folhaweb:hover {
+    border: 1px solid rgb(88, 88, 233); 
 }
 
-.bg-fr-calendario i{
-    color:  #05ab6d !important;
+.bg-fr-ramais{
+    /*background-color: #3648AB !important;*/
+    background-color: rgb(76, 76, 187) !important;
+    transition: .5s;
 }
 
-.bg-fr-calendario:hover{
-    background-color: #05ab6d !important;
+.bg-fr-ramais:hover h4, .bg-fr-ramais:hover i, .bg-fr-ramais:hover small, .bg-fr-ramais:hover{
+    color:  rgb(76, 76, 187)  !important;
+    background-color: transparent !important;
 }
 
+.bg-fr-ramais:hover {
+    border: 1px solid rgb(76, 76, 187) ; 
+}
 
-.bg-fr-calendario:hover h4, .bg-fr-calendario:hover i, .bg-fr-calendario:hover small{
-    color:  white !important;
+.bg-fr-calendario{
+    background-color: #dd4855 !important;
+    transition: .5s;
+}
+
+.bg-fr-calendario:hover h4, .bg-fr-calendario:hover i, .bg-fr-calendario:hover small, .bg-fr-calendario:hover{
+    color:  #d35f5fff !important;
+    background-color: transparent !important;
 }
 
 .bg-fr-calendario:hover {
-    border: 1px solid #05ab6d; 
+    border: 1px solid #d35f5fff; 
 }
 
-/* FR ANIVERSARIANTES  0d8d5e*/
-
-.bg-fr-aniversariantes {
-    background-color: white !important;
+.bg-fr-aniversariantes{
+    background-color: #5599ffff !important;
     transition: .5s;
-    border: 1px solid #0d8d5e; 
 }
 
-.bg-fr-aniversariantes h4 {
-    color: #0d8d5e !important;
-}
-
-.bg-fr-aniversariantes small {
-    color:  #0d8d5e !important;
-}
-
-.bg-fr-aniversariantes i{
-    color:  #0d8d5e !important;
-}
-
-.bg-fr-aniversariantes:hover{
-    background-color: #0d8d5e !important;
-}
-
-
-.bg-fr-aniversariantes:hover h4, .bg-fr-aniversariantes:hover i, .bg-fr-aniversariantes:hover small{
-    color:  white !important;
+.bg-fr-aniversariantes:hover h4, .bg-fr-aniversariantes:hover i, .bg-fr-aniversariantes:hover small, .bg-fr-aniversariantes:hover{
+    color:  #5599ffff !important;
+    background-color: transparent !important;
 }
 
 .bg-fr-aniversariantes:hover {
-    border: 1px solid #0d8d5e; 
+    border: 1px solid #5599ffff; 
 }
 
-
-/*FR CONFIGURAÇÔES*/
-
-.bg-fr-configuracoes {
-    background-color: white !important;
+.bg-fr-dom{
+    background-color: #df4b57 !important;
     transition: .5s;
-    border: 1px solid #146d4c; 
 }
 
-.bg-fr-configuracoes h4 {
-    color: #146d4c !important;
+.bg-fr-dom:hover h4, .bg-fr-dom:hover i, .bg-fr-dom:hover small, .bg-fr-dom:hover{
+    color:  #df4b57 !important;
+    background-color: transparent !important;
 }
 
-.bg-fr-configuracoes small {
-    color:  #146d4c !important;
+.bg-fr-dom:hover {
+    border: 1px solid #df4b57; 
 }
 
-.bg-fr-configuracoes i{
-    color:  #146d4c !important;
+.bg-fr-clipagem{
+    background-color: #6666FF !important;
+    transition: .5s;
 }
 
-.bg-fr-configuracoes:hover{
-    background-color: #146d4c !important;
+.bg-fr-clipagem:hover h4, .bg-fr-clipagem:hover i, .bg-fr-clipagem:hover small, .bg-fr-clipagem:hover{
+    color:  #6666FF !important;
+    background-color: transparent !important;
 }
 
+.bg-fr-clipagem:hover {
+    border: 1px solid #6666FF; 
+}
 
-.bg-fr-configuracoes:hover h4, .bg-fr-configuracoes:hover i, .bg-fr-configuracoes:hover small{
-    color:  white !important;
+.bg-fr-configuracoes{
+    background-color: #00b274 !important;
+    transition: .5s;
+}
+
+.bg-fr-configuracoes:hover h4, .bg-fr-configuracoes:hover i, .bg-fr-configuracoes:hover small, .bg-fr-configuracoes:hover{
+    color:  #00b274 !important;
+    background-color: transparent !important;
 }
 
 .bg-fr-configuracoes:hover {
-    border: 1px solid #146d4c; 
+    border: 1px solid #00b274; 
 }
-
-
-/* END FR STYLE */
 
 .home-news-header{
     background-color: #3B6ED9 !important;

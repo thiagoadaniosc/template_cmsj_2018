@@ -1,73 +1,62 @@
 <section class="col-lg-12 row p-0 m-0 home-ferramentas">
     <header class="home-ferramentas-header col-lg-12 mb-3">
-        <p class="" style="opacity:0; font-size:1px; margin:1px; padding:1px"></p>
+        <h4 class="col-lg-12 mt-2 text-center">FERRAMENTAS</h4>
     </header>
     
     <article class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-2 home-ferramentas-article" >
         <a class="text" href="<?= SUPORTE_URI ?>" target="_blank">
-            <div class="card col-lg-12 justify-content-center rounded-0 p-3 bg-fr-glpi zoomIn animated bg-fr"  style="height: 150px" >
-            <img class="m-auto img-fr-glpi"  data-src="<?= TEMPLATE_URI ?>/imgs/glpi-hover.png" data-hover="<?= TEMPLATE_URI ?>/imgs/glpi.png" src="<?= TEMPLATE_URI ?>/imgs/glpi-hover.png" width="60vh" alt="GLPI">
-                <h4 class="text-center"  style="font-size: 2.5vh">GLPI</h4>
-                <small class="text-center">(Sistema de Suporte)</small>
-            </div>
-        </a>
-    </article>
-
-    <article class="col-xl-4 col-md-6 col-lg-6 mb-2 col-sm-12 justify-content-center home-ferramentas-article">
-        <a class="text" href="<?= RAMAIS_URI ?>">
-            <div class="card col-lg-12 rounded-0 p-3 bg-fr-ramais zoomIn animated bg-fr" style="height: 150px;">
-                <i class="fa fa-phone m-auto text-white" style="font-size:50px"></i>
-                <h4 class="text-center text-white"  style="font-size: 2.5vh">Ramais</h4>
-                <small class="text-center text-white">(Ramais - Setores e Gabinetes)</small>
-            </div>
-        </a>
-    </article>
-
-    <article class="col-xl-4 col-md-6 col-lg-6 mb-2 col-sm-12 home-ferramentas-article">
-        <a class="text" href="<?= FOLHAWEB_URI ?>" target="_blank">
-            <div class="card col-lg-12 justify-content-center rounded-0 p-3 bg-white bg-fr-folhaweb zoomIn animated bg-fr" style="height:150px">
-                <img class="mr-auto ml-auto img-fr-folha-web" data-src="<?= TEMPLATE_URI ?>/imgs/folha-web-hover.png" data-hover="<?= TEMPLATE_URI ?>/imgs/folha-web.png" width="50" src="<?= TEMPLATE_URI ?>/imgs/folha-web-hover.png" alt="">
-                <h4 class="text-center text-white" style="font-size: 2.5vh">Folha Web</h4>
-                <small class="text-center text-white">(Folha de Pagamento Digital)</small>
-            </div>
-        </a>
-    </article>
-
-    <article class="col-xl-4 col-md-6 col-lg-6 col-sm-12 mb-2 justify-content-center home-ferramentas-article">
-        <a class="text" href="<?= DOM_URI ?>" target="_blank">
-            <div class="card col-lg-12 rounded-0 justify-content-center p-3 bg-fr-dom zoomIn animated bg-fr" style="height: 150px">
-                <img class="m-auto img-fr-dom"  data-src="<?= TEMPLATE_URI ?>/imgs/dom-logo-hover.png" data-hover="<?= TEMPLATE_URI ?>/imgs/dom-logo.png" src="<?= TEMPLATE_URI ?>/imgs/dom-logo-hover.png" width="80vh" alt="">
-                <h4 class="text-center text-white"  style="font-size: 2.5vh">DOM</h4>
-                <small class="text-center text-white">(Diário Official dos Municípios)</small>
-            </div>
-        </a>
-    </article>
-
-    <article class="col-xl-4 col-md-6 col-lg-6 col-sm-12 mb-2 justify-content-center home-ferramentas-article">
-        <a class="text" href="<?= CLIPAGEMDIGITAL_URI ?>" target="_blank">
-            <div class="card col-lg-12 rounded-0 justify-content-center p-3 bg-fr-clipagem zoomIn animated bg-fr" style="height: 150px">
-                <i class="fa fa-paperclip m-auto text-white" style="font-size:50px"></i>
-                <h4 class="text-center text-white"  style="font-size: 2.5vh">Clipagem Digital</h4>
-                <small class="text-center text-white">(CMSJ na Mídia)</small>
+            <div class="card col-lg-12 justify-content-center rounded-0 p-3 bg-fr-glpi zoomIn animated"  style="height: 150px" >
+            <img class="m-auto img-fr-glpi"  data-src="<?= TEMPLATE_URI ?>/imgs/glpi.png" data-hover="<?= TEMPLATE_URI ?>/imgs/glpi-hover.png" src="<?= TEMPLATE_URI ?>/imgs/glpi.png" width="60vh" alt="GLPI">
+                <h4 class="text-center text-white"  style="font-size: 2.5vh">GLPI</h4>
+                <small class="text-center text-white">(Sistema de Suporte)</small>
             </div>
         </a>
     </article>
     
     <article class="col-xl-4 col-md-6 col-lg-6  mb-2 col-sm-12 home-ferramentas-article">
         <a class="text" href="<?= COMUNICADOS_URI ?>" target="_blank">
-            <div class="card col-lg-12 justify-content-center rounded-0 p-3 bg-fr-comunicados zoomIn animated bg-fr" style="height: 150px;">
-                <i class="fa fa-bullhorn m-auto" style="font-size:50px"></i>
-                <h4 class="text-center" style="font-size: 2.5vh">Comunicados</h4>
-                <small class="text-center">(Comunicados Internos)</small>
+            <div class="card col-lg-12 justify-content-center rounded-0 p-3 bg-fr-comunicados zoomIn animated" style="height: 150px;">
+                <i class="fa fa-bullhorn m-auto text-white" style="font-size:50px"></i>
+                <h4 class="text-center text-white"  style="font-size: 2.5vh">Comunicados</h4>
+                <small class="text-center text-white">(Comunicados Internos)</small>
             </div>
         </a>
     </article>
     
+    <article class="col-xl-4 col-md-6 col-lg-6 mb-2 col-sm-12 home-ferramentas-article">
+        <a class="text" href="<?= FOLHAWEB_URI ?>" target="_blank">
+            <div class="card col-lg-12 justify-content-center rounded-0 p-3 bg-white bg-fr-folhaweb zoomIn animated" style="height:150px">
+                <img class="mr-auto ml-auto img-fr-folha-web" data-src="<?= TEMPLATE_URI ?>/imgs/folha-web.png" data-hover="<?= TEMPLATE_URI ?>/imgs/folha-web-hover.png" width="50" src="<?= TEMPLATE_URI ?>/imgs/folha-web.png" alt="">
+                <h4 class="text-center text-white" style="font-size: 2.5vh">Folha Web</h4>
+                <small class="text-center text-white">(Folha de Pagamento Digital)</small>
+            </div>
+        </a>
+    </article>
 
         
+        <article class="col-xl-4 col-md-6 col-lg-6 col-sm-12 mb-2 justify-content-center home-ferramentas-article">
+        <a class="text" href="<?= DOM_URI ?>" target="_blank">
+            <div class="card col-lg-12 rounded-0 justify-content-center p-3 bg-fr-dom zoomIn animated" style="height: 150px">
+                <img class="m-auto img-fr-dom"  data-src="<?= TEMPLATE_URI ?>/imgs/dom-logo.png" data-hover="<?= TEMPLATE_URI ?>/imgs/dom-logo-hover.png" src="<?= TEMPLATE_URI ?>/imgs/dom-logo.png" width="80vh" alt="">
+                <h4 class="text-center text-white"  style="font-size: 2.5vh">DOM</h4>
+                <small class="text-center text-white">(Diário Official dos Municípios)</small>
+            </div>
+        </a>
+    </article>
+    
+    <article class="col-xl-4 col-md-6 col-lg-6 mb-2 col-sm-12 justify-content-center home-ferramentas-article">
+        <a class="text" href="<?= RAMAIS_URI ?>">
+            <div class="card col-lg-12 rounded-0 p-3 bg-fr-ramais zoomIn animated" style="height: 150px;">
+                <i class="fa fa-phone m-auto text-white" style="font-size:50px"></i>
+                <h4 class="text-center text-white"  style="font-size: 2.5vh">Ramais</h4>
+                <small class="text-center text-white">(Ramais - Setores e Gabinetes)</small>
+            </div>
+        </a>
+    </article>
+    
     <article class="col-xl-4 col-md-6 col-lg-6 mb-2 col-sm-12 justify-content-center home-ferramentas-article">
         <a class="text" href="" data-toggle="modal" data-target="#modalCalendario">
-            <div class="card col-lg-12 rounded-0 p-3 bg-fr-calendario zoomIn animated bg-fr" style="height: 150px">
+            <div class="card col-lg-12 rounded-0 p-3 bg-fr-calendario zoomIn animated" style="height: 150px">
                 <i class="fa fa-calendar m-auto text-white" style="font-size:50px"></i>
                 <h4 class="text-center text-white"  style="font-size: 2.5vh">Calendário</h4>
                 <small class="text-center text-white">(Feriados e pontos facultativos)</small>
@@ -77,7 +66,7 @@
     
     <article class="col-xl-4 col-md-6 col-lg-6 mb-2 col-sm-12 justify-content-center home-ferramentas-article">
         <a class="text" href="" data-toggle="modal" data-target="#modalAniversariantes">
-            <div class="card col-lg-12 rounded-0 p-3 bg-fr-aniversariantes zoomIn animated bg-fr" style="height: 150px;">
+            <div class="card col-lg-12 rounded-0 p-3 bg-fr-aniversariantes zoomIn animated" style="height: 150px;">
                 <i class="fa fa-birthday-cake m-auto text-white" style="font-size:50px"></i>
                 <h4 class="text-center text-white" style="font-size: 2.5vh">Aniversariantes</h4>
                 <small class="text-center text-white">(Aniversariantes do mês)</small>
@@ -85,9 +74,19 @@
         </a>
     </article>
     
+    <article class="col-xl-4 col-md-6 col-lg-6 col-sm-12 mb-2 justify-content-center home-ferramentas-article">
+        <a class="text" href="<?= CLIPAGEMDIGITAL_URI ?>" target="_blank">
+            <div class="card col-lg-12 rounded-0 justify-content-center p-3 bg-fr-clipagem zoomIn animated" style="height: 150px">
+                <i class="fa fa-paperclip m-auto text-white" style="font-size:50px"></i>
+                <h4 class="text-center text-white"  style="font-size: 2.5vh">Clipagem Digital</h4>
+                <small class="text-center text-white">(CMSJ na Mídia)</small>
+            </div>
+        </a>
+    </article>
+    
     <article class="col-xl-4 col-md-12 col-lg-12 col-sm-12 mb-2 justify-content-center home-ferramentas-article">
         <a class="text" href="<?= CONFIGURACOES_URI ?>" target="_blank">
-            <div class="card col-lg-12 rounded-0 justify-content-center p-3 bg-fr-configuracoes zoomIn animated bg-fr" style="height: 150px">
+            <div class="card col-lg-12 rounded-0 justify-content-center p-3 bg-fr-configuracoes zoomIn animated" style="height: 150px">
                 <i class="fa fa-cogs m-auto text-white" style="font-size:50px"></i>
                 <h4 class="text-center text-white"  style="font-size: 2.5vh">Configurações</h4>
                 <small class="text-center text-white">(Configurações do Usuário)</small>
