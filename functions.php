@@ -414,7 +414,7 @@ function ad_get_group_users($cn){
 	ldap_set_option($connect, LDAP_OPT_REFERRALS, 0);
     if($connect != null) {
     	if ($result = ldap_bind($connect, 'AD-CMSJ\\' . $user, $pass)) {      
-    		$filter = "(&(objectClass=user)(sAMAccountName=*)(memberof=$cn))";
+    		$filter = "(&(objectClass=user)(sAMAccountName=*)(memberof=$cn)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))";
     	    $res = ldap_search($connect, $dn, $filter);       
 			$entries = ldap_get_entries($connect, $res);
 			return $entries;
