@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/css/template.css">
     <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/style.css">
     
-    <title>Intranet CMSJ</title>
+    <title><?= get_bloginfo('name'); ?></title>
 
 </head>
 <!--
