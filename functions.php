@@ -362,6 +362,7 @@ function possibly_redirect(){
 			$user_mail = $user->user_email;
 			$user_meta = get_user_meta($user->ID);
 			$user_name = $user_meta['adi_displayname'][0];
+			$user_first_name = $user_meta['first_name'][0];
 			//var_dump($user_meta);
 		
 			//echo $user_login;
@@ -371,10 +372,12 @@ function possibly_redirect(){
 			$subject =  str_replace('{$user_login}', $user_login, $subject);
 			$subject =  str_replace('{$user_mail}', $user_mail, $subject);
 			$subject =  str_replace('{$user_name}', $user_name, $subject);
+			$subject =  str_replace('{$user_name}', $user_first_name, $subject);
 			$body = $_POST['body'];
 			$body =  str_replace('{$user_login}', $user_login, $body);
 			$body =  str_replace('{$user_mail}', $user_mail, $body);
 			$body =  str_replace('{$user_name}', $user_name, $body);
+			$body =  str_replace('{$user_first_name}', $user_first_name, $body);
 
 
 			if ($user_meta['adi_user_disabled'][0] != 1) {

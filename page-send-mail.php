@@ -53,6 +53,7 @@ if (isset($_GET['send'])) {
                     <li>{$user_mail}</li>
                     <li>{$user_login}</li>
                     <li>{$user_name}</li>
+                    <li>{$user_first_name}</li>
                 </ul>
                 
             </small>
