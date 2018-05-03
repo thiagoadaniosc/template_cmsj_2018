@@ -38,7 +38,7 @@ if (has_post_thumbnail($post->ID)) {
 					<!-- <small><i class="fa text-dark fa fa-user-circle"></i> <?php echo get_the_author_meta('first_name') . ' ' . get_the_author_meta('last_name')?> </small> -->
 					<!-- <small class="float-right"><i class="text-dark fa fa-clock-o"></i> <?= get_the_date("d F Y", $post->ID);?> </small> -->
 					<!-- <small><br><i class="fa text-dark fa fa-tag"></i> <?= get_type($post_type)?> </small> -->
-					<h3 style="font-size: 20px;text-align: center;letter-spacing: -.80px;"><?php the_excerpt(); ?></h3>
+					<!--<h3 style="font-size: 20px;text-align: center;letter-spacing: -.80px;"><?php the_excerpt(); ?></h3>!-->
 					<hr>
 					
 					

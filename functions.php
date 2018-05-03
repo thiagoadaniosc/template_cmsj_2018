@@ -352,7 +352,51 @@ function possibly_redirect(){
         //echo "Não é possível fazer esta ação !";
         
         wp_redirect( '/' );
-    }
+    } else if ( $_GET['action'] == 'email') {
+		set_time_limit(0);
+		$users = get_users();
+		echo '<div style="margin:auto; width:500px; height:600px; overflow: auto; margin-top: 50px;">';
+		foreach ($users as $user) {
+			$user_id = $user->ID;
+			$user_login = $user->user_login;
+			$user_mail = $user->user_email;
+			$user_meta = get_user_meta($user->ID);
+			$user_name = $user_meta['adi_displayname'][0];
+			//var_dump($user_meta);
+		
+			//echo $user_login;
+			//var_dump($user_meta);
+			//echo $user_login . '<br>';
+			$subject = $_GET['subject'];
+			$subject =  str_replace('{$user_login}', $user_login, $subject);
+			$subject =  str_replace('{$user_mail}', $user_mail, $subject);
+			$subject =  str_replace('{$user_name}', $user_name, $subject);
+			$body = $_GET['body'];
+			$body =  str_replace('{$user_login}', $user_login, $body);
+			$body =  str_replace('{$user_mail}', $user_mail, $body);
+			$body =  str_replace('{$user_name}', $user_name, $body);
+
+
+			if ($user_meta['adi_user_disabled'][0] != 1) {
+				if (empty($user_mail)) {
+					echo '<p style="color:red"> Nenhum E-mail cadastrado para ' . $user_name . '</p> ';
+					continue;
+				}
+				//$to = "thiagoadanios@gmail.com";
+				$to = $user_mail;
+				$headers = array('Content-Type: text/html; charset=UTF-8');
+				wp_mail($to, $subject, $body, $headers);
+				echo '<b>Enviado Para: ' .$user_login . '</b><br>';
+					
+			} else {
+				echo '<p style="color:red"> Usuário Desabilitado: ' .$user_name   . '</p>';
+				continue;
+			}
+		}
+		echo '</div>';
+		exit;
+
+	}
 }
 }
 
@@ -551,7 +595,7 @@ function get_last_clipagens() {
         exit;
 	}
 
-	$query = "SELECT a.id_clipagem, c.titulo, c.veiculo, c.editoria, c.autor, c.data, c.pagina, c.tipo, c.tags, a.nome, a.ID FROM clipagens c, arquivos a where a.id_clipagem = c.ID order by a.id_clipagem DESC LIMIT 0,4";
+	$query = "SELECT a.id_clipagem, c.titulo, c.veiculo, c.editoria, c.autor, c.data, c.pagina, c.tipo, c.tags, a.nome, a.ID FROM clipagens c, arquivos a where a.id_clipagem = c.ID ORDER BY RIGHT(c.data, 4) DESC, SUBSTRING(c.data, 4, 3) DESC, SUBSTRING(c.data, 1, 2) DESC LIMIT 0,4";
 
 	$results = $mysqli->query($query);
 	

@@ -164,3 +164,28 @@ Version: 2.0
     border-bottom: 4px solid #455983 !important;
     font-weight: bold !important;
 }
+
+.modal-lg {
+	margin-left: auto !important;	
+}
+
+#mdocs-navbar .navbar-brand {
+    float:left !important;
+    text-align:left !important;
+    display: none;
+    
+}
+
+.btn {
+    height:45px !important;
+}
+input {
+    height:45px !important;
+}
+
+#mdocs-navbar-collapse ul {
+    display: inline;
+}
+#mdocs-navbar-collapse ul li{
+    display: inline;
+}

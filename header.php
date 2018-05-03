@@ -8,7 +8,7 @@
     <meta name="author" content="Thiago Scheidt">
     <meta name="author" content="Marcelo Macagnan">
     <meta name="author" content="Câmara Municipal de São José">
-    <link rel="icon" href="imgs/sao-jose-icon.png" sizes="192x192">
+    <link rel="icon" href="<?= TEMPLATE_URI ?> /imgs/sao-jose-icon.png" sizes="192x192">
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <link href="<?= TEMPLATE_URI ?>/css/bootstrap.min.css" rel="stylesheet">
@@ -121,6 +121,9 @@
                 </li>
                 <li class="dropdown-item">
                 <a class="text-dark dropdown-link d-block" href="/contato/?show"><i class="fa fa-envelope"></i> Mensagens e Sugestões </a>
+                </li>
+                <li class="dropdown-item">
+                <a class="text-dark dropdown-link d-block" href="/send-mail"><i class="fa fa-envelope"></i> Enviar E-mail's </a>
                 </li>
                 <?php endif; ?>
 
