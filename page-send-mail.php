@@ -1,5 +1,8 @@
 <?php
 
+if ($current_user->roles[0] !== 'administrator') {
+    header('Location: /');
+}
 /*
 if (isset($_GET['send'])) {
     $nome = isset($_GET['nome']) ? $_GET['nome'] : 'Teste';
@@ -40,7 +43,7 @@ if (isset($_GET['send'])) {
             </small>
             -->
         </p>        
-        <form class="form-group col-lg-10 m-auto" action="/" method="GET" onsubmit="return confirm('Enviar E-mails ?')">
+        <form class="form-group col-lg-10 m-auto" action="/?action=email" method="POST" onsubmit="return confirm('Enviar E-mails ?')">
         <input type="hidden" name="action" value="email">
             <input class="form-control mt-2 mb-2" type="text" name="subject" placeholder="Título" required>
             <textarea name="body" placeholder="Mensagem..." class="form-control" id="" cols="30" rows="10"></textarea>

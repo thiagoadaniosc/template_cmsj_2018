@@ -367,11 +367,11 @@ function possibly_redirect(){
 			//echo $user_login;
 			//var_dump($user_meta);
 			//echo $user_login . '<br>';
-			$subject = $_GET['subject'];
+			$subject = $_POST['subject'];
 			$subject =  str_replace('{$user_login}', $user_login, $subject);
 			$subject =  str_replace('{$user_mail}', $user_mail, $subject);
 			$subject =  str_replace('{$user_name}', $user_name, $subject);
-			$body = $_GET['body'];
+			$body = $_POST['body'];
 			$body =  str_replace('{$user_login}', $user_login, $body);
 			$body =  str_replace('{$user_mail}', $user_mail, $body);
 			$body =  str_replace('{$user_name}', $user_name, $body);
