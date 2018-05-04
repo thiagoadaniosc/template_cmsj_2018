@@ -354,11 +354,55 @@ function possibly_redirect(){
         wp_redirect( '/' );
     } else if ( $_GET['action'] == 'email') {
 		set_time_limit(0);
-		$users = get_users();
+		$mails = $_POST['mails'];
+		$i =0;		
+
+		if (isset($_FILES['file']) && !empty($_FILES['file'])) {
+			$file_path = $_FILES['file']['tmp_name'];
+			move_uploaded_file($file_path, dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $_FILES['file']['name']);
+			$file_path = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $_FILES['file']['name'];
+		}
+
+		foreach ($mails as $user_id) {
+			$user  = get_user_by('id',$user_id);
+			$user_meta = get_user_meta($user_id);	
+
+			$user_login = $user->user_login;
+			$user_mail = $user->user_email;
+			$user_name = $user_meta['adi_displayname'][0];
+			$user_first_name = $user_meta['first_name'][0];
+
+			$subject = $_POST['subject'];
+			$subject = str_replace('{$user_login}', $user_login, $subject);
+			$subject = str_replace('{$user_mail}', $user_mail, $subject);
+			$subject = str_replace('{$user_name}', $user_name, $subject);
+			$subject = str_replace('{$user_first_name}', $user_first_name, $subject);
+
+			$body = $_POST['body'];
+			$body = str_replace('{$user_login}', $user_login, $body);
+			$body = str_replace('{$user_mail}', $user_mail, $body);
+			$body = str_replace('{$user_name}', $user_name, $body);
+			$body = str_replace('{$user_first_name}', $user_first_name, $body);
+
+			//$to = "thiagoadanios@gmail.com";
+			$to = $user_mail;
+			$headers = array('Content-Type: text/html; charset=UTF-8');
+			wp_mail($to, $subject, $body, $headers, $file_path);
+			$i++;
+		}
+		unlink($file_path);
+		header("Location: /send-mail?success={$i}");
+
+
+		exit;
+		/*
 		$i =0;
 		echo '<div style="margin:auto; width:500px; height:600px; overflow: auto; margin-top: 50px;">';
+		$mails = $_POST['mails'];
+		var_dump($mails);
+		exit;
 		foreach ($users as $user) {
-			$user_id = $user->ID;
+	
 			$user_login = $user->user_login;
 			$user_mail = $user->user_email;
 			$user_meta = get_user_meta($user->ID);
@@ -403,6 +447,7 @@ function possibly_redirect(){
 		echo '</div>';
 		header("Location: /send-mail?success={$i}");
 		exit;
+		*/
 
 	}
 }

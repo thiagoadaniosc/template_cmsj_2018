@@ -20,6 +20,7 @@
 <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/scrollup/2.4.1/jquery.scrollUp.min.js'></script>
 
+<script src="<?= TEMPLATE_URI ?>/js/multiple-select.js"></script>
 <script src="<?= TEMPLATE_URI ?>/js/script.js"></script>
 
 <?php wp_footer() ?>

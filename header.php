@@ -18,6 +18,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css'/>
     <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/css/template.css">
     <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/style.css">
+    <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/css/multiple-select.css">
     
     <title><?= get_bloginfo('name'); ?></title>
 

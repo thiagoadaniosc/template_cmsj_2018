@@ -22,6 +22,9 @@ if (isset($_GET['send'])) {
         background-attachment: fixed;
         background-size: cover;
     }
+    .ms-search input{
+        height:30px !important;
+    }
 </style>
 <main class="row col-lg-12 pl-lg-5 pr-lg-5 p-sm-0 p-md-0 justify-content-center ml-auto mr-auto">
 <script src="<?= TEMPLATE_URI ?>/js/tinymce/tinymce.min.js"></script>
@@ -52,6 +55,44 @@ if (isset($_GET['send'])) {
                 </button>
             </div>
         <?php endif; ?>
+        <?php 
+            $users = get_users();
+            //var_dump(get_user_meta($users[0]->ID));
+        ?>
+        <select multiple placeholder="E-mails" name="mails[]">
+        <?php
+        foreach ($users as $user) : 
+            $user_id = $user->ID;
+            $user_login = $user->user_login;
+            $user_mail = $user->user_email;
+            $user_meta = get_user_meta($user->ID);
+            $user_name = $user_meta['adi_displayname'][0];
+            $user_first_name = $user_meta['first_name'][0];
+            $user_departament = $user_meta['adi_department'][0];
+            if (empty($user_mail) || $user_meta['adi_user_disabled'][0] == 1) {
+                continue;
+            }
+        ?>
+        <!-- <optgroup label="TI">  </optgroup> -->
+            <?php if (empty($user_name)):  ?>
+                <option value="<?= $user_id; ?>"><?= $user->display_name; ?> - Outros</option>
+            <?php else: ?>
+                <option value="<?= $user_id; ?>"><?= $user_name; ?> - <?= $user_departament; ?></option>
+        <?php endif; ?>
+       
+            
+        <?php endforeach; ?>
+        
+        </select>
+        <script src="<?= TEMPLATE_URI ?>/js/multiple-select.js"></script>
+        <script>
+             $("select").multipleSelect({
+            width: '100%',
+
+            filter: true,
+            placeholder: "Selecione os e-mails."
+        });
+        </script>
         <input type="hidden" name="action" value="email">
             <input class="form-control mt-2 mb-2" type="text" name="subject" placeholder="Assunto" required>
             <textarea name="body" placeholder="Mensagem..." class="form-control" id="" cols="30" rows="10"></textarea>
