@@ -14,7 +14,7 @@
     
     <aside class="col-xl-3 col-lg-3 col-md-12 bg-white home-asidel">
 
-         <?php require('includes/aside.php'); ?>
+         <?php require_once('includes/aside.php'); ?>
         
     </aside>
     

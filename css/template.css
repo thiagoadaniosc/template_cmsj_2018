@@ -335,9 +335,10 @@ a {
     text-decoration: inherit;
     color: white !important;
     padding-right: 0.5em;
-    float: right;
-    position: absolute;
-    right: 50;
+    float: right !important;
+    position: relative !important;
+    right: 50 !important;
+    /*right: 50;*/
     /*
     transition: 1s;
     background-color: black;
@@ -356,9 +357,9 @@ a {
     text-decoration: inherit;
     color: white;
     padding-right: 0.5em;
-    float: right;
-    position: absolute;
-    right: 50;
+    float: right !important;
+    position: relative !important;
+    right: 50 !important;
 /*
     background-color: black;
     padding-left: 5px;

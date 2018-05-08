@@ -25,6 +25,11 @@ if (isset($_GET['send'])) {
     .ms-search input{
         height:30px !important;
     }
+
+    input[type=checkbox] {
+        height: 20px !important;
+    }
+    
 </style>
 <main class="row col-lg-12 pl-lg-5 pr-lg-5 p-sm-0 p-md-0 justify-content-center ml-auto mr-auto">
 <script src="<?= TEMPLATE_URI ?>/js/tinymce/tinymce.min.js"></script>

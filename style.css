@@ -11,7 +11,7 @@ Version: 2.0
 }
 
 .home-asidel-menu-header {
-    background-color: #166fb8ff;
+    background-color: rgb(22, 111, 184);
     border-bottom: 4px solid rgb(0, 92, 167);
     color: white;
     height: auto;
@@ -92,26 +92,26 @@ Version: 2.0
 }
 
 .bg-fr-calendario:hover h4, .bg-fr-calendario:hover i, .bg-fr-calendario:hover small, .bg-fr-calendario:hover{
-    color:  #d35f5fff !important;
+    color:  #dd4855 !important;
     background-color: transparent !important;
 }
 
 .bg-fr-calendario:hover {
-    border: 1px solid #d35f5fff; 
+    border: 1px solid #dd4855; 
 }
 
 .bg-fr-aniversariantes{
-    background-color: #5599ffff !important;
+    background-color: rgb(85, 153, 255) !important;
     transition: .5s;
 }
 
 .bg-fr-aniversariantes:hover h4, .bg-fr-aniversariantes:hover i, .bg-fr-aniversariantes:hover small, .bg-fr-aniversariantes:hover{
-    color:  #5599ffff !important;
+    color:  rgb(85, 153, 255) !important;
     background-color: transparent !important;
 }
 
 .bg-fr-aniversariantes:hover {
-    border: 1px solid #5599ffff; 
+    border: 1px solid rgb(85, 153, 255); 
 }
 
 .bg-fr-dom{

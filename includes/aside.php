@@ -38,6 +38,7 @@
   <header class="home-asidel-header text-center mb-2"><i class="fa fa-snowflake-o"></i>
     Clima</header>
     <div id="cont_843f6808bbb2d4f5f32d422047c54d18"><script type="text/javascript" async src="https://www.tempo.com/wid_loader/843f6808bbb2d4f5f32d422047c54d18"></script></div>
+</section>
     
     <section class="home-asidel-suporte mb-2" style="overflow: auto">
       <header class="home-asidel-header text-center mb-2">Meus Chamados</header>
