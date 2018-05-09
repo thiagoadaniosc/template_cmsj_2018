@@ -546,6 +546,9 @@ function ad_modify_entries($username, $telephonenumber){
 			//echo $filter;
 			$res = ldap_search($connect, $dn, $filter);
 			$entries = ldap_get_entries($connect, $res);
+			if (empty($telephonenumber)) {
+				$telephonenumber = ' ';
+			}
 			$entry['telephonenumber'] = $telephonenumber;
 			 //ldap_modify($connect, "uid={$username},  DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br", $entry);
 			 //ldap_modify($connect, "CN=$cn , cn=user,DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br", $entry);

@@ -78,8 +78,11 @@
                                 // var_dump($entries);
                                 
                                 foreach ($entries as $user) {
-                                    if ($user['cn'][0] == null || $user['telephonenumber'][0] == null){
+                                    if ($user['cn'][0] == null) {
                                         continue;
+                                    }
+                                    if ((($user['telephonenumber'][0] == null || $user['telephonenumber'][0] == ' ') && ($current_user->roles[0] !== 'administrator' &&  $current_user->roles[0] !== 'telefonistas'))){
+                                       continue;
                                     }
                                     ?>
                                     <!-- LDAP -->
