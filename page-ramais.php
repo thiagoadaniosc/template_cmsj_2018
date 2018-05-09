@@ -68,10 +68,7 @@
                         if($connect != null) {
                             
                             if ($result = ldap_bind($connect, 'AD-CMSJ\\' . $user, $pass)) {
-                                
-                                
-                                
-                                
+
                                 $filter = AD_FILTER_RAMAIS;
                                 
                                 $res = ldap_search($connect, $dn, $filter);
@@ -81,9 +78,9 @@
                                 // var_dump($entries);
                                 
                                 foreach ($entries as $user) {
-                                    if ($user['cn'][0] == null){
+                                    if ($user['cn'][0] == null || $user['telephonenumber'][0] == null){
                                         continue;
-                                    }    
+                                    }
                                     ?>
                                     <!-- LDAP -->
                                         <tr class="<?=$user['samaccountname'][0];?>_tr">
@@ -113,10 +110,7 @@
                                         </tr>
                                         
                                         <?php 
-                                        
-                                        
-                                        
-                                        
+
                                     }
                                     
                                     
