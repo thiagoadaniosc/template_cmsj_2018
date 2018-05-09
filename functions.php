@@ -22,7 +22,8 @@ define('AD_FILTER', '(&(objectCategory=person)(objectClass=user)(samaccountname=
 //define('AD_FILTER_RAMAIS', '(&(objectCategory=group)(description=*))');
 //define('AD_FILTER_RAMAIS', '(&(objectCategory=group)(member=CN=Admin Lancer,OU=Empresas,OU=Colaboradores,OU=CMSJ,DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br))');
 //define('AD_FILTER_RAMAIS', '(&(objectClass=group)(&(ou:dn:=Colaboradores)))');
-define('AD_FILTER_RAMAIS', '(&(objectCategory=group)(CN=*))');
+//define('AD_FILTER_RAMAIS', '(&(objectCategory=group)(CN=*))');
+define('AD_FILTER_RAMAIS', '(&(objectCategory=person)(objectClass=user)(samaccountname=*)(!(UserAccountControl:1.2.840.113556.1.4.803:=2))(!(cn=*Admin*))(!(cn=*teste*))(!(cn=*VM*))(!(cn=*Suporte*)))');
 add_post_type_support( 'page', 'excerpt' );
 
 //  Registando Menus
@@ -449,6 +450,14 @@ function possibly_redirect(){
 		exit;
 		*/
 
+	} else if( $_GET['action'] == 'ramais'){
+		$username = $_GET['username'];
+		$telephonenumber = $_GET['telephonenumber'];
+		ad_modify_entries($username, $telephonenumber);
+		echo json_encode(
+			['username' => $username]
+		);
+		exit;
 	}
 }
 }
@@ -520,7 +529,7 @@ function ad_get_group_users($cn){
 	}
 }
 
-function ad_modify_entries($cn, $telephonenumber){
+function ad_modify_entries($username, $telephonenumber){
 	setlocale(LC_ALL, 'pt_BR');
     $ldap_server = 'ad.cmsj.sc.gov.br';
  	$ldapport = 389;
@@ -532,15 +541,16 @@ function ad_modify_entries($cn, $telephonenumber){
     ldap_set_option($connect, LDAP_OPT_REFERRALS, 0);
     if($connect != null) {
 		if ($result = ldap_bind($connect, 'AD-CMSJ\\' . $user, $pass)) {
-			/*$username = 'thiagoas';
+			$username = $username;
 			$filter = "(samaccountname={$username})";
-			echo $filter;
+			//echo $filter;
 			$res = ldap_search($connect, $dn, $filter);
-			$entries = ldap_get_entries($connect, $res);*/
-			$entry['info'] = $telephonenumber;
-			//ldap_modify($connect, "uid=thiagoas, cn=user,  DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br", $entry);
-			ldap_modify($connect, "$cn", $entry);
-			//ldap_modify($connect, $dn, $entry);
+			$entries = ldap_get_entries($connect, $res);
+			$entry['telephonenumber'] = $telephonenumber;
+			 //ldap_modify($connect, "uid={$username},  DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br", $entry);
+			 //ldap_modify($connect, "CN=$cn , cn=user,DC=ad,DC=cmsj,DC=sc,DC=gov,DC=br", $entry);
+			ldap_modify($connect, $entries[0]['dn'], $entry);
+			//ldap_modify($connect, $filter, $entry);
 			//var_dump($entries);
 		}
 	}

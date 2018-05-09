@@ -4,7 +4,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js'></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-    crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 <script src="<?= TEMPLATE_URI ?>/js/bootstrap.min.js" type="text/javascript"></script>
 
 <script src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'></script>
@@ -22,6 +22,32 @@
 
 <script src="<?= TEMPLATE_URI ?>/js/multiple-select.js"></script>
 <script src="<?= TEMPLATE_URI ?>/js/script.js"></script>
+
+<script type="text/javascript">
+var app = angular.module('ramais', []);
+app.controller('ramaisCtrl', function ($scope, $http) {
+    $scope.editar = function ($username, $telefone){
+        angular.element('.'+$username+'_tr i').addClass('fa fa-spinner fa-spin');
+        $http.get('/?action=ramais&username='+$username+'&telephonenumber='+$telefone).then(function(response){
+            angular.element('.'+response.data.username+'_tr').addClass('alert alert-success animated flash');
+            setTimeout(function() {
+                angular.element('.'+response.data.username+'_tr').removeClass('alert alert-success animated flash');
+                angular.element('.'+response.data.username+'_tr i').removeClass('fa fa-spinner fa-spin');
+                angular.element('.'+$username+'_tr i').addClass('fa fa-edit');
+            }, 1000);
+            
+        });
+    }
+
+    $scope.inputChange = function($span_id, $value){
+            console.log($value);
+            
+            angular.element('#'+$span_id+'_span').text($value);
+
+    }
+});
+</script>
+
 
 <?php wp_footer() ?>
 </body>

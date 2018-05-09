@@ -1,9 +1,3 @@
-<?php 
-if (isset($_GET['CN']) && isset($_GET['telephonenumber']) && ($current_user->roles[0] == 'telefonistas' ||  $current_user->roles[0] == 'administrator')) {
-    ad_modify_entries($_GET['CN'], $_GET['telephonenumber']);
-    header('Location:/ramais?success='. base64_encode($_GET['CN']));
-}
-?>
 <?php get_header(); ?>
 <div class="row justify-content-center p-0 m-0 loader"  style="width: 100%; height: 100%; z-index:99; position:absolute; top:0;">
     <div class="row col-lg-12 m-auto justify-content-center">
@@ -14,7 +8,7 @@ if (isset($_GET['CN']) && isset($_GET['telephonenumber']) && ($current_user->rol
         <p style="position: relative; left:0 " class="text-dark"><b><i>Carregando...</i></b></p>   
     </div>
 </div>
-<main class="row col-lg-12 pl-lg-5 pr-lg-5 p-sm-0 p-md-0 justify-content-center ml-auto mr-auto">
+<main class="row col-lg-12 pl-lg-5 pr-lg-5 p-sm-0 p-md-0 justify-content-center ml-auto mr-auto"  ng-app="ramais" ng-controller="ramaisCtrl">
     <style>
 		body{
 			/* background-color: #EEEEEE; */
@@ -23,7 +17,7 @@ if (isset($_GET['CN']) && isset($_GET['telephonenumber']) && ($current_user->rol
             background-repeat: repeat-y;
             background-attachment: fixed;
             background-size: cover;
-            }
+        }
         
         h1 {
             display: none;
@@ -46,10 +40,10 @@ if (isset($_GET['CN']) && isset($_GET['telephonenumber']) && ($current_user->rol
                 <thead>
                     <tr>
                         <th style="width:200px">Setor</th>
-                        <th>Servidores</th>
+                        <th>Servidor (Nome)</th>
                         <th style="width:200px">Ramal</th>
                         <?php if($current_user->roles[0] == 'telefonistas' || $current_user->roles[0] == 'administrator'): ?>
-                        <th>Opções</th>
+                        <th style="width:100px">Opções</th>
                         <?php endif; ?>
                     </tr>
                 </thead>
@@ -86,150 +80,126 @@ if (isset($_GET['CN']) && isset($_GET['telephonenumber']) && ($current_user->rol
                                 //var_dump($entries);
                                 // var_dump($entries);
                                 
-                                foreach ($entries as $groups) {
-                                    if ($groups['cn'][0] == null){
+                                foreach ($entries as $user) {
+                                    if ($user['cn'][0] == null){
                                         continue;
-                                    }  
-                                    //  if ((strpos($users['dn'], 'Colaboradores')) ==! true) {
-                                        if (preg_match('/\Colaboradores\b/', $groups['dn']) == false) {
-                                            //echo $users['cn'][0];
-                                            //echo '<br>';
-                                            //var_dump(strpos($users['dn'], 'Colaboradores'));
-                                            continue;
-                                        }
-                                        
-                                        $users = ad_get_group_users($groups['dn']);
-                                        
-                                        ?>
-                                        <!-- LDAP -->
-                                        <?php if (isset($_GET['success']) && base64_decode($_GET['success']) == $groups['dn']): ?>
-                                        <tr class="table-success">
+                                    }    
+                                    ?>
+                                    <!-- LDAP -->
+                                        <tr class="<?=$user['samaccountname'][0];?>_tr">
+                                      
+                                            <td><?= $user['department'][0]; ?></td>
+                                            <td align="left">
+                                                
+                                                <?= $user['cn'][0]; ?>
+                                            </td>
+                                            
+                                            <?php if($current_user->roles[0] == 'telefonistas' || $current_user->roles[0] == 'administrator'): ?>
+                                            <td> 
+                                                <input type="text" ng-change="inputChange('telefone_<?=  $user['samaccountname'][0]; ?>', telefone_<?= $user['samaccountname'][0];?>)" ng-init="telefone_<?= $user['samaccountname'][0];?> = '<?=$user['telephonenumber'][0];?>'" ng-model="telefone_<?= $user['samaccountname'][0];?>" class="bg-transparent border" style="height:30px">
+                                                <span ng-show="false" id="telefone_<?=  $user['samaccountname'][0]; ?>_span"><?= $user['telephonenumber'][0]; ?></span>
+                                            </td>
+                                            
+                                            <td align="center"> 
+                                               <!-- <a href="?username=<?= $user['samaccountname'][0];?>&telephonenumber={{telefone_<?= $user['samaccountname'][0];?>}}" name="<?= $user['samaccountname'][0]; ?>_link" class="badge badge-primary text-center m-auto"> <i class="fa fa-edit"></i>Editar</a> -->
+
+                                                <a href ng-click="editar('<?= $user['samaccountname'][0]; ?>',telefone_<?= $user['samaccountname'][0];?>)" name="<?= $user['samaccountname'][0]; ?>_link" class="badge badge-primary text-center m-auto"> <i class="fa fa-edit"></i> Editar</a>
+
+                                             </td>
+                                            
                                             <?php else : ?>
-                                            <tr>
-                                                <?php endif ?>
-                                                <td><?= $groups['cn'][0]; ?></td>
-                                                <td align="left">
-                                                    <?php
-                                                    $i = 0;
-                                                    $array_users = '';
-                                                    ?>
-                                                    <?php foreach ($users as $user): ?>
-                                                    <?php if ($user['cn'][0] == null) continue; ?>
-                                                    <?php if ($i > 0 ): ?>
-                                                    <?php $array_users .= ', '.$user['cn'][0];?>
-                                                    <?php else : ?>
-                                                    <?php $array_users .= $user['cn'][0];?>
-                                                    <?php endif; ?>
-                                                    
-                                                    <?php $i++ ?>
-                                                    
-                                                    <?php endforeach; ?>
-                                                    <?= $array_users ?>
-                                                    
-                                                </td>
-                                                
-                                                <?php if($current_user->roles[0] == 'telefonistas' || $current_user->roles[0] == 'administrator'): ?>
-                                                <td> 
-                                                    <input type="text" class="bg-transparent border" style="height:30px" name="<?= $groups['dn']; ?>" value="<?= $groups['info'][0]; ?>" onkeyup="get_telephonenumber('<?= $groups['dn']; ?>')">
-                                                    <span class="d-none"> <?= $groups['info'][0]; ?> </span>
-                                                </td>
-                                                
-                                                <td align="center"> <a href="#" name="<?= $groups['dn']; ?>_link" class="badge badge-primary text-center m-auto">Alterar</a> </td>
-                                                
-                                                <?php else : ?>
-                                                <td><?= $groups['info'][0]; ?> </td>
-                                                <?php endif; ?>
-                                            </tr>
-                                            
-                                            <?php 
-                                            
-                                            
-                                            
-                                            
-                                        }
+                                            <td><?= $user['telephonenumber'][0]; ?></td>
+                                            <?php endif; ?>
+                                        </tr>
+                                        
+                                        <?php 
+                                        
+                                        
                                         
                                         
                                     }
+                                    
+                                    
                                 }
-                                ?>
-                                
-                            </tbody>
-                        </table>
-                    </div>
+                            }
+                            ?>
+                            
+                        </tbody>
+                    </table>
                 </div>
-            </main>
-            <script>
-                //var ramais = [];
-                function get_telephonenumber($inputName){
-                    $input = document.getElementsByName($inputName);
-                    $inputValue = $input[0].value;
-                    $linkButton = document.getElementsByName($inputName + '_link');
-                    $linkButton[0].href = '?CN=' + $inputName + '&telephonenumber=' + $inputValue;
-                    
-                    //  window.ramais[$inputName] = $inputValue;
-                    //console.log(window.ramais[$inputName]);
-                }
-                
-                $(document).ready(function() {
-                    var table = $('#servidores-table').DataTable( {
-                        lengthChange: true,
-                        "lengthMenu": [[30, 50, 100, -1], [30, 50, 100, "Todos"]],
-                        buttons: [
-                        {
-                            extend:    'excelHtml5',
-                            text:      '<i class="fa fa-file-excel-o"></i>',
-                            titleAttr: 'Excel',
-                            exportOptions: {
-                                columns: [ 0, 1, 2 ]
-                            }
-                        },
-                        {
-                            extend:    'excel',
-                            text:      '<i class="fa fa-file-text-o"></i>',
-                            titleAttr: 'CSV',
-                            exportOptions: {
-                                columns: [ 0, 1, 2 ]
-                            }
-                        },
-                        {
-                            extend:    'print',
-                            text:      '<i class="fa fa-file-pdf-o"></i>',
-                            titleAttr: 'PDF',
-                            messageTop: '<h2 class="text-center bg-white">LISTA DE RAMAL</h2>',
-                            autoPrint: true,
-                            exportOptions: {
-                                columns: [ 0, 1, 2 ]
-                            }
+            </div>
+        </main>
+        <script>
+           
+            $(document).ready(function() {
+                var table = $('#servidores-table').DataTable( {
+                    <?php if($current_user->roles[0] == 'telefonistas' || $current_user->roles[0] == 'administrator'): ?>
+                    lengthChange: false,
+                    "lengthMenu": [[-1], [ "Todos"]],
+                    <?php else: ?>
+                    lengthChange: true,
+                    "lengthMenu": [[20,50,100,-1], ["20","50","100", "Todos"]],
+                    <?php endif; ?>
+                    buttons: [
+                    {
+                        extend:    'excelHtml5',
+                        text:      '<i class="fa fa-file-excel-o"></i>',
+                        titleAttr: 'Excel',
+                        exportOptions: {
+                            columns: [ 0, 1, 2 ]
                         }
-                        ],
-                        "oLanguage": { 
-                            "sEmptyTable": "Nenhum registro encontrado",
-                            "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
-                            "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
-                            "sInfoFiltered": "(Filtrados de _MAX_ registros)",
-                            "sInfoPostFix": "",
-                            "sInfoThousands": ".",
-                            "sLengthMenu": "_MENU_ resultados por página",
-                            "sLoadingRecords": "Carregando...",
-                            "sProcessing": "Processando...",
-                            "sZeroRecords": "Nenhum registro encontrado",
-                            "sSearch": "Pesquisar",
-                            "oPaginate": {
-                                "sNext": "Próximo",
-                                "sPrevious": "Anterior",
-                                "sFirst": "Primeiro",
-                                "sLast": "Último"
-                            },
-                            "oAria": {
-                                "sSortAscending": ": Ordenar colunas de forma ascendente",
-                                "sSortDescending": ": Ordenar colunas de forma descendente"
-                            }
+                    },
+                    {
+                        extend:    'excel',
+                        text:      '<i class="fa fa-file-text-o"></i>',
+                        titleAttr: 'CSV',
+                        exportOptions: {
+                            columns: [ 0, 1, 2 ]
                         }
-                    } );
-                    
-                    table.buttons().container()
-                    .appendTo( '#servidores-table_wrapper .col-md-6:eq(0)' );
+                    },
+                    {
+                        extend:    'print',
+                        text:      '<i class="fa fa-file-pdf-o"></i>',
+                        titleAttr: 'PDF',
+                        messageTop: '<h2 class="text-center bg-white">LISTA DE RAMAL</h2>',
+                        autoPrint: true,
+                        exportOptions: {
+                            columns: [ 0, 1, 2 ]
+                        }
+                    }
+                    ],
+                    "oLanguage": { 
+                        "sEmptyTable": "Nenhum registro encontrado",
+                        "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                        "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                        "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                        "sInfoPostFix": "",
+                        "sInfoThousands": ".",
+                        "sLengthMenu": "_MENU_ resultados por página",
+                        "sLoadingRecords": "Carregando...",
+                        "sProcessing": "Processando...",
+                        "sZeroRecords": "Nenhum registro encontrado",
+                        "sSearch": "Pesquisar Ramais: ",
+                        "oPaginate": {
+                            "sNext": "Próximo",
+                            "sPrevious": "Anterior",
+                            "sFirst": "Primeiro",
+                            "sLast": "Último"
+                        },
+                        "oAria": {
+                            "sSortAscending": ": Ordenar colunas de forma ascendente",
+                            "sSortDescending": ": Ordenar colunas de forma descendente"
+                        }
+                    }
                 } );
-            </script> 
-            
-            <?php get_footer(); ?>
+   
+                table.buttons().container()
+                .appendTo( '#servidores-table_wrapper .col-md-6:eq(0)' );
+                $('#servidores-table_filter input').addClass('col-lg-12 col-xl-12');
+                $('#servidores-table_filter input').attr('placeholder', 'Nome, Ramal ou Setor...');
+
+            } );
+
+        </script> 
+
+        <?php get_footer(); ?>

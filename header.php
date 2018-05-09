@@ -39,7 +39,7 @@
     <header class="navbar site-header col-lg-7 col-xl-9 col-sm-12 col-md-12 navbar-dark bg-header justify-content-between"> 
         <a href="/" class="navbar-brand  col-xl-4 col-lg-6 p-0 m-0 col-md-4 col-sm-8"><img class="header-logo img-fluid col-xl-8 col-md-8 col-sm-8" src="<?= TEMPLATE_URI ?>/imgs/sao-jose-logo-md.png" alt=""></a>
         
-        <form class="d-none d-md-none d-sm-none d-lg-inline-flex d-xl-inline-flex form-inline search-form col-xl-auto col-xl-8 col-lg-6 col-md-12 col-sm-12" action="">
+        <form class="d-none d-md-none d-sm-none d-lg-inline-flex d-xl-inline-flex form-inline search-form col-xl-auto col-xl-8 col-lg-6 col-md-12 col-sm-12 m-0" action="">
             <input type="text" style="border-radius: 0; border:0" name="s" class="form-control search-form-input col-lg-8 col-xl-10" placeholder="O que você procura ?">
             <button class="form-control btn col-xl-2 col-lg-4 text-white" type="submit" style="padding-top: 14px !important;
             padding-bottom: 14px !important; border:0px; background-color: rgb(80, 80, 80);"> <i class="fa fa-x fa-search text-white"></i></button>
@@ -90,7 +90,7 @@
         <div class="btn-group d-lg-inline-flex d-xl-inline-flex d-md-none d-sm-none justify-content-center col-xl-7 col-lg-7 col-md-8 col-sm-8">
             
             
-            <button type="button" class="btn btn-secondary dropdown-toggle col-lg-12 col-md-12 col-sm-12" style="border-radius: 0; overflow: none; word-wrap: break-word; font-size:1.8vh; " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-secondary dropdown-toggle col-lg-12 col-md-12 col-sm-12 p-0" style="border-radius: 0; overflow: none; word-wrap: break-word; font-size:1.8vh; " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <small style=" word-wrap: break-word;">
                 <!--<?php $complete_name = $current_user->user_firstname . ' ' .  substr($current_user->user_lastname,0,1) . '.'; ?>-->
                 <?php $complete_name = $current_user->user_firstname . ' ' .$current_user->user_lastname   ?>
