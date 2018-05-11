@@ -19,6 +19,16 @@ crossorigin="anonymous"></script>
 <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js'></script>
 <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/scrollup/2.4.1/jquery.scrollUp.min.js'></script>
+<script src='http://dbrekalo.github.io/simpleLightbox/dist/simpleLightbox.min.js'></script>
+
+<script type="text/javascript">
+
+
+        //$( '.gallery a' ).attr('href', 'http://127.0.0.1/wp-content/uploads/2018/03/sao-jose-logo_black-150x113.png');
+        $( '.gallery' ).addClass('imageGallery1');
+        $('.imageGallery1 a').simpleLightbox();
+
+</script>
 
 <script src="<?= TEMPLATE_URI ?>/js/multiple-select.js"></script>
 <script src="<?= TEMPLATE_URI ?>/js/script.js"></script>

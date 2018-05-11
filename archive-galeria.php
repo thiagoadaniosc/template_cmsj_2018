@@ -13,32 +13,29 @@
             <a class="breadcrumb-item" href="/">Home</a>
             <a class="breadcrumb-item active" href="<?= get_post_type_archive_link(get_post_type())  ?>"><?= get_type($post_type) ?></a>
         </nav>
-        <h4 class="text-center text-white bg-dark mt-0"> <i class="home-news-header-title m-0 fa fa-newspaper-o"></i> Notícias</h4>
+        <h4 class="text-center text-white bg-dark mt-0"> <i class="fa fa-image home-news-header-title"></i> Galeria de Imagens</h4>
         
         <section>
-            <div class="mt-2">
+            <div class="mt-2 row p-0 m-0 p-auto mt-4">
                 <?php while (have_posts()): the_post() ?>
-                <?php if (get_post_type() !== 'post') {
-                    continue;
-                } ?>
-                <article class="list-group mb-2">
-                    <a href="<?= get_permalink()?>" class="list-group-item list-group-item-action flex-column align-items-start rounded-0">
+                <article class="list-group mb-2 col-xl-3 pl-2">
+                    <a href="<?= get_permalink()?>" class="list-group-item list-group-item-action flex-column align-items-start rounded p-0 m-0 archive-gallery-article-link">
                         <?php 
                         
                         if (has_post_thumbnail() == 1):
                         ?>
-                        <img class="archive-noticia-article-img col-lg-3 float-left m-0 pl-0" src="<?=  the_post_thumbnail_url('full'); ?>" alt="">
+                        <img class="archive-gallery-article-img col-lg-12 float-left m-0 p-0 rounded" src="<?=  the_post_thumbnail_url('full'); ?>" alt="">
                         <?php
                         else:
                         ?>
-                        <img class="archive-noticia-article-img col-lg-3 float-left m-0 pl-0" src="<?= TEMPLATE_URI ?>/imgs/suporte_background.jpg" alt="">
+                        <img class="archive-gallery-article-img col-lg-12 float-left m-auto p-0 rounded" src="<?= TEMPLATE_URI ?>/imgs/suporte_background.jpg" alt="">
                         <?php endif;  ?>
                         
-                        <div class="d-flex w-100 justify-content-between pl-0 col-lg-9">
-                            <h5 class="mb-1 ml-0 pl-0"><?= the_title() ?></h5>      
-                            <small class="p-1"> <i class="fa fa-clock-o"></i> <?= get_the_date()?></small>                  
+                        <div class="d-flex w-100 justify-content-between pl-0 pt-2 pb-2 col-lg-12 col-xl-12 rounded gallery-img-title" style="position:absolute; bottom:0; background-color:rgba(5, 5, 5,.6)">
+                            <h5 class="mb-1 ml-0 pl-0 m-auto text-white rounded"><?= the_title() ?></h5>      
+                            <!--<small class="p-1"> <i class="fa fa-clock-o"></i> <?= get_the_date()?></small>-->                  
                         </div>
-                        <p class="mb-1"><?= the_excerpt()?></p>
+                      
                     </a>
                     
                 </article>

@@ -17,6 +17,7 @@
     type="text/css" />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/css/dataTables.bootstrap4.min.css'/>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css'/>
+    <link rel='stylesheet' href='http://dbrekalo.github.io/simpleLightbox/dist/simpleLightbox.min.css'/>
     <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/css/template.css">
     <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/style.css">
     <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/css/multiple-select.css">
@@ -41,7 +42,7 @@
         
         <form class="d-none d-md-none d-sm-none d-lg-inline-flex d-xl-inline-flex form-inline search-form col-xl-auto col-xl-8 col-lg-6 col-md-12 col-sm-12 m-0" action="">
             <input type="text" style="border-radius: 0; border:0" name="s" class="form-control search-form-input col-lg-8 col-xl-10" placeholder="O que você procura ?">
-            <button class="form-control btn col-xl-2 col-lg-4 text-white" type="submit" style="padding-top: 14px !important;
+            <button class="form-control btn col-xl-2 col-lg-4 text-white" type="submit" style="padding-top: 12px !important;
             padding-bottom: 14px !important; border:0px; background-color: rgb(80, 80, 80);"> <i class="fa fa-x fa-search text-white"></i></button>
         </form>
 

@@ -221,8 +221,8 @@ function post_type_galeria(){
 	$labels = array(
 		'name' => 'Galeria de Imagens',
 		'singular_name' => 'Galeria de Imagens',
-		'add_new_item' => 'Adicionar nova galeria de imagens',
-		'add_new' => 'Adicionar nova galeria de imagens'
+		'add_new_item' => 'Nova galeria de imagens',
+		'add_new' => 'Nova galeria de imagens'
 	);
 	register_post_type( 'galeria', 
 		array(
@@ -230,7 +230,7 @@ function post_type_galeria(){
 			'public' => true,
 			'menu_icon' => 'dashicons-format-gallery',
 			'has_archive' => true,
-			'supports' => ['title', 'thumbnail', 'excerpt'],
+			'supports' => ['title', 'thumbnail', 'excerpt','editor'],
 			'capabilities' => array(
 				'edit_post'          => 'edit_galeria', 
 				'read_post'          => 'read_galeria', 
@@ -240,8 +240,8 @@ function post_type_galeria(){
 				'publish_posts'      => 'publish_galeria',       
 				'read_private_posts' => 'read_private_galeria', 
 				'create_posts'       => 'edit_galeria', 
-			)
-			//'capability_type' => array('galeria', 'galeria') 
+			),
+			'capability_type' => array('galeria', 'galeria') 
 		) 
 
 	);
@@ -280,7 +280,10 @@ function get_type($post_type){
 		return "Notícias";
 	} elseif ($post_type == "comunicados") {
 		return "Comunicados";
-	} else {
+	} elseif ($post_type == "galeria") {
+		return "Galeria de Imagens";
+	} 
+	 else {
 		return "Notícias";
 	}
 
@@ -611,6 +614,16 @@ function add_event_caps() {
 	$role->add_cap('edit_published_posts');
 	$role->add_cap('delete_published_posts');
 	$role->add_cap('read');
+	$role->add_cap( 'edit_galeria' ); 
+	$role->add_cap( 'read_galeria' ); 
+	$role->add_cap( 'delete_galeria' ); 
+	$role->add_cap( 'edit_galeria' ); 
+	$role->add_cap( 'edit_others_galeria' ); 
+	$role->add_cap( 'publish_galeria' ); 
+	$role->add_cap( 'read_private_galeria' ); 
+	$role->add_cap( 'create_galeria' ); 
+	$role->add_cap( 'galeria' ); 
+	
 	// $role->remove_cap('events');
 	
 	
@@ -802,7 +815,7 @@ add_action( 'init', 'post_type_comunicados');
 //add_action( 'init', 'post_type_adm');
 //add_action( 'init', 'post_type_rh');
 
-//add_action( 'init', 'post_type_galeria');
+add_action( 'init', 'post_type_galeria');
 //add_action( 'init', 'post_type_ramais');
 add_theme_support( 'post-thumbnails', array('post', 'page', 'comunicados'));
 add_action('init','possibly_redirect'); 
