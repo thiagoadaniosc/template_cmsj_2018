@@ -33,130 +33,131 @@ Version: 2.0
     top: 12px;
 }
 
-.bg-fr-glpi {
+.bg-fr-glpi:hover {
     background-color: #007BFF !important;
     transition: .5s;
 }
 
-.bg-fr-glpi:hover h4, .bg-fr-glpi:hover i, .bg-fr-glpi:hover small, .bg-fr-glpi:hover{
+.bg-fr-glpi h4, .bg-fr-glpi i, .bg-fr-glpi small, .bg-fr-glpi{
     color:  #007BFF !important;
     background-color: transparent !important;
 }
 
-.bg-fr-glpi:hover {
+.bg-fr-glpi {
     border: 1px solid #007BFF; 
 }
 
-.bg-fr-comunicados{
+.bg-fr-comunicados:hover{
     background-color: #ffc13a !important;
     transition: .5s;
+    color: white !important;
 }
 
-.bg-fr-comunicados:hover h4, .bg-fr-comunicados:hover i, .bg-fr-comunicados:hover small, .bg-fr-comunicados:hover{
+.bg-fr-comunicados h4, .bg-fr-comunicados i, .bg-fr-comunicados small, .bg-fr-comunicados{
     color:  #ffc13a !important;
     background-color: transparent !important;
 }
 
-.bg-fr-comunicados:hover {
+.bg-fr-comunicados {
     border: 1px solid #ffc13a; 
 }
 
-.bg-fr-folhaweb{
+.bg-fr-folhaweb:hover{
     background-color: #5858e9 !important;
     transition: .5s;
 }
 
-.bg-fr-folhaweb:hover h4, .bg-fr-folhaweb:hover i, .bg-fr-folhaweb:hover small, .bg-fr-folhaweb:hover{
+.bg-fr-folhaweb h4, .bg-fr-folhaweb i, .bg-fr-folhaweb small, .bg-fr-folhaweb{
     color:  rgb(88, 88, 233) !important;
     background-color: transparent !important;
 }
 
-.bg-fr-folhaweb:hover {
+.bg-fr-folhaweb {
     border: 1px solid rgb(88, 88, 233); 
 }
 
-.bg-fr-ramais{
+.bg-fr-ramais:hover{
     /*background-color: #3648AB !important;*/
     background-color: rgb(76, 76, 187) !important;
     transition: .5s;
 }
 
-.bg-fr-ramais:hover h4, .bg-fr-ramais:hover i, .bg-fr-ramais:hover small, .bg-fr-ramais:hover{
+.bg-fr-ramais h4, .bg-fr-ramais i, .bg-fr-ramais small, .bg-fr-ramais{
     color:  rgb(76, 76, 187)  !important;
     background-color: transparent !important;
 }
 
-.bg-fr-ramais:hover {
+.bg-fr-ramais {
     border: 1px solid rgb(76, 76, 187) ; 
 }
 
-.bg-fr-calendario{
+.bg-fr-calendario:hover{
     background-color: #dd4855 !important;
     transition: .5s;
 }
 
-.bg-fr-calendario:hover h4, .bg-fr-calendario:hover i, .bg-fr-calendario:hover small, .bg-fr-calendario:hover{
+.bg-fr-calendario h4, .bg-fr-calendario i, .bg-fr-calendario small, .bg-fr-calendario{
     color:  #dd4855 !important;
     background-color: transparent !important;
 }
 
-.bg-fr-calendario:hover {
+.bg-fr-calendario {
     border: 1px solid #dd4855; 
 }
 
-.bg-fr-aniversariantes{
+.bg-fr-aniversariantes:hover{
     background-color: rgb(85, 153, 255) !important;
     transition: .5s;
 }
 
-.bg-fr-aniversariantes:hover h4, .bg-fr-aniversariantes:hover i, .bg-fr-aniversariantes:hover small, .bg-fr-aniversariantes:hover{
+.bg-fr-aniversariantes h4, .bg-fr-aniversariantes i, .bg-fr-aniversariantes small, .bg-fr-aniversariantes{
     color:  rgb(85, 153, 255) !important;
     background-color: transparent !important;
 }
 
-.bg-fr-aniversariantes:hover {
+.bg-fr-aniversariantes {
     border: 1px solid rgb(85, 153, 255); 
 }
 
-.bg-fr-dom{
+.bg-fr-dom:hover{
     background-color: #df4b57 !important;
     transition: .5s;
 }
 
-.bg-fr-dom:hover h4, .bg-fr-dom:hover i, .bg-fr-dom:hover small, .bg-fr-dom:hover{
+.bg-fr-dom h4, .bg-fr-dom i, .bg-fr-dom small, .bg-fr-dom{
     color:  #df4b57 !important;
     background-color: transparent !important;
 }
 
-.bg-fr-dom:hover {
+.bg-fr-dom {
     border: 1px solid #df4b57; 
 }
 
-.bg-fr-clipagem{
+.bg-fr-clipagem:hover{
     background-color: #6666FF !important;
     transition: .5s;
 }
 
-.bg-fr-clipagem:hover h4, .bg-fr-clipagem:hover i, .bg-fr-clipagem:hover small, .bg-fr-clipagem:hover{
+.bg-fr-clipagem h4, .bg-fr-clipagem i, .bg-fr-clipagem small, .bg-fr-clipagem{
     color:  #6666FF !important;
     background-color: transparent !important;
 }
 
-.bg-fr-clipagem:hover {
+.bg-fr-clipagem {
     border: 1px solid #6666FF; 
 }
 
-.bg-fr-configuracoes{
+.bg-fr-configuracoes:hover{
     background-color: #00b274 !important;
     transition: .5s;
 }
 
-.bg-fr-configuracoes:hover h4, .bg-fr-configuracoes:hover i, .bg-fr-configuracoes:hover small, .bg-fr-configuracoes:hover{
+.bg-fr-configuracoes h4, .bg-fr-configuracoes i, .bg-fr-configuracoes small, .bg-fr-configuracoes{
     color:  #00b274 !important;
     background-color: transparent !important;
 }
 
-.bg-fr-configuracoes:hover {
+.bg-fr-configuracoes {
     border: 1px solid #00b274; 
 }
 

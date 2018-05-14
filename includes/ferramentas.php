@@ -6,7 +6,7 @@
     <article class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-2 home-ferramentas-article" >
         <a class="text" href="<?= SUPORTE_URI ?>" target="_blank">
             <div class="card col-lg-12 justify-content-center rounded-0 p-3 bg-fr-glpi zoomIn animated"  style="height: 150px" >
-            <img class="m-auto img-fr-glpi"  data-src="<?= TEMPLATE_URI ?>/imgs/glpi.png" data-hover="<?= TEMPLATE_URI ?>/imgs/glpi-hover.png" src="<?= TEMPLATE_URI ?>/imgs/glpi.png" width="60vh" alt="GLPI">
+            <img class="m-auto img-fr-glpi"  data-src="<?= TEMPLATE_URI ?>/imgs/glpi-hover.png" data-hover="<?= TEMPLATE_URI ?>/imgs/glpi.png" src="<?= TEMPLATE_URI ?>/imgs/glpi-hover.png" width="60vh" alt="GLPI">
                 <h4 class="text-center text-white"  style="font-size: 2.5vh">GLPI</h4>
                 <small class="text-center text-white">(Suporte Técnico)</small>
             </div>
@@ -26,7 +26,7 @@
     <article class="col-xl-4 col-md-6 col-lg-6 mb-2 col-sm-12 home-ferramentas-article">
         <a class="text" href="<?= FOLHAWEB_URI ?>" target="_blank">
             <div class="card col-lg-12 justify-content-center rounded-0 p-3 bg-white bg-fr-folhaweb zoomIn animated" style="height:150px">
-                <img class="mr-auto ml-auto img-fr-folha-web" data-src="<?= TEMPLATE_URI ?>/imgs/folha-web.png" data-hover="<?= TEMPLATE_URI ?>/imgs/folha-web-hover.png" width="50" src="<?= TEMPLATE_URI ?>/imgs/folha-web.png" alt="">
+                <img class="mr-auto ml-auto img-fr-folha-web" data-src="<?= TEMPLATE_URI ?>/imgs/folha-web-hover.png" data-hover="<?= TEMPLATE_URI ?>/imgs/folha-web.png" width="50" src="<?= TEMPLATE_URI ?>/imgs/folha-web-hover.png" alt="">
                 <h4 class="text-center text-white" style="font-size: 2.5vh">Folha Web</h4>
                 <small class="text-center text-white">(Contracheque)</small>
             </div>
@@ -37,7 +37,7 @@
         <article class="col-xl-4 col-md-6 col-lg-6 col-sm-12 mb-2 justify-content-center home-ferramentas-article">
         <a class="text" href="<?= DOM_URI ?>" target="_blank">
             <div class="card col-lg-12 rounded-0 justify-content-center p-3 bg-fr-dom zoomIn animated" style="height: 150px">
-                <img class="m-auto img-fr-dom"  data-src="<?= TEMPLATE_URI ?>/imgs/dom-logo.png" data-hover="<?= TEMPLATE_URI ?>/imgs/dom-logo-hover.png" src="<?= TEMPLATE_URI ?>/imgs/dom-logo.png" width="80vh" alt="">
+                <img class="m-auto img-fr-dom"  data-src="<?= TEMPLATE_URI ?>/imgs/dom-logo-hover.png" data-hover="<?= TEMPLATE_URI ?>/imgs/dom-logo.png" src="<?= TEMPLATE_URI ?>/imgs/dom-logo-hover.png" width="80vh" alt="">
                 <h4 class="text-center text-white"  style="font-size: 2.5vh">DOM</h4>
                 <small class="text-center text-white">(Diário Official dos Municípios)</small>
             </div>
