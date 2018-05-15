@@ -6,7 +6,7 @@
     <div class="mt-2">
         
         <?php 
-        $noticias_query = new WP_Query(array('post_type' => 'post', 'posts_per_page' => 3));
+        $noticias_query = new WP_Query(array('post_type' => 'post', 'posts_per_page' => 4));
         $noticias_post = $noticias_query->get_posts();
         foreach ($noticias_post as $post):
         ?>
