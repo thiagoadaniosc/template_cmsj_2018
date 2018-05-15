@@ -14,7 +14,7 @@ define('FOLHAWEB_URI', 'http://folhaweb.cmsj.info:8080/');
 define('RAMAIS_URI', '/ramais');
 define('DOM_URI', 'https://www.diariomunicipal.sc.gov.br/site/');
 define('CLIPAGEMDIGITAL_URI', 'http://clipagem.cmsj.info/visitante?username=' . $current_user->user_login  );
-define('CONFIGURACOES_URI', '/wp-admin/profile.php');
+define('GALERIA_URI', '/galeria');
 define('AD_FILTER', '(&(objectCategory=person)(objectClass=user)(samaccountname=*)(!(UserAccountControl:1.2.840.113556.1.4.803:=2))(!(cn=*Admin*))(!(cn=*teste*))(!(cn=*VM*))(!(cn=*Suporte*)))');
 //define('AD_FILTER_RAMAIS', '(groupOfUniqueNames=*)');
 //define('AD_FILTER_RAMAIS', '(&(objectClass=organizationalUnit)((ou:dn:=Evil))');

@@ -85,11 +85,11 @@
     </article>
     
     <article class="col-xl-4 col-md-12 col-lg-12 col-sm-12 mb-2 justify-content-center home-ferramentas-article">
-        <a class="text" href="<?= CONFIGURACOES_URI ?>" target="_blank">
+        <a class="text" href="<?= GALERIA_URI ?>">
             <div class="card col-lg-12 rounded-0 justify-content-center p-3 bg-fr-configuracoes zoomIn animated" style="height: 150px">
-                <i class="fa fa-cogs m-auto text-white" style="font-size:50px"></i>
-                <h4 class="text-center text-white"  style="font-size: 2.5vh">Configurações</h4>
-                <small class="text-center text-white">(Configurações do Usuário)</small>
+                <i class="fa fa-image m-auto text-white" style="font-size:50px"></i>
+                <h4 class="text-center text-white"  style="font-size: 2.5vh">Galeria de Imagens</h4>
+                <small class="text-center text-white">(Galeria de imagens)</small>
             </div>
         </a>
     </article>
