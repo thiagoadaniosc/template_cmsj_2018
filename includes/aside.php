@@ -64,8 +64,8 @@
           <?php endwhile; ?>
           <tr> 
             <td colspan="3" class="col-lg-12">
-              <a href="http://suporte.cmsj.info/front/ticket.php" class="col-lg-5 col-md-5 col-sm-5 btn btn-dark rounded-0" target="_blank" style="font-size:.9vw"><i class="fa fa-eye"></i> VER TODOS</a>
-              <a href="http://suporte.cmsj.info/front/helpdesk.public.php?create_ticket=1" class="col-lg-5 col-md-5 col-sm-5 btn btn-primary float-right rounded-0" target="_blank" title="Novo Chamado" style="font-size:.9vw">NOVO <i class="fa fa-plus"></i></a>
+              <a href="http://suporte.cmsj.info/front/ticket.php" class="col-lg-5 col-md-5 col-sm-5 btn btn-dark rounded-0" target="_blank" style="font-size:1em; height: auto !important;"><i class="fa fa-eye"></i> VER TODOS</a>
+              <a href="http://suporte.cmsj.info/front/helpdesk.public.php?create_ticket=1" class="col-lg-5 col-md-5 col-sm-5 btn btn-primary float-right rounded-0 p-auto" target="_blank" title="Novo Chamado" style="font-size:1em; height: auto !important;">NOVO <i class="fa fa-plus"></i></a>
             </td>
             
           </tr>

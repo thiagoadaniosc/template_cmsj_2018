@@ -20,7 +20,7 @@
                 <?php
                 else:
                 ?>
-                <img class="home-news-article-img col-lg-4 float-left m-0 pl-0" width="auto" height="200" src="<?= TEMPLATE_URI ?>/imgs/suporte_background.jpg" alt="">
+                <img class="home-news-article-img col-lg-4 float-left m-0 pl-0" width="auto" height="200" src="<?= TEMPLATE_URI ?>/imgs/back.jpg" alt="">
                 <?php endif;  ?>
                 
                 <div class="d-flex w-100 justify-content-between pl-0 col-lg-8">

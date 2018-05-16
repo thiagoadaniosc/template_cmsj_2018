@@ -24,7 +24,7 @@
                 else:
                 ?>
                 <figure>
-                    <img class="home-news-mobile-article-img col-lg-12 pt-2 p-2" width="auto" height="180"  src="<?= TEMPLATE_URI ?>/imgs/suporte_background.jpg" alt="">
+                    <img class="home-news-mobile-article-img col-lg-12 pt-2 p-2" width="auto" height="180"  src="<?= TEMPLATE_URI ?>/imgs/back.jpg" alt="">
                     <small class="badge badge-primary rounded-0" style="position: absolute; top:15; right:20px; background-color: rgba(33, 128, 206, 0.5)"><i class="fa fa-clock-o"></i> <?= get_the_date("d F Y", $post->ID);?></small>
                 </figure>
                 <?php endif;  ?>

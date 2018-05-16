@@ -282,8 +282,9 @@ function get_type($post_type){
 		return "Comunicados";
 	} elseif ($post_type == "galeria") {
 		return "Galeria de Imagens";
-	} 
-	 else {
+	} else if ($post_type == "thc-events") {
+		return "Eventos";
+	} else {
 		return "Notícias";
 	}
 

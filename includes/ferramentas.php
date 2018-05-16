@@ -99,7 +99,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Calendário </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" onClick="window.location = '/'" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -107,7 +107,7 @@
                     <?php echo do_shortcode('[thc-calendar title="Upcoming Events" showholidays="yes" country="br" displaymode="calendar" firstday="su" numberofholidays="3"]'); ?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-secondary" onClick="window.location = '/'" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
