@@ -818,7 +818,7 @@ add_action( 'init', 'post_type_comunicados');
 
 add_action( 'init', 'post_type_galeria');
 //add_action( 'init', 'post_type_ramais');
-add_theme_support( 'post-thumbnails', array('post', 'page', 'comunicados'));
+add_theme_support( 'post-thumbnails', array('post', 'page', 'comunicados', 'galeria'));
 add_action('init','possibly_redirect'); 
 //add_action('admin_head', 'my_custom_fonts');
 

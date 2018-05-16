@@ -126,6 +126,9 @@
                 <li class="dropdown-item">
                 <a class="text-dark dropdown-link d-block" href="/contato/?show"><i class="fa fa-envelope"></i> Mensagens e Sugestões </a>
                 </li>
+                <?php endif; ?>
+
+                 <?php if ($current_user->roles[0] == 'administrator') : ?>
                 <li class="dropdown-item">
                 <a class="text-dark dropdown-link d-block" href="/send-mail"><i class="fa fa-envelope"></i> Enviar E-mail's </a>
                 </li>
