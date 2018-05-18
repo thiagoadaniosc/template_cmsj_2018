@@ -22,6 +22,11 @@
         h1 {
             display: none;
         }
+
+        .width-100 {
+            width: 100% !important;
+        }
+
     </style>
     
     <div class="bg-white pb-4 p-0 col-lg-12 row pl-0 pr-0 mr-0 ml-0 pt-3" style="box-shadow:rgba(0,0,0,.2) 0 4px 16px; overflow: auto"> 
@@ -176,7 +181,8 @@
                         "sLoadingRecords": "Carregando...",
                         "sProcessing": "Processando...",
                         "sZeroRecords": "Nenhum registro encontrado",
-                        "sSearch": "Pesquisar Ramais: ",
+                        "sSearch": '',
+                        //"sSearch": "Pesquisar Ramais: ",
                         "oPaginate": {
                             "sNext": "Próximo",
                             "sPrevious": "Anterior",
@@ -192,8 +198,10 @@
    
                 table.buttons().container()
                 .appendTo( '#servidores-table_wrapper .col-md-6:eq(0)' );
+                $('#servidores-table_filter label').addClass('col-lg-12 col-xl-12');
                 $('#servidores-table_filter input').addClass('col-lg-12 col-xl-12');
-                $('#servidores-table_filter input').attr('placeholder', 'Nome, Ramal ou Setor...');
+                $('#servidores-table_filter input').addClass('width-100');
+                $('#servidores-table_filter input').attr('placeholder', 'Pesquisar Ramais: Nome, ramal ou setor');
 
             } );
 

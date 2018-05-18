@@ -363,10 +363,14 @@ function possibly_redirect(){
 		$i =0;		
 
 		if (isset($_FILES['file']) && !empty($_FILES['file'])) {
+			if (!is_dir(dirname(__FILE__) . DIRECTORY_SEPARATOR. 'uploads' )) {
+				mkdir( dirname(__FILE__) . DIRECTORY_SEPARATOR. 'uploads', 0777 , true);
+			}
 			$file_path = $_FILES['file']['tmp_name'];
 			move_uploaded_file($file_path, dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $_FILES['file']['name']);
 			$file_path = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $_FILES['file']['name'];
 		}
+
 
 		foreach ($mails as $user_id) {
 			$user  = get_user_by('id',$user_id);

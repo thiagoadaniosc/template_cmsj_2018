@@ -28,7 +28,7 @@
                         <?php
                         else:
                         ?>
-                        <img class="archive-gallery-article-img col-lg-12 float-left m-auto p-0 rounded" src="<?= TEMPLATE_URI ?>/imgs/suporte_background.jpg" alt="">
+                        <img class="archive-gallery-article-img col-lg-12 float-left m-auto p-0 rounded" src="<?= TEMPLATE_URI ?>/imgs/back.jpg" alt="">
                         <?php endif;  ?>
                         
                         <div class="d-flex w-100 justify-content-between pl-0 pt-2 pb-2 col-lg-12 col-xl-12 rounded gallery-img-title" style="position:absolute; bottom:0; background-color:rgba(5, 5, 5,.6)">
