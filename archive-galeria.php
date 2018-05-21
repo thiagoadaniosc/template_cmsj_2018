@@ -31,8 +31,8 @@
                         <img class="archive-gallery-article-img col-lg-12 float-left m-auto p-0 rounded" src="<?= TEMPLATE_URI ?>/imgs/back.jpg" alt="">
                         <?php endif;  ?>
                         
-                        <div class="d-flex w-100 justify-content-between pl-0 pt-2 pb-2 col-lg-12 col-xl-12 rounded gallery-img-title" style="position:absolute; bottom:0; background-color:rgba(5, 5, 5,.6)">
-                            <h5 class="mb-1 ml-0 pl-0 m-auto text-white rounded"><?= the_title() ?></h5>      
+                        <div class="d-flex w-100 justify-content-between pl-1 pr-1 pt-2 pb-2 col-lg-12 col-xl-12 rounded gallery-img-title" style="position:absolute; bottom:0; background-color:rgba(5, 5, 5,.6)">
+                            <h5 class="mb-1 ml-0 pl-0 m-auto text-white text-center rounded"><?= the_title() ?></h5>      
                             <!--<small class="p-1"> <i class="fa fa-clock-o"></i> <?= get_the_date()?></small>-->                  
                         </div>
                       
