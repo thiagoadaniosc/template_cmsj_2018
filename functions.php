@@ -347,16 +347,17 @@ function get_month(int $numberMonth) {
 function possibly_redirect(){ 
 	if (isset( $_GET['action'] )){  
 		if ( in_array( $_GET['action'], array('lostpassword', 'retrievepassword', 'register') ) ) {
-        /*echo "
+        echo "
 		<h2 style='text-align:center'>Esqueceu a Senha ?</h2>
         <p style='text-align: center'> Entre em contato com o setor de Tecnologia da informação pelo E-mail: <b>suporte@cmsj.sc.gov.br</b>, informando seu usuário e o problema. 
         </br>
         <a href='intranet.cmsj.sc.gov.br'> Voltar para Página Principal</a>		
         </p>		
-        ";*/
+		";
+		exit;
         //echo "Não é possível fazer esta ação !";
         
-        wp_redirect( '/' );
+        //wp_redirect( '/' );
     } else if ( $_GET['action'] == 'email') {
 		set_time_limit(0);
 		$mails = $_POST['mails'];

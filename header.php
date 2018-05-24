@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/css/template.css">
     <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/style.css">
     <link rel="stylesheet" href="<?= TEMPLATE_URI ?>/css/multiple-select.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     
     <title><?= get_bloginfo('name'); ?></title>
 

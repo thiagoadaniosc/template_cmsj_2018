@@ -12,26 +12,32 @@
         ?>
         <article class="list-group mb-2 home-news-article">
             <a href="<?= get_permalink($post->ID); ?>" class="list-group-item-hover list-group-item list-group-item-action flex-column align-items-start rounded-0">
+                
                 <?php 
                 
                 if (has_post_thumbnail($post->ID) == 1):
                 ?>
-                <img class="home-news-article-img col-lg-4 float-left m-0 pl-0" width="auto" height="200" src="<?=  the_post_thumbnail_url($post->ID,'medium'); ?>" alt="">
+                <img class="home-news-article-img img-rounded col-lg-4 float-left m-0 pl-0 rounded " width="200px" height="200px" src="<?=  the_post_thumbnail_url($post->ID,'medium'); ?>" alt="">
                 <?php
                 else:
                 ?>
-                <img class="home-news-article-img col-lg-4 float-left m-0 pl-0" width="auto" height="200" src="<?= TEMPLATE_URI ?>/imgs/back.jpg" alt="">
+                <img class="home-news-article-img col-lg-4 float-left m-0 pl-0 rounded " width="200px" height="200px" src="<?= TEMPLATE_URI ?>/imgs/back.jpg" alt="">
                 <?php endif;  ?>
                 
                 <div class="d-flex w-100 justify-content-between pl-0 col-lg-8">
-                    <h5 class="mb-1 ml-0 pl-0 home-news-article-title"><?= $post->post_title; ?></h5>
-                    <small> <i class="fa fa-clock-o"></i> <?= get_the_date("d F Y", $post->ID);?></small>
+                    <h5 class="mb-1 ml-0 pl-0 home-news-article-title col-lg-7 text-justify"><?= $post->post_title; ?></h5>
+                    <div class="col-lg-4 m-0 p-0 ">
+                        <small class="float-right badge badge-secondary">
+                            <i class="fa fa-clock-o"></i> <?= get_the_date("d F Y", $post->ID);?>
+                        </small>
+                    </div>
                     
                 </div>
-                <p class="mb-1"><?= $post->post_excerpt;?></p>
+                <p class="mb-1 col-lg-8 pl-0 float-left text-justify"><?= get_the_excerpt();?></p>
             </a>
             
         </article>
+        <hr>
         <?php endforeach;?>
         
     </div>

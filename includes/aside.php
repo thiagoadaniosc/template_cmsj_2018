@@ -3,7 +3,7 @@
 <section class="home-asidel-menu mb-2">
   <header class=" home-asidel-menu-header text-center mb-2">
     <!-- img src="<?= TEMPLATE_URI ?>/imgs/17.png" class="home-asidel-menu-header-icon" alt="">  -->
-    <i class="fa fa-bars float-left" style="position: relative; top: 5px; left: 20px; font-size: 20px;"></i> Menu
+    <i class="fa fa-bars float-left" style="position: relative; top: 5px; left: 20px; font-size: 20px;"><a></i> Menu </a>
   </header>
 
   

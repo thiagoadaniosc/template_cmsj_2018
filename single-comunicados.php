@@ -30,7 +30,7 @@ if (has_post_thumbnail($post->ID)) {
 		
 		
 		
-		<div class="post-main row justify-content-center m-0 col-lg-8 rounded-0">		
+		<div class="post-main row justify-content-center m-0 col-xl-10 col-lg-12 col-md-12 rounded-0 rounded-0">		
 			
 			<div class="post-content col-lg-12 mt-4 ">
 				<div class="pr-5 pl-5 pt-4 pb-4 border  border-light bg-white rounded-0" style="box-shadow:rgba(0,0,0,.2) 0 4px 16px; font-size: 1.25rem;">

@@ -6,6 +6,25 @@ Author URI: https://github.com/thiagoadaniosc
 Version: 2.0
 */
 
+h1, h2, h3, h5 {
+    font-family: 'Source Sans Pro', sans-serif !important;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1em;
+}
+
+h4, a  {
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+p {
+    font-family: 'Source Sans Pro', sans-serif !important;
+    letter-spacing: 1.5px !important;
+    font-size: .9em !important;
+}
+
 
 .archive-gallery-article-link:hover > .gallery-img-title {
     height: 100% !important;
@@ -15,8 +34,14 @@ Version: 2.0
 }
 
 .home-asidel-menu-header {
-    background-color: rgb(22, 111, 184);
+   /* background-color: rgb(22, 111, 184);
     border-bottom: 4px solid rgb(0, 92, 167);
+    
+    background-color: rgba(57, 67, 76, 0.98);
+    border-bottom: 4px solid rgb(53, 58, 62);
+    */
+    background-color: rgb(54, 101, 173);
+    border-bottom: 4px solid rgb(6, 88, 154);
     color: white;
     height: auto;
     padding-top:10px;
