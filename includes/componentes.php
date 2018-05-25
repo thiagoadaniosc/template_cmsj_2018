@@ -35,11 +35,12 @@
         <div class="mt-2">
             <?php while($clipagem = $clipagens->fetch_assoc()) : ?>
             <article class="list-group mb-2">
-                <a href="http://clipagem.cmsj.info/uploads/<?= $clipagem['nome'] ?>" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start">                        
+                <a href="http://clipagem.cmsj.info/uploads/<?= $clipagem['nome'] ?>" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start home-clipagem-card">                        
                     <div class="d-flex w-100 justify-content-between pl-0 col-lg-12">
-                        <h5 class="mb-1 ml-0 pl-0" style="font-size: 16px;"><?= $clipagem['titulo'] ?></h5>  
-                        <small class="text-right d-xl-inline d-lg-none d-md-none d-sm-inline"> <i class="fa fa-clock-o"></i> <?= $clipagem['data'] ?></small>                             
+                        <h5 class="mb-1 ml-0 pl-0 col-lg-12" style="font-size: 16px;"><?= $clipagem['titulo'] ?></h5>  
+                        
                     </div>
+                    <small class="d-xl-inline m-0 d-lg-none d-md-none d-sm-inline badge badge-secondary col-lg-12"> <i class="fa fa-clock-o"></i> <?= $clipagem['data'] ?></small>     
                     <p class="mb-1" style="word-break: break-all;"><i class="fa fa-newspaper-o"></i> <?= $clipagem['veiculo'] ?></p>
                     <p class="mb-1" style="word-break: break-all;"><i class="fa fa-user-circle"></i> <?= $clipagem['autor'] ?></p>
                 </a>

@@ -25,8 +25,8 @@
                 <?php endif;  ?>
                 
                 <div class="d-flex w-100 justify-content-between pl-0 col-lg-8">
-                    <h5 class="mb-1 ml-0 pl-0 home-news-article-title col-lg-7 text-justify"><?= $post->post_title; ?></h5>
-                    <div class="col-lg-4 m-0 p-0 ">
+                    <h5 class="mb-1 ml-0 pl-0 home-news-article-title col-lg-9"><?= $post->post_title; ?></h5>
+                    <div class="col-lg-3 m-0 p-0 ">
                         <small class="float-right badge badge-secondary">
                             <i class="fa fa-clock-o"></i> <?= get_the_date("d F Y", $post->ID);?>
                         </small>

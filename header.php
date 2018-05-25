@@ -101,7 +101,7 @@
                 
             </button>
             
-            <div class="dropdown-menu" id="user-menu" style="border-radius: 0; right:0;  top: 50px; left:0" >
+            <div class="dropdown-menu" id="user-menu" style="border-radius: 0;  top: 50px; left:0" >
                 <?php if ($current_user->roles[0] !== 'subscriber') :  ?>
                 <li class="dropdown-item">
                 <a class="text-dark dropdown-link d-block" href="/wp-admin"><i class="fa fa-dashboard"></i> Painel Administrativo</a>

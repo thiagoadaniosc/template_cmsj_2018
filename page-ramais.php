@@ -108,7 +108,7 @@
                                             <td align="center"> 
                                                <!-- <a href="?username=<?= $user['samaccountname'][0];?>&telephonenumber={{telefone_<?= $user['samaccountname'][0];?>}}" name="<?= $user['samaccountname'][0]; ?>_link" class="badge badge-primary text-center m-auto"> <i class="fa fa-edit"></i>Editar</a> -->
 
-                                                <a href ng-click="editar('<?= $user['samaccountname'][0]; ?>',telefone_<?= $user['samaccountname'][0];?>)" name="<?= $user['samaccountname'][0]; ?>_link" class="badge badge-primary text-center m-auto"> <i class="fa fa-edit"></i> Editar</a>
+                                                <a href ng-click="editar('<?= $user['samaccountname'][0]; ?>',telefone_<?= $user['samaccountname'][0];?>)" name="<?= $user['samaccountname'][0]; ?>_link" class="badge badge-primary text-center m-auto"> <i class="fa fa-edit"></i> Confirmar</a>
 
                                              </td>
                                             
@@ -202,6 +202,8 @@
                 $('#servidores-table_filter input').addClass('col-lg-12 col-xl-12');
                 $('#servidores-table_filter input').addClass('width-100');
                 $('#servidores-table_filter input').attr('placeholder', 'Pesquisar Ramais: Nome, ramal ou setor');
+                $(".dataTables_filter input").focus();
+
 
             } );
 

@@ -429,6 +429,18 @@ a {
     border-radius: 0;
 }
 
+.home-clipagem-card {
+    border-top: 1px solid #f2f2f2;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #f2f2f2;
+    border-radius: 0 !important;
+}
+
+.home-clipagem-card:hover {
+    background-color:#f7f7f7 !important;
+}
+
 .home-news-mobile-article-img{
     width: 100%;
     height: 200px;
@@ -948,12 +960,82 @@ a {
 
     
 }
-@media (min-width: 1366px) { 
+@media (max-width: 1366px) { 
     .home-news-article-img{
-        width: 200px;
-        height: 150px;
+        width: 130px;
+        height: 100px;
         overflow: hidden;
         border-radius: 50px;
+    }
+    h5 {
+        font-size: 14px !important;
+    }
+
+    p {
+        font-size: 12px !important;
+    }
+    .home-aside-clipagem-header, .home-aside-comunicados-header {
+        padding: 2px;
+    }
+    .home-aside-clipagem-header a, .home-aside-comunicados-header a {
+        font-size: 15px;
+    }
+
+    .home-aside-clipagem-header a i, .home-aside-comunicados-header a i {
+        font-size: 15px;
+    }
+
+    .home-aside-clipagem-header a i {
+        font-size: 15px;
+        top: 10px !important;
+    }
+
+    .home-aside-comunicados-header a i {
+        top: 12px !important;
+    }
+
+    .home-news-header h3 {
+        font-size: 15px;
+    }
+
+    .home-asidel-menu-header {
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+
+    .home-asidel-menu-header a,.home-asidel-menu-header i  {
+        font-size: 15px !important;
+        top:10px !important;
+    }
+
+    .home-asidel-menu li {
+        font-size: 15px !important; 
+        padding: 2px !important;
+    }
+
+    .home-asidel-clima .home-asidel-header {
+        font-size: 14px; 
+    }
+    .home-asidel-suporte .home-asidel-header {
+        font-size: 14px;
+    }
+
+    .home-ferramentas-article a div {
+        height: 100px !important;
+    }
+    .home-ferramentas-article a div i {
+        font-size: 25px !important;
+    }
+    .home-ferramentas-article a div h4 {
+        font-size: 15px !important;
+    }
+
+    .home-ferramentas-article a div small {
+        font-size: 10px !important;
+    }
+
+    .home-ferramentas-article a div img {
+        width: 40px !important;
     }
 
 }
