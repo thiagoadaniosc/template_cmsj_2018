@@ -3,7 +3,7 @@
     <section class="home-asider-comunicados">
         <header class="home-aside-comunicados-header text-center text-white"> <a class="text-white" href="<?= COMUNICADOS_URI ?>"> <i class="fa fa-bullhorn m-auto text-white" style="position: absolute; left:35px; top: 15px"></i> Comunicados </a></header>
         <?php
-        $comunicados_query = new WP_Query(array('post_type' => 'comunicados', 'posts_per_page' => 3));
+        $comunicados_query = new WP_Query(array('post_type' => 'comunicados', 'posts_per_page' => 5));
         $comunicados_post = $comunicados_query->get_posts();
         ?>
         <div class="mt-2">

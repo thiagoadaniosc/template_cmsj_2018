@@ -21,6 +21,7 @@
     <div class="col-lg-6 col-xl-6 bg-white mb-5 pb-5 home-content-main">
 
         <?php require('includes/ferramentas.php');?>
+        <!-- <?php var_dump(current_user_can('edit_comunicados')) ?> -->
         <?php require('includes/home.news.php');?>
         <?php require('includes/home.news.mobile.php');?>
         

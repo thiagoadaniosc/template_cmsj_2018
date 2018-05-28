@@ -10,8 +10,8 @@
         $noticias_post = $noticias_query->get_posts();
         foreach ($noticias_post as $post):
         ?>
-        <article class="list-group mb-2 home-news-article">
-            <a href="<?= get_permalink($post->ID); ?>" class="list-group-item-hover list-group-item list-group-item-action flex-column align-items-start rounded-0">
+        <article class="list-group mb-2 home-news-article col-lg-12">
+            <a href="<?= get_permalink($post->ID); ?>" class="list-group-item-hover list-group-item list-group-item-action flex-column align-items-start rounded-0 col-lg-12">
                 
                 <?php 
                 
