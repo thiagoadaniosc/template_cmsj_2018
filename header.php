@@ -10,8 +10,9 @@
     <meta name="author" content="Marcelo Macagnan">
     <meta name="author" content="Câmara Municipal de São José">
     <link rel="icon" href="<?= TEMPLATE_URI ?> /imgs/sao-jose-icon.png" sizes="192x192">
-
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js'></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/red/pace-theme-minimal.min.css'/>
     <link href="<?= TEMPLATE_URI ?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="all" rel="stylesheet"
     type="text/css" />

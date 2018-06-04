@@ -25,6 +25,15 @@ p {
     font-size: .9em;
 }
 
+.pace .pace-progress {
+    background: #ee3148;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 4px !important;
+  }
 
 .archive-gallery-article-link:hover > .gallery-img-title {
     height: 100% !important;

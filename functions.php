@@ -680,7 +680,7 @@ function get_last_clipagens() {
         exit;
 	}
 
-	$query = "SELECT a.id_clipagem, c.titulo, c.veiculo, c.editoria, c.autor, c.data, c.pagina, c.tipo, c.tags, a.nome, a.ID FROM clipagens c, arquivos a where a.id_clipagem = c.ID ORDER BY RIGHT(c.data, 4) DESC, SUBSTRING(c.data, 4, 3) DESC, SUBSTRING(c.data, 1, 2) DESC LIMIT 0,4";
+	$query = "SELECT a.id_clipagem, c.titulo, c.veiculo, c.editoria, c.autor, c.data, c.pagina, c.tipo, c.tags, a.nome, a.ID FROM clipagens c, arquivos a where a.id_clipagem = c.ID ORDER BY RIGHT(c.data, 4) DESC, SUBSTRING(c.data, 4, 3) DESC, SUBSTRING(c.data, 1, 2) DESC LIMIT 0,7";
 
 	$results = $mysqli->query($query);
 	

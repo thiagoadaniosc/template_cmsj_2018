@@ -18,7 +18,7 @@
         <section>
             <div class="mt-2 row p-0 m-0 p-auto mt-4">
                 <?php while (have_posts()): the_post() ?>
-                <article class="list-group mb-2 col-xl-3 pl-2">
+                <article class="list-group mb-2 col-xl-4 col-lg-4 pl-2">
                     <a href="<?= get_permalink()?>" class="list-group-item list-group-item-action flex-column align-items-start rounded p-0 m-0 archive-gallery-article-link">
                         <?php 
                         
