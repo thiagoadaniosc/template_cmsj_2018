@@ -44,9 +44,6 @@
             
         </section>
         
-        <section class="pagination col-lg-12 text-center justify-content-center">
-            <?php wordpress_pagination(); ?>
-        </section>
         
         
     </div>
