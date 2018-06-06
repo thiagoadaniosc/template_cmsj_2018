@@ -29,11 +29,15 @@
                      ?>
                      <img class="home-news-article-img col-lg-3 float-left m-0 pl-0" width="auto" height="200" src="<?= TEMPLATE_URI ?>/imgs/suporte_background.jpg" alt="">
                      <?php endif;  ?>
-                        <div class="d-flex w-100 justify-content-between pl-0 col-lg-8">
-                            <h5 class="mb-1 ml-0 pl-0"><?= the_title() ?></h5>      
-                            <small class="p-1"> <i class="fa fa-clock-o"></i> <?= get_the_date()?></small>                  
+                     <div class="d-flex w-100 justify-content-between pl-0 col-lg-9">
+                            <div class="col-lg-10 p-0">
+                                <h5 class="mb-1 ml-0 pl-0 col-lg-12"><?= the_title() ?></h5>   
+                            </div>   
+                            <div class="col-lg-2">
+                                <small class="badge badge-dark float-right"> <i class="fa fa-clock-o"></i> <?= get_the_date()?></small>
+                            </div>                  
                         </div>
-                        <p class="mb-1"><?= the_excerpt()?></p>
+                        <p class="mb-1 text-justify"><?= the_excerpt()?></p>
                     </a>
                     
                 </article>

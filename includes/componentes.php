@@ -12,7 +12,7 @@
                 <a href="<?=  get_permalink($post->ID); ?>" class="list-group-item list-group-item-action flex-column align-items-start home-comunicados-card">
                     <div class="d-flex w-100 justify-content-between pl-0">
                         <h5 class="mb-1 ml-0 pl-0" style="font-size: 16px;"><?= $post->post_title ?></h5>      
-                        <small class="d-xl-inline float-right m-0 d-lg-none d-md-none d-sm-inline badge badge-light"><i class="fa fa-clock-o"></i> <?= get_the_date("d F Y", $post->ID);?></small>                  
+                        <small class="d-xl-inline float-right m-0 d-lg-none d-md-none d-sm-inline badge"><i class="fa fa-clock-o"></i> <?= get_the_date("d F Y", $post->ID);?></small>                  
                     </div>
                     <p class="mb-1"><?= $post->post_excerpt?></p>
                 </a>
@@ -40,7 +40,7 @@
                         <h5 class="mb-1 ml-0 pl-0 col-lg-12" style="font-size: 16px;"><?= $clipagem['titulo'] ?></h5>  
                         
                     </div>
-                    <small class="d-xl-inline m-0 d-lg-none d-md-none d-sm-inline badge badge-secondary col-lg-12"> <i class="fa fa-clock-o"></i> <?= $clipagem['data'] ?></small>     
+                    <small class="d-xl-inline m-0 d-lg-none d-md-none d-sm-inline badge badge-secondary rounded-0 col-lg-12"> <i class="fa fa-clock-o"></i> <?= $clipagem['data'] ?></small>     
                     <p class="mb-1" style="word-break: break-all;"><i class="fa fa-newspaper-o"></i> <?= $clipagem['veiculo'] ?></p>
                     <p class="mb-1" style="word-break: break-all;"><i class="fa fa-user-circle"></i> <?= $clipagem['autor'] ?></p>
                 </a>

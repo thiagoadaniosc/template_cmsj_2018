@@ -539,13 +539,17 @@ a {
     box-shadow:rgba(0,0,0,.2) 0 4px 16px;
 }
 .archive-comunicados-content h4 {
-    background-color: rgb(88, 129, 219);
-    border-bottom: 5px solid #3B6ED9
+    font-size: 1.5em !important;
+    /* background-color: rgb(88, 129, 219); */
+    background-color:#df4b57;
+    border-bottom: 5px solid #b1303a
 }
 
 .archive-noticias-content h4 {
+    font-size: 1.5em !important;
+    background-color: #3B6ED9 !important; 
     padding: 5px;
-    border-bottom: 5px solid rgb(19, 24, 31)
+    border-bottom: 5px solid #455983;
 }
 
 .archive-noticia-article-img {

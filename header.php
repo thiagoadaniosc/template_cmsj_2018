@@ -147,7 +147,7 @@
                 <a class="text-dark dropdown-link d-block" href="/wp-admin/post-new.php?post_type=comunicados"><i class="fa fa-bullhorn"></i> Comunicado </a>
                     <ul class="p-1 dropdown-submenu">
                         <li class="dropdown-subitem">
-                            <a class="d-block dropdown-link" href="/wp-admin/post-new.php"><i class="fa fa-plus"></i> Adcionar comunicado</a>
+                            <a class="d-block dropdown-link" href="/wp-admin/post-new.php?post_type=comunicados"><i class="fa fa-plus"></i> Adcionar comunicado</a>
                         </li>
                         <li class="dropdown-subitem">
                             <a class="d-block dropdown-link" href="/wp-admin/edit.php?post_type=comunicados"><i class="fa fa-list"></i> Comunicados</a>
