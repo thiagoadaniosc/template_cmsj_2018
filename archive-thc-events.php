@@ -7,14 +7,64 @@
             background-attachment: fixed;
             background-size: cover;
 		}
+
+        .btn-print {
+            width:auto;
+            position: absolute;
+            top:13px;
+            right:20px;
+            height: auto !important;
+            font-size: 15px;
+            padding: 8px !important;
+            background-color: #3B6ED9 !important;
+            border:0px;
+            
+        }
+
+        @media print {
+            .breadcrumb {
+                display: none !important;
+            }
+            header {
+                display:none !important;
+                width: 0px; 
+                heigth: 0px !important;
+            }
+            h4 {
+                /* display: none !important; */
+                border: 1px solid #EEEE !important;
+
+            }
+
+            main {
+                margin-top: 0px !important;
+            }
+
+            .archive-noticias-content {
+                /* position: absolute !important;
+                top:0px !important;
+                padding: 0px !important;
+                margin:0px !important; */
+
+            }
+
+            .site-header {
+                display: none;
+            }
+
+            .btn-print {
+                display: none;
+            }
+        }
 	</style>
     <div class="col-xl-8 col-lg-10 justify-content-center pt-2 m-auto bg-white archive-noticias-content">
         <nav class="breadcrumb rounded-0">
             <a class="breadcrumb-item" href="/">Home</a>
             <a class="breadcrumb-item active" href="/events">Eventos</a>
+        <button class="btn btn-secondary btn-print float-right" onclick="window.print()"><i class="fa fa-print"></i> Imprimir</button>
+   
         </nav>
-        <h4 class="text-center text-white bg-dark mt-0"> Eventos</h4>
-        
+        <h4 class="text-center text-white bg-dark mt-0"> Eventos</h4>        
         <section>
             <?php if(isset($_GET['date'])) : ?>
             <div class="mt-2">
@@ -50,6 +100,7 @@
             <div class="mt-2">
                 <?php foreach ($noticias_post as $post): ?>
                 <?php  $meta = get_post_meta($post->ID); ?>
+                <!-- <?php var_dump($meta); ?> -->
                 <article class="list-group mb-2">
                     <a href="<?= get_permalink()?>" class="list-group-item list-group-item-action flex-column align-items-start rounded-0">
                         <div class="d-flex w-100 justify-content-between pl-0 col-lg-12">
