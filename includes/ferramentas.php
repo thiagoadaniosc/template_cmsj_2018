@@ -28,7 +28,7 @@
             <div class="card col-lg-12 justify-content-center rounded-0 p-3 bg-white bg-fr-folhaweb zoomIn animated" style="height:150px">
                 <img class="mr-auto ml-auto img-fr-folha-web" data-src="<?= TEMPLATE_URI ?>/imgs/folha-web.png" data-hover="<?= TEMPLATE_URI ?>/imgs/folha-web-hover.png" width="50" src="<?= TEMPLATE_URI ?>/imgs/folha-web.png" alt="">
                 <h4 class="text-center text-white" style="font-size: 2.5vh">Folha Web</h4>
-                <small class="text-center text-white">(Contracheque)</small>
+                <small class="text-center text-white">(Contracheque e Cartão Ponto)</small>
             </div>
         </a>
     </article>
