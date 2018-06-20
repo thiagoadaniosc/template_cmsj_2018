@@ -25,7 +25,7 @@
     </section>
     
     <section class="home-asider-clipagem">
-        <header class="home-aside-clipagem-header text-center"> <a href="<?= CLIPAGEMDIGITAL_URI ?>" class="text-white"> <i class="fa fa-paperclip m-auto text-white float-left" style="position: relative; left:20px; top:8px"></i> CMSJ na Mídia </a></header>
+        <header class="home-aside-clipagem-header text-center"> <a href="<?= CLIPAGEMDIGITAL_URI ?>" class="text-white" target="_blank"> <i class="fa fa-paperclip m-auto text-white float-left" style="position: relative; left:20px; top:8px"></i> CMSJ na Mídia </a></header>
         <?php 
         
        $clipagens = get_last_clipagens(); 

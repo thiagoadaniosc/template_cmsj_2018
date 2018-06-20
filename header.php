@@ -136,7 +136,7 @@
                 </li>
                 <?php endif; ?>
 
-                <?php if ($current_user->roles[0] == 'rh' || $current_user->roles[0] == 'administrator') : ?>
+                <?php if ($current_user->roles[0] == 'rh' || $current_user->roles[0] == 'administrator' || current_user_can('events')) : ?>
                 <li class="dropdown-item">
                 <a class="text-dark dropdown-link d-block" href="/wp-admin/edit.php?post_type=thc-events"><i class="fa fa-calendar"></i> Calendário </a>
                 </li>

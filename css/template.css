@@ -184,7 +184,7 @@ a {
 
 .home-news-article-title {
     transition: 1s;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     -webkit-transition: 1s;
     transition: 1s;
     border:0 !important;
@@ -521,7 +521,7 @@ a {
 }
 .home-news-mobile-article-title h5 {
     transition: 1s;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     
 }
 
@@ -912,6 +912,11 @@ a {
     }
     .tickets-table-size {
         font-size: 10px !important;
+    }
+
+    .post-title {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 

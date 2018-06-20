@@ -13,7 +13,7 @@ define('NOTICIAS_URI', '/comunicados');
 define('FOLHAWEB_URI', 'http://folhaweb.cmsj.info:8080/');	
 define('RAMAIS_URI', '/ramais');
 define('DOM_URI', 'https://www.diariomunicipal.sc.gov.br/site/');
-define('CLIPAGEMDIGITAL_URI', 'http://clipagem.cmsj.info/visitante?username=' . $current_user->user_login  );
+define('CLIPAGEMDIGITAL_URI', 'http://clipagem.cmsj.info/visitante?username=' . $current_user->user_login .'&name='. $current_user->user_firstname . ' '. $current_user->user_lastname );
 define('GALERIA_URI', '/galeria');
 define('AD_FILTER', '(&(objectCategory=person)(objectClass=user)(samaccountname=*)(!(UserAccountControl:1.2.840.113556.1.4.803:=2))(!(cn=*Admin*))(!(cn=*teste*))(!(cn=*VM*))(!(cn=*Suporte*)))');
 //define('AD_FILTER_RAMAIS', '(groupOfUniqueNames=*)');
@@ -467,6 +467,11 @@ function possibly_redirect(){
 			['username' => $username]
 		);
 		exit;
+	} else if($_GET['action'] == 'edit_contato'){
+		$id = $_POST['id'];
+		$status = $_POST['status'];
+		edit_contato($id, $status);
+		exit;
 	}
 }
 }
@@ -805,6 +810,26 @@ function show_mensages(){
 	$results = $mysqli->query($query);
 	
 	return 	$results;
+}
+
+function edit_contato($id, $status){
+	$servidor = 'localhost';
+    $usuario = base64_decode('cm9vdA==');
+    $senha = base64_decode('cm9vdA==');
+    $banco = 'wordpress';
+    
+    $mysqli = new mysqli($servidor, $usuario, $senha, $banco);
+    mysqli_set_charset($mysqli, "utf8");
+    
+    if(mysqli_connect_errno()) {
+        echo ("Erro ao Conectar ao Banco de Dados");
+        exit;
+	}
+
+	$query = "UPDATE wp_mensagens SET status='{$status}' WHERE id = {$id}";
+	$mysqli->query($query);
+	header('Location: /contato?show');
+	exit;
 }
 
 add_action( 'admin_init', 'add_event_caps');
