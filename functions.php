@@ -337,7 +337,7 @@ function get_month(int $numberMonth) {
 		break;
 		
 		case 12 :
-			return 'Outubro';
+			return 'Dezembro';
 		break;
 
 

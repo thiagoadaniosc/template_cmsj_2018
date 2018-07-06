@@ -132,9 +132,9 @@ a {
     color: white !important;
 }
 
-.dropdown-submenu {
-    /*display: none;*/
-}
+/* .dropdown-submenu {
+    display: none;
+} */
 .dropdown-subitem {
     list-style: none;
     transition: 1s;

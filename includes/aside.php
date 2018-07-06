@@ -59,7 +59,7 @@
           <tr>
             <td><?= $ticket['name']; ?></td>
             <td><?= get_glpi_status($ticket['status']); ?></td>
-            <td class="d-xl-table-cell d-lg-none d-sm-none d-md-table-cell"><a class="badge badge-dark" alt="Vizualizar" title="Visualizar Chamado" href="http://suporte.cmsj.info/front/ticket.form.php?id=<?= $ticket['id'];?>" target="_blank"><i class="fa fa-eye" style="font-size:14px"></i></a></td>
+            <td class="d-xl-table-cell d-lg-none d-sm-none d-md-table-cell"><a class="badge badge-dark" alt="Vizualizar" title="Visualizar Chamado" href="http://suporte.cmsj.info/front/ticket.form.php?id=<?= $ticket['id'];?>&forcetab=Ticket$1" target="_blank"><i class="fa fa-eye" style="font-size:14px"></i></a></td>
           </tr>
           <?php endwhile; ?>
           <tr> 

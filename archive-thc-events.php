@@ -71,12 +71,16 @@
                 <?php while (have_posts()): the_post(); ?>
                 <?php  $meta = get_post_meta($post->ID); ?>
                 <article class="list-group mb-2">
+                    <!-- <?php var_dump($meta); ?> -->
                     <a href="<?= get_permalink()?>" class="list-group-item list-group-item-action flex-column align-items-start rounded-0">
                         <div class="d-flex w-100 justify-content-between pl-0 col-lg-12">
                             <h5 class="mb-1 ml-0 pl-0"><?= $post->post_title; ?></h5>                                      
                             <!-- <small class="p-1"> <i class="fa fa-clock-o"></i> <?= get_the_date()?></small>                   -->
                         </div>
-                        <p class="mb-1 ml-0 rounded-0 badge badge-secondary"><strong> <i class="fa fa-clock-o"></i> Data do Evento: </strong> <?= date("d/m/Y", strtotime($meta['eventDate'][0])); ?></p> <?php if(strlen($post->post_content) >= 255 ): ?> 
+                        <p class="mb-1 ml-0 rounded-0 badge badge-secondary"><strong> <i class="fa fa-clock-o"></i> Data do Evento: </strong> <?= date("d/m/Y", strtotime($meta['eventDate'][0])); ?> - <?= $meta['eventTime'][0] ?>  Hs</p> 
+                        <?php if(strlen($post->post_content) >= 255 ): ?> >
+                        
+                        
                         <p class="mb-1"><strong>Descrição:</strong> <?= substr($post->post_content, 0, 255)?>...</p>
                         <?php else : ?>
                         <p class="mb-1"><strong>Descrição:</strong> <?= substr($post->post_content, 0, 255)?></p>
